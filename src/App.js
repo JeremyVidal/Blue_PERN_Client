@@ -1,4 +1,6 @@
 import React from 'react';
+import Auth from './auth/Auth'
+import MediaIndex from './media/MediaIndex'
 // import logo from './logo.svg';
 import './App.css';
 
