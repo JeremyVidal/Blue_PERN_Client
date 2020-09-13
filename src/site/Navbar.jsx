@@ -10,19 +10,19 @@ import {
 } from "reactstrap";
 
 const Sitebar = (props) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => {
-        let newIsOpen = !isOpen;
-        setIsOpen(newIsOpen);
-    }
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    let newIsOpen = !isOpen;
+    setIsOpen(newIsOpen);
+  };
   return (
     <Navbar color="faded" light expand="md">
-      <NavbarBrand href="/">My Media Collection </NavbarBrand>
+      <NavbarBrand>My Media Collection </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
-        <Nav className="justify-content-space-between" navbar>
+        <Nav className="ml-auto" navbar>
           <NavItem>
-            <Button onClick={MediaTable}>View Media</Button>
+            <Button /*onClick={MediaTable}*/>View Media</Button>
             <Button onClick={props.clearToken}>Logout</Button>
           </NavItem>
         </Nav>

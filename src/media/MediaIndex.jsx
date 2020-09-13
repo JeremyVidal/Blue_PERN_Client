@@ -37,8 +37,8 @@ const MediaIndex = (props) => {
         <Col md="9">
           <MediaTable
             media={media}
-            editUpdateMedia={editUpdateMedia}
-            updateOn={updateOn}
+            // editUpdateMedia={editUpdateMedia}
+            // updateOn={updateOn}
             token={props.token}
           />
         </Col>
