@@ -1,86 +1,104 @@
 import React, { useState, useEffect } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-
+import "./UserEdit.css"
 
 const UserEdit = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- 
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(firstName, lastName, username, password);
- 
+    console.log(firstName, lastName, email, password);
+
     fetch("http://localhost:3025/user/", {
       method: "PUT",
-      body: JSON.stringify({user: { firstName:firstName, lastName:lastName,  email: email, password: password } }), 
+      body: JSON.stringify({
+        user: {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password,
+        },
+      }),
       headers: new Headers({
         "Content-Type": "application/json",
       }),
     })
       .then((response) => response.json())
       .then((data) => {
-        props.updateToken(data.sessionToken)
-             });
+        props.updateToken(data.sessionToken);
+      });
   };
 
-    return (
-      <div>
-        <h1>Update User</h1>
-        <Form onSubmit={handleSubmit}>  
-        <FormGroup>
-            <Label htmlFor="firstName">First lastName</Label>
+  return (
+    <div id="editForm">
+      <h1>Update User</h1>
+      <Form onSubmit={handleSubmit}>
+        <div className="name">
+          <FormGroup className="fname">
+            <Label htmlFor="firstName">First Name:</Label>
+            <br />
             <Input
               id="firstName"
               type="text"
               name="firstName"
               placeholder="enter first name"
-              onChange={(e) => setFirstName(e.target.value)}             
+              onChange={(e) => setFirstName(e.target.value)}
               value={firstName}
               required
-            />          
+            />
           </FormGroup>
-          <FormGroup>
-            <Label htmlFor="lastName">Last Name</Label>
+          <FormGroup className="lname">
+            <Label htmlFor="lastName">Last Name:</Label>
+            <br />
             <Input
               id="lastName"
               type="text"
               name="lastName"
               placeholder="enter last name"
-              onChange={(e) => setLastName(e.target.value)}             
+              onChange={(e) => setLastName(e.target.value)}
               value={lastName}
-              required
-            />          
-          </FormGroup>    
-          <FormGroup>
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="text"
-              name="email"
-              placeholder="enter email"
-              onChange={(e) => setEmail(e.target.value)}             
-              value={email}
-              required
-            />          
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              type="password"
-              name="password"
-              placeholder="enter password"
-              onChange={(e) => setPassword(e.target.value)}         
-              value={password}
               required
             />
           </FormGroup>
-          <Button type="submit">Sign Up</Button>
-        </Form>
-      </div>
-    );
-  }
+        </div>
+
+        <FormGroup className="email">
+          <Label htmlFor="email">Email:</Label>
+          <br />
+          <Input
+            id="email"
+            type="text"
+            size="30"
+            name="email"
+            placeholder="enter email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            required
+          />
+        </FormGroup>
+        <br />
+        <FormGroup className="password">
+          <Label htmlFor="password">Password:</Label>
+          <br />
+          <Input
+            id="password"
+            type="password"
+            size="30"
+            name="password"
+            placeholder="enter password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            required
+          />
+        </FormGroup>
+        <br />
+        <Button  className="toggle" type="submit">Update</Button>
+      </Form>
+    </div>
+  );
+};
 
 export default UserEdit;
