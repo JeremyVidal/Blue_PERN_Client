@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Col, FormFeedback, Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import { Container, Row, Col, FormFeedback, Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
 
 const Signup = (props) => {
+
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [message, setMessage] = useState('');
-	const [validity, setValidity] = useState('valid');
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -14,7 +16,7 @@ const Signup = (props) => {
 		if(email){
 			fetch("http://localhost:3025/user/signup", {
 				method: 'POST',
-				body: JSON.stringify({email: email, password: password}),
+				body: JSON.stringify({firstName: firstName, lastName: lastName, email: email, password: password}),
 				headers: new Headers({
 					'Content-Type': 'application/json'
 				})
@@ -24,31 +26,49 @@ const Signup = (props) => {
 			.catch(err => console.log(err))
 		}
 		else {
-			setMessage('Please Enter a Username!');
-			setValidity('invalid');
+			setMessage('Required!');
 		}
 	}
 	
 	return(
-		<div>
-			<Form onSubmit={handleSubmit}>
-				<h1>Sign Up</h1>
+			<Container className="App">
+			<h1>Sign Up</h1>
+			<Form className="form" onSubmit={handleSubmit}>
+				<Row>
+				<Col md={6}>
 				<FormGroup row>
-					<Label htmlFor="email" sm={2}>Email</Label>
-					<Col sm={10}>
-						<Input name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-						<FormFeedback tooltip>{ message }</FormFeedback>
-					</Col>
-				</FormGroup>
-				<FormGroup row>
-					<Label htmlFor="password" sm={2}>Password</Label>
-					<Col sm={10}>
-						<Input name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-					</Col>
-				</FormGroup>
-				<Button type="submit">Signup</Button>
+					<Input name="firstName" id="firstName" type="text" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+					{/* <FormFeedback tooltip>{ message }</FormFeedback> */}
+					</FormGroup>
+				</Col>
+				</Row>
+				<Row>
+				<Col sm={10}>
+					<FormGroup row>
+					<Input name="lastName" id="lastName" type="text" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+					{/* <FormFeedback tooltip>{ message }</FormFeedback> */}
+					</FormGroup>
+				</Col>
+				</Row>
+				<Row>
+				<Col sm={10}>
+					<FormGroup row>
+					<Input name="email" id="email" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+					{/* <FormFeedback tooltip>{ message }</FormFeedback> */}
+					</FormGroup>
+				</Col>
+				</Row>
+				<Row>
+				<Col sm={10}>
+					<FormGroup row>
+					<Input name="password" id="password" type="text" placeholder="Password"  value={password} onChange={(e) => setPassword(e.target.value)} />
+					</FormGroup>
+				</Col>
+				</Row>
+					<Button type="submit">Signup</Button>
 			</Form>
-		</div>
+			</Container>
+
 
 	);
 };
