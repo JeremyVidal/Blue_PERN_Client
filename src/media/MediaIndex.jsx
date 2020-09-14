@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MediaTable from './MediaTable';
+// import MediaCreate from './MediaCreate';
 import MediaActions from './MediaActions';
 
 import { Container, Row, Col } from "reactstrap";
@@ -36,6 +37,14 @@ const MediaIndex = (props) => {
         </Col>
         <Col md="9">
           <MediaTable
+            media={media}
+            // editUpdateMedia={editUpdateMedia}
+            // updateOn={updateOn}
+            token={props.token}
+          />
+        </Col>
+        <Col md="9">
+          <MediaActions
             media={media}
             // editUpdateMedia={editUpdateMedia}
             // updateOn={updateOn}
