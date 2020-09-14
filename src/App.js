@@ -3,7 +3,6 @@ import Auth from "./auth/Auth";
 import MediaIndex from "./media/MediaIndex";
 // import Header from './site/Header'
 import Sitebar from "./site/Navbar";
-
 import "./App.css";
 
 function App() {
