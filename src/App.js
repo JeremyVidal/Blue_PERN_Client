@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Auth from "./auth/Auth";
 import MediaIndex from "./media/MediaIndex";
-// import Header from './site/Header'
+import Header from './site/Header'
 import Sitebar from "./site/Navbar";
 import "./App.css";
 
@@ -34,8 +34,8 @@ function App() {
 
   return (
     <div>
-      {/* <Header /> */}
-      <Sitebar clearToken={clearToken} />
+      <Header />
+      {/* <Sitebar clearToken={clearToken} /> */}
       {protectedViews()}
       <MediaIndex />
     </div>
