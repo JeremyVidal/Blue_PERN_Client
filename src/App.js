@@ -34,8 +34,8 @@ function App() {
 
   return (
     <div>
-      <Header />
-      {/* <Sitebar clearToken={clearToken} /> */}
+      {/* <Header /> */}
+      <Sitebar clearToken={clearToken} />
       {protectedViews()}
       <MediaIndex />
     </div>

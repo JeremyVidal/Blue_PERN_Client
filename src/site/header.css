@@ -1,5 +1,11 @@
+/* img{
+    background-position:right top;
+    background-size: 100vw 100px;
+} */
+
 img{
     width: 100vw;
     background-position:right top;
-    background-size: 100vw 100px;
+	width: 100%;
+	height: 150px;
 }
