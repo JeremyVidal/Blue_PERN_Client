@@ -7,10 +7,10 @@ const Header =(props) =>{
     return (
         <div>
             <nav>
-                {/* img source: https://www.vecteezy.com/vector-art/1183293-neutral-low-poly-abstract-banner */}
+                img source: https://www.vecteezy.com/vector-art/1183293-neutral-low-poly-abstract-banner
                 <img id="banner" src= {banner} alt="banner" />
              {/* <Logout setSessionToken={props.setSessionToken}/> */}
-             <Sitebar clearToken={props.clearToken} />
+             {/* <Sitebar clearToken={props.clearToken} /> */}
             </nav>
         </div>
     )
