@@ -44,7 +44,7 @@ const UserEdit = (props) => {
               id="firstName"
               type="text"
               name="firstName"
-              placeholder="enter first name"
+              placeholder="Enter First Name"
               onChange={(e) => setFirstName(e.target.value)}
               value={firstName}
               required
@@ -57,7 +57,7 @@ const UserEdit = (props) => {
               id="lastName"
               type="text"
               name="lastName"
-              placeholder="enter last name"
+              placeholder="Enter Last Name"
               onChange={(e) => setLastName(e.target.value)}
               value={lastName}
               required
@@ -73,7 +73,7 @@ const UserEdit = (props) => {
             type="text"
             size="30"
             name="email"
-            placeholder="enter email"
+            placeholder="Enter Email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             required
@@ -88,7 +88,7 @@ const UserEdit = (props) => {
             type="password"
             size="30"
             name="password"
-            placeholder="enter password"
+            placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             required
