@@ -77,7 +77,7 @@ const MediaCreate = (props) => {
           </Input>
         </FormGroup>
         <FormGroup>
-          <Label html for="title">
+          <Label htmlFor="title">
             {" "}
             Title:{" "}
           </Label>
@@ -88,7 +88,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label html for="genre">
+          <Label htmlFor="genre">
             {" "}
             Genre:{" "}
           </Label>
@@ -99,7 +99,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label html for="description">
+          <Label htmlFor="description">
             {" "}
             Description:{" "}
           </Label>
@@ -110,7 +110,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label html for="rated">
+          <Label htmlFor="rated">
             {" "}
             Rated:{" "}
           </Label>
@@ -121,7 +121,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label html for="rating">
+          <Label htmlFor="rating">
             {" "}
             Rating:{" "}
           </Label>
@@ -132,7 +132,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label html for="consumed">
+          <Label htmlFor="consumed">
             Consumed:{" "}
           </Label>
           <Input
@@ -142,7 +142,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label html for="platform">
+          <Label htmlFor="platform">
             Platform:{" "}
           </Label>
           <Input
