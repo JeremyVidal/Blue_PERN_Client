@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import MediaCreate from './MediaCreate';
+import UserEdit from '../auth/UserEdit';
 import {
     Button,
     Row,
@@ -11,20 +12,24 @@ const MediaActions = (props) => {
 
 
 return (
-    <div>
-        <Row>
+    <div class="Main">
+        <div class = "box1">
         <h1>Welcome *user*</h1>
         <Col md ="10">
         <Button onClick={props.MediaTable}>Go to your Collection</Button>
+
         {/* <h3>Select Media Type</h3> */}
         <MediaCreate />
-        </Col>
+        </div>
         {/* <Col md ="3">
             <h3>Media edit</h3>
         <MediaEdit />
         </Col> */}
         </Row>
         {/* {viewConductor()} */}
+        <div class = "box4">
+            <UserEdit />
+        </div>
     </div>
 )
 

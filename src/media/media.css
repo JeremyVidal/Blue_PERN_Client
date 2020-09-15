@@ -1,5 +1,17 @@
 /* -----  Buttons  ----- */
 /* https://blog.koalite.com/bbg/ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
 .btn-delete { 
     color: #ffffff; 
     background-color: #865F67; 
