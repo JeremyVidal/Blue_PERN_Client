@@ -44,7 +44,7 @@ const Login = (props) => {
 
   return (
     <Container className="App">
-      <h1>Login</h1>
+      <h1>{title()}</h1>
       <Form className="form" onSubmit={handleSubmit}>
         <Row>
           <Col sm={10}>

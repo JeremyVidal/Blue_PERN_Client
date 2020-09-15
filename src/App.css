@@ -20,6 +20,25 @@ body{
 }
 
 
+.App-header {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+#main{
+	height: 100vh;
+	  background-image: linear-gradient(#6B7D73,#31525E);
+}
+
 /* footer */
 footer {
   background-color: #363C45; 

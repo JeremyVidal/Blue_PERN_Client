@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import APIURL from '../helpers/environment';
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "./UserEdit.css"

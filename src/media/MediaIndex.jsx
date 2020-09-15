@@ -3,8 +3,7 @@ import MediaTable from './MediaTable';
 import APIURL from '../helpers/environment';
 // import MediaCreate from './MediaCreate';
 import MediaActions from './MediaActions';
-
-import { Container, Row, Col } from "reactstrap";
+import {Container, Row, Col } from "reactstrap";
 
 
 const MediaIndex = (props) => {
@@ -30,6 +29,8 @@ const MediaIndex = (props) => {
     fetchMedia();
   }, []);
   
+ 
+
   return (
     <Container>
       <Row>
@@ -41,17 +42,17 @@ const MediaIndex = (props) => {
           <MediaTable
             media={media}
             // editUpdateMedia={editUpdateMedia}
-            // updateOn={updateOn}
+			// updateOn={updateOn}
             token={props.token}
           />
         </Col>
         <Col md="6">
-          <MediaActions
+          {/* <MediaActions
             media={media}
             // editUpdateMedia={editUpdateMedia}
             // updateOn={updateOn}
             token={props.token}
-          />
+          /> */}
         </Col>
                    
       </Row>

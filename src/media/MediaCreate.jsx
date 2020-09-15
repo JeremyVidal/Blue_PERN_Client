@@ -6,9 +6,6 @@ import {
   FormGroup,
   Label,
   Input,
-  UncontrolledCollapse,
-  Card,
-  CardBody,
 } from "reactstrap";
 
 const MediaCreate = (props) => {
