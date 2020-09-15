@@ -2,10 +2,10 @@
     text-align: center;
     /* background-color: #d1c0aa; */
 }
-form{
+/* form{
   
     text-align: center ;
-}
+} */
 .name{
     display:flex;
     justify-content: center
@@ -25,4 +25,5 @@ form{
 background-color: rgb(248, 203, 185);}
 input{
     pointer-events:fill;
-}
+};
+
