@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Route, Link, Switch } from "react-router-dom";
+import Home from './Home';
+// import MediaIndex from "../media/MediaTable"
 import {
   Navbar,
   NavbarBrand,
@@ -26,14 +28,18 @@ const Sitebar = (props) => {
         // justify variant="pills" 
         className="ml-auto" navbar>
           <NavItem>
-       
-            <Button onClick={props.MediaTable}>View Media</Button>
+            {/* <Button onClick ={props.media}><Link to ="/mediaindex">ViewMedia</Link></Button> */}
+            <Button onClick ={props.media}>View Media</Button>
             <Button onClick={props.MediaActions}>Home</Button>
             <Button onClick={props.clearToken}>Logout</Button>
           </NavItem>
         </Nav>
       </Collapse>
     </Navbar>
+    {/* <div className="route">
+      <Route exact path="/home"><Home /></Route>
+      <Route exact path="/mediaindex"><MediaIndex /></Route>
+    </div> */}
     </div>
   );
 };
