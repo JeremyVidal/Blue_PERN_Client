@@ -24,7 +24,7 @@ return (
         </Col> */}
         {/* <Button onClick={MediaTable}>Go to your Collection</Button> */}
         </Row>
-        {viewConductor()}
+        {/* {viewConductor()} */}
     </div>
 )
 

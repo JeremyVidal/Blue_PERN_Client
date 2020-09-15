@@ -17,8 +17,9 @@ const Sitebar = (props) => {
     setIsOpen(newIsOpen);
   };
   return (
-    <Navbar  color="faded" light expand="md">
-      <NavbarBrand>My Media Collection </NavbarBrand>
+    <div className="mainNav">
+    <Navbar  color="black" light expand="md">
+      <NavbarBrand> <h4>My Media Collection</h4> </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav 
@@ -33,6 +34,7 @@ const Sitebar = (props) => {
         </Nav>
       </Collapse>
     </Navbar>
+    </div>
   );
 };
 export default Sitebar;
