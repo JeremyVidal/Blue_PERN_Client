@@ -22,13 +22,13 @@ const Signup = (props) => {
 					'Content-Type': 'application/json'
 				})
 			})
-		})
+		
 		.then((response) => response.json())
 		.then((data) => {props.updateToken(data.sessionToken)})
 		.catch(err => console.log(err))
 		}
 
-	
+	}
 	
 	return(
 			<Form className="form" onSubmit={handleSubmit}>
