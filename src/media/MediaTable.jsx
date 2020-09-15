@@ -3,7 +3,6 @@ import { Table, Button } from "reactstrap";
 import "./media.css";
 
 const MediaTable = (props) => {
- 
 
   const mediaMapper = () => {
     return props.media.map((media, index) => {

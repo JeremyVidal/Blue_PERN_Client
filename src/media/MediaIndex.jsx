@@ -8,7 +8,21 @@ import { Container, Row, Col } from "reactstrap";
 
 const MediaIndex = (props) => {
   const [media, setMedia] = useState([]);
+  const [updateActive, setUpdateActive] = useState(false);
+  const [mediaToUpdate, setMediaToUpdate] = useState({});
 
+  const editUpdateMedia = (mediaEntry) => {
+    setMediaToUpdate(mediaEntry);
+    console.log(mediaEntry);
+  }
+
+  const updateOn = () => {
+    setUpdateActive(true);
+  }
+
+  const updateOff = () => {
+    setUpdateActive(false);
+  }
 
   const fetchMedia = () => {
     // fetch("http://localhost:3025/media", {
@@ -25,6 +39,8 @@ const MediaIndex = (props) => {
         console.log(mediaData);
       });
   };
+
+
   useEffect(() => {
     fetchMedia();
   }, []);
@@ -39,16 +55,18 @@ const MediaIndex = (props) => {
         <Col md="12">
           <MediaTable
             media={media}
-            // editUpdateMedia={editUpdateMedia}
-            // updateOn={updateOn}
+            editUpdateMedia={editUpdateMedia}
+            updateOn={updateOn}
+            updateOff={updateOff}
             token={props.token}
           />
         </Col>
         <Col md="6">
           <MediaActions
             media={media}
-            // editUpdateMedia={editUpdateMedia}
-            // updateOn={updateOn}
+            editUpdateMedia={editUpdateMedia}
+            updateOn={updateOn}
+            updateOff={updateOff}
             token={props.token}
           />
         </Col>

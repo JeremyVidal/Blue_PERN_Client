@@ -5,7 +5,7 @@ import {
     Row,
     Col,
 } from "reactstrap";
-// import MediaEdit from './MediaEdit';
+import MediaEdit from './MediaEdit';
 
 const MediaActions = (props) => {
 
@@ -19,10 +19,10 @@ return (
         {/* <h3>Select Media Type</h3> */}
         <MediaCreate />
         </Col>
-        {/* <Col md ="3">
+        <Col md ="3">
             <h3>Media edit</h3>
-        <MediaEdit />
-        </Col> */}
+        {props.updateOn() ? <MediaEdit editUpdateMedia={props.editUpdateMedia} mediaToUpdate={props.mediaToUpdate} token={props.token} /> : <></>}
+        </Col>
         </Row>
         {/* {viewConductor()} */}
     </div>
