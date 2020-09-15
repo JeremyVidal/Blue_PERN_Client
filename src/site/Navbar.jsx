@@ -27,7 +27,7 @@ const Sitebar = (props) => {
           <NavItem>
        
             <Button onClick={props.MediaTable}>View Media</Button>
-            <Button onClick={props.Home}>Home</Button>
+            <Button onClick={props.MediaActions}>Home</Button>
             <Button onClick={props.clearToken}>Logout</Button>
           </NavItem>
         </Nav>

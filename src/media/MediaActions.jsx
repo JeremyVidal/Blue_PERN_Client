@@ -7,21 +7,24 @@ import {
 } from "reactstrap";
 // import MediaEdit from './MediaEdit';
 
-const MediaActions = () => {
+const MediaActions = (props) => {
 
 return (
     <div>
         <Row>
         <h1>Welcome *user*</h1>
-        <Col md ="6">
-        <h3>Select Media Type</h3>
+        <Col md ="2">
+        <Button /*onClick={MediaTable}*/>Go to your Collection</Button>
+        </Col>
+        <Col md ="10">
+        {/* <h3>Select Media Type</h3> */}
         <MediaCreate />
         </Col>
-        <Col md ="3">
-            <h3>workout edit</h3>
-        {/* <MediaEdit /> */}
-        </Col>
-        <Button /*onClick={MediaTable}*/>Go to your Collection</Button>
+        {/* <Col md ="3">
+            <h3>Media edit</h3>
+        <MediaEdit />
+        </Col> */}
+        {/* <Button onClick={MediaTable}>Go to your Collection</Button> */}
         </Row>
     </div>
 )
