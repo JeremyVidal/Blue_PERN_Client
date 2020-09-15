@@ -3,7 +3,7 @@ let APIURL = "";
 switch (window.location.hostname){
     case "localhost" || "127.0.0.1":
 
-    APIURL = "https://localhost:3025";
+    APIURL = "http://localhost:3025";
     break;
 
     case "tl-my-mediacollection.herokuapp.com":
