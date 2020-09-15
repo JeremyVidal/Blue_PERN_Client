@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React/*, {useState, useEffect}*/ from 'react'
 import MediaCreate from './MediaCreate';
+import UserEdit from '../auth/UserEdit';
 import {
-    Button,
     Row,
     Col,
 } from "reactstrap";
@@ -11,20 +11,25 @@ const MediaActions = (props) => {
 
 
 return (
-    <div>
-        <Row>
-        <h1>Welcome *user*</h1>
-        <Button /*onClick={MediaTable}*/>Go to your Collection</Button>
-        <Col md ="10">
-        {/* <h3>Select Media Type</h3> */}
-        <MediaCreate />
-        </Col>
-        <Col md ="3">
-            <h3>Media edit</h3>
-        {props.updateOn() ? <MediaEdit editUpdateMedia={props.editUpdateMedia} mediaToUpdate={props.mediaToUpdate} token={props.token} /> : <></>}
-        </Col>
-        </Row>
+    <div class="Main">
+        <div className = "box1">
+          <h1>Welcome *user*</h1>
+     
+        <Button onClick={props.MediaTable}>Go to your Collection</Button>
+        </div>
+<div className="box2">
+    
+            {/* <h3>Select Media Type</h3> */}
+            <MediaCreate />
+            </div>
+            {/* <Col md ="3">
+                <h3>Media edit</h3>
+            {props.updateOn() ? <MediaEdit editUpdateMedia={props.editUpdateMedia} mediaToUpdate={props.mediaToUpdate} token={props.token} /> : <></>}
+        </Col> */}
         {/* {viewConductor()} */}
+        <div className = "box4">
+            <UserEdit />
+        </div>
     </div>
 )
 
