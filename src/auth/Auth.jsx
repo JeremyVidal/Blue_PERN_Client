@@ -13,7 +13,7 @@ const Auth = (props) => {
                     <Signup updateToken={props.updateToken}/>
                 </Col>
                 <Col md="4">
-                    {/* <Login updateToken={props.updateToken}/> */}
+                    <Login updateToken={props.updateToken}/>
                 </Col>
                 <Col md="4">
                     <UserEdit updateToken={props.updateToken}/>

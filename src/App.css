@@ -1,3 +1,9 @@
+
+
+*{
+  color: white;
+}
+
 .App {
   text-align: center;
 }
@@ -13,8 +19,14 @@
   }
 }
 
+.mainNav{
+  background-color: #363C45;
+  color: white;
+}
+
+
 .App-header {
-  background-color: #282c34;
+  background: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,12 +39,113 @@
 .App-link {
   color: #61dafb;
 }
+#main{
+  background-image: linear-gradient(#6B7D73,#31525E);
+}
+/* footer */
+footer {
+  background-color: #363C45; 
+  color: white;
+  margin-top: 10px;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer  p {
+  margin-top: 0.8em!important;
+  margin-left: 1.5em;
+}
+/* -----  Buttons  ----- */
+/* https://blog.koalite.com/bbg/ */
+.btn-delete { 
+  color: #ffffff; 
+  background-color: #865F67; 
+  border-color: #865F67; 
+} 
+ 
+.btn-delete:hover, 
+.btn-delete:focus, 
+.btn-delete:active, 
+.btn-delete.active, 
+.open .dropdown-toggle.btn-delete { 
+  color: #ffffff; 
+  background-color: #5F636D; 
+  border-color: #865F67; 
+} 
+ 
+.btn-delete:active, 
+.btn-delete.active, 
+.open .dropdown-toggle.btn-delete { 
+  background-image: none; 
+} 
+ 
+.btn-delete.disabled, 
+.btn-delete[disabled], 
+fieldset[disabled] .btn-delete, 
+.btn-delete.disabled:hover, 
+.btn-delete[disabled]:hover, 
+fieldset[disabled] .btn-delete:hover, 
+.btn-delete.disabled:focus, 
+.btn-delete[disabled]:focus, 
+fieldset[disabled] .btn-delete:focus, 
+.btn-delete.disabled:active, 
+.btn-delete[disabled]:active, 
+fieldset[disabled] .btn-delete:active, 
+.btn-delete.disabled.active, 
+.btn-delete[disabled].active, 
+fieldset[disabled] .btn-delete.active { 
+  background-color: #865F67; 
+  border-color: #865F67; 
+} 
+ 
+.btn-delete .badge { 
+  color: #865F67; 
+  background-color: #ffffff; 
+}
+
+
+
+
+.btn-edit { 
+  color: #ffffff; 
+  background-color: #DD5551; 
+  border-color: #DD5551; 
+} 
+ 
+.btn-edit:hover, 
+.btn-edit:focus, 
+.btn-edit:active, 
+.btn-edit.active, 
+.open .dropdown-toggle.btn-edit { 
+  color: #ffffff; 
+  background-color: #5F636D; 
+  border-color: #DD5551; 
+} 
+ 
+.btn-edit:active, 
+.btn-edit.active, 
+.open .dropdown-toggle.btn-edit { 
+  background-image: none; 
+} 
+ 
+.btn-edit.disabled, 
+.btn-edit[disabled], 
+fieldset[disabled] .btn-edit, 
+.btn-edit.disabled:hover, 
+.btn-edit[disabled]:hover, 
+fieldset[disabled] .btn-edit:hover, 
+.btn-edit.disabled:focus, 
+.btn-edit[disabled]:focus, 
+fieldset[disabled] .btn-edit:focus, 
+.btn-edit.disabled:active, 
+.btn-edit[disabled]:active, 
+fieldset[disabled] .btn-edit:active, 
+.btn-edit.disabled.active, 
+.btn-edit[disabled].active, 
+fieldset[disabled] .btn-edit.active { 
+  background-color: #DD5551; 
+  border-color: #DD5551; 
+} 
+ 
+.btn-edit .badge { 
+  color: #DD5551; 
+  background-color: #ffffff; 
 }
