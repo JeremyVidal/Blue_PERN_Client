@@ -1,0 +1,28 @@
+#editForm{
+    text-align: center;
+    background-color: #d1c0aa;
+}
+form{
+  
+    text-align: center ;
+}
+.name{
+    display:flex;
+    justify-content: center
+}
+.fname, .lname{
+    margin:25px;
+}
+
+.buttons{
+    margin: 20px;
+}
+.toggle{
+    margin:25px;
+    background-color: rgb(241, 163, 155);
+}
+.toggle:hover{
+background-color: rgb(248, 203, 185);}
+input{
+    pointer-events:fill;
+}

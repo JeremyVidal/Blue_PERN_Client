@@ -1,21 +1,43 @@
-import React from 'react';
-import Auth from './auth/Auth'
-import MediaIndex from './media/MediaIndex'
-// import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Auth from "./auth/Auth";
+import MediaIndex from "./media/MediaIndex";
+import Header from './site/Header'
+import Sitebar from "./site/Navbar";
+import "./App.css";
 
 function App() {
+  const [sessionToken, setSessionToken] = useState("");
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setSessionToken(localStorage.getItem("token"));
+    }
+  }, []);
+
+  const updateToken = (newToken) => {
+    localStorage.setItem("token", newToken);
+    setSessionToken(newToken);
+    console.log(sessionToken);
+  };
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken("");
+  };
+
+  const protectedViews = () => {
+    return sessionToken === localStorage.getItem("token") ? (
+      <MediaIndex token={sessionToken} />
+    ) : (
+      <Auth updateToken={updateToken} />
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Patrick is testing.
-        </p>
-        <a>
-                   Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Header /> */}
+      <Sitebar clearToken={clearToken} />
+      {protectedViews()}
+      <MediaIndex />
     </div>
   );
 }
