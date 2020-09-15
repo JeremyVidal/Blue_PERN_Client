@@ -11,6 +11,7 @@ const MediaIndex = (props) => {
 
 
   const fetchMedia = () => {
+    // fetch("http://localhost:3025/media", {
     fetch("http://localhost:3025/media/all", {
       method: "GET",
       headers: new Headers({
@@ -31,11 +32,11 @@ const MediaIndex = (props) => {
   return (
     <Container>
       <Row>
-        <Col md="3">
+        {/* <Col md="3">
     
         
-        </Col>
-        <Col md="9">
+        </Col> */}
+        <Col md="12">
           <MediaTable
             media={media}
             // editUpdateMedia={editUpdateMedia}
@@ -43,7 +44,7 @@ const MediaIndex = (props) => {
             token={props.token}
           />
         </Col>
-        <Col md="9">
+        <Col md="6">
           <MediaActions
             media={media}
             // editUpdateMedia={editUpdateMedia}
