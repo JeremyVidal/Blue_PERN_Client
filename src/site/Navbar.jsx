@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from './Home';
-// import MediaIndex from "../media/MediaTable"
+import MediaIndex from "../media/MediaIndex"
 import {
   Navbar,
   NavbarBrand,
@@ -21,7 +21,7 @@ const Sitebar = (props) => {
   return (
     <div className="mainNav">
     <Navbar  color="black" light expand="md">
-      <NavbarBrand> <h4>My Media Collection</h4> </NavbarBrand>
+      <NavbarBrand> <h3>My Media Collection</h3> </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav 
@@ -29,7 +29,7 @@ const Sitebar = (props) => {
         className="ml-auto" navbar>
           <NavItem>
             {/* <Button onClick ={props.media}><Link to ="/mediaindex">ViewMedia</Link></Button> */}
-            <Button onClick ={props.media}>View Media</Button>
+            <Button onClick ={props.MediaTable}>View Media</Button>
             <Button onClick={props.MediaActions}>Home</Button>
             <Button onClick={props.clearToken}>Logout</Button>
           </NavItem>
