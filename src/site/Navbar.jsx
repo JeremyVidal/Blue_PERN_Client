@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Route, Link, Switch } from "react-router-dom";
 import {
   Navbar,
   NavbarBrand,
@@ -16,13 +17,17 @@ const Sitebar = (props) => {
     setIsOpen(newIsOpen);
   };
   return (
-    <Navbar color="faded" light expand="md">
+    <Navbar  color="faded" light expand="md">
       <NavbarBrand>My Media Collection </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
-        <Nav className="ml-auto" navbar>
+        <Nav 
+        // justify variant="pills" 
+        className="ml-auto" navbar>
           <NavItem>
-            <Button /*onClick={MediaTable}*/>View Media</Button>
+       
+            <Button onClick={props.MediaTable}>View Media</Button>
+            <Button onClick={props.Home}>Home</Button>
             <Button onClick={props.clearToken}>Logout</Button>
           </NavItem>
         </Nav>

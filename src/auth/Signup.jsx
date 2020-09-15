@@ -35,7 +35,7 @@ const Signup = (props) => {
 			<h1>Sign Up</h1>
 			<Form className="form" onSubmit={handleSubmit}>
 				<Row>
-				<Col md={6}>
+				<Col md={10}>
 				<FormGroup row>
 					<Input name="firstName" id="firstName" type="text" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
 					{/* <FormFeedback tooltip>{ message }</FormFeedback> */}

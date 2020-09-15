@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
+import "./media.css";
 
 const MediaTable = (props) => {
  
@@ -15,11 +16,11 @@ const MediaTable = (props) => {
           <td>{media.description}</td>
           <td>{media.rated}</td>
           <td>{media.platform}</td>
-          {/* <td>{media.consumed}</td> */}
-          {/* <td>{media.rating}</td> */}
+          <td>{media.consumed}</td>
+          <td>{media.rating}</td>
           <td>
-          <Button color ="warning" onClick={()=> {props.editUpdateMedia(media); props.updateOn()}}>Update</Button>
-            {/* <Button color="danger" onClick={() => {deleteMedia(media) }}>Delete</Button> */}
+          <Button /*className="btn-edit"*/ color ="info" onClick={()=> {props.editUpdateMedia(media); props.updateOn()}}>Update</Button>
+            <Button color="dark" onClick={() => {props.deleteMedia(media) }}>Delete</Button>
           </td>
         </tr>
       );
@@ -36,6 +37,7 @@ const MediaTable = (props) => {
             <th>#</th>
             <th>Type</th>
             <th>Title</th>
+            <th>Genre</th>
             <th>Description</th>
             <th>Rated</th>
             <th>Platform</th>

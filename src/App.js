@@ -3,7 +3,9 @@ import Auth from "./auth/Auth";
 import MediaIndex from "./media/MediaIndex";
 import Header from './site/Header'
 import Sitebar from "./site/Navbar";
+import Footer from './site/Footer'
 import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -33,11 +35,12 @@ function App() {
   };
 
   return (
-    <div>
+    <div id="main">
       {/* <Header /> */}
       <Sitebar clearToken={clearToken} />
       {protectedViews()}
-      <MediaIndex />
+      {/* <MediaIndex /> */}
+      <Footer />
     </div>
   );
 }

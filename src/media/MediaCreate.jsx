@@ -1,20 +1,18 @@
 import React, {useState} from 'react'
 import {Button, Form, FormGroup, Label, Input, UncontrolledCollapse, Card, CardBody} from 'reactstrap';
 
+
 const MediaCreate = (props) => {
+  const [type, setType] = useState("");
+  const [title, setTitle] = useState("");
+  const [genre, setGenre] = useState("");
+  const [description, setDescription] = useState("");
+  const [rated, setRated] = useState("");
+  const [rating, setRating] = useState("");
+  const [consumed, setConsumed] = useState("");
+  const [platform, setPlatform] = useState("");
 
-    const [type, setType] = useState('');
-    const [title, setTitle] = useState('');
-    const [genre, setGenre] = useState('');
-    const [description, setDescription] = useState('');
-    const [rated, setRated] = useState('');
-    const [rating, setRating] = useState('');
-    const [consumed, setConsumed] = useState('');
-    const [platform, setPlatform] = useState('');
-
-
-
-    const handleSubmit = (e) => {
+     const handleSubmit = (e) => {
         e.preventDefault();
         fetch('http://localhost:3025/media/create', {
             method: 'POST',
@@ -100,4 +98,5 @@ const MediaCreate = (props) => {
         </div>
     )
 }
+
 export default MediaCreate;
