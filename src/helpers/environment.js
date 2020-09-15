@@ -7,7 +7,7 @@ switch (window.location.hostname){
     APIURL = "http://localhost:3025";
     break;
 
-    case "tl-my-mediacollection.herokuapp.com":
+    case "tl-my-mediacollection-client.herokuapp.com":
 
     APIURL = "https://tl-my-mediacollection.herokuapp.com"
 }
