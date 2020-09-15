@@ -14,6 +14,7 @@ return (
     <div>
         <Row>
         <h1>Welcome *user*</h1>
+        <Button /*onClick={MediaTable}*/>Go to your Collection</Button>
         <Col md ="10">
         {/* <h3>Select Media Type</h3> */}
         <MediaCreate />
@@ -22,7 +23,6 @@ return (
             <h3>Media edit</h3>
         <MediaEdit />
         </Col> */}
-        {/* <Button onClick={MediaTable}>Go to your Collection</Button> */}
         </Row>
         {/* {viewConductor()} */}
     </div>
