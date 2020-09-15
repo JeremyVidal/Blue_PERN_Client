@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, FormFeedback, Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import { Container, Row, Col, Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
 
 const Signup = (props) => {
@@ -8,7 +8,6 @@ const Signup = (props) => {
 	const [lastName, setLastName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	const [message, setMessage] = useState('');
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -34,7 +33,6 @@ const Signup = (props) => {
 				<Col md={10}>
 				<FormGroup row>
 					<Input name="firstName" id="firstName" type="text" placeholder="First Name" required value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-					{/* <FormFeedback tooltip>{ message }</FormFeedback> */}
 					</FormGroup>
 				</Col>
 				</Row>
@@ -42,7 +40,6 @@ const Signup = (props) => {
 				<Col md={10}>
 					<FormGroup row>
 					<Input name="lastName" id="lastName" type="text" placeholder="Last Name" required value={lastName} onChange={(e) => setLastName(e.target.value)} />
-					{/* <FormFeedback tooltip>{ message }</FormFeedback> */}
 					</FormGroup>
 				</Col>
 				</Row>
@@ -50,7 +47,6 @@ const Signup = (props) => {
 				<Col md={10}>
 					<FormGroup row>
 					<Input name="email" id="email" type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-					{/* <FormFeedback tooltip>{ message }</FormFeedback> */}
 					</FormGroup>
 				</Col>
 				</Row>

@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React/*, {useState, useEffect}*/ from 'react'
 import MediaCreate from './MediaCreate';
 import {
-    Button,
     Row,
     Col,
 } from "reactstrap";
