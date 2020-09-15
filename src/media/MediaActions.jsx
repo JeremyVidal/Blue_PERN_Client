@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import MediaCreate from './MediaCreate';
 import {
     Button,
@@ -9,13 +9,11 @@ import {
 
 const MediaActions = (props) => {
 
+
 return (
     <div>
         <Row>
         <h1>Welcome *user*</h1>
-        <Col md ="2">
-        <Button /*onClick={MediaTable}*/>Go to your Collection</Button>
-        </Col>
         <Col md ="10">
         {/* <h3>Select Media Type</h3> */}
         <MediaCreate />
@@ -26,6 +24,7 @@ return (
         </Col> */}
         {/* <Button onClick={MediaTable}>Go to your Collection</Button> */}
         </Row>
+        {viewConductor()}
     </div>
 )
 
