@@ -1,5 +1,6 @@
 let APIURL = "";
 
+console.log(window.location.hostname);
 switch (window.location.hostname){
     case "localhost" || "127.0.0.1":
 
@@ -8,6 +9,6 @@ switch (window.location.hostname){
 
     case "tl-my-mediacollection.herokuapp.com":
 
-    APIURL = "https://tl-my-mediacollection.herokuapp.com/"
+    APIURL = "https://tl-my-mediacollection.herokuapp.com"
 }
 export default APIURL;
