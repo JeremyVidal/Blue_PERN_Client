@@ -35,7 +35,7 @@ const UserEdit = (props) => {
 
   return (
     <div id="editForm">
-      <h1>Update User</h1>
+      <h2>Update User</h2>
       <Form onSubmit={handleSubmit}>
         <div className="name">
           <FormGroup className="fname">
