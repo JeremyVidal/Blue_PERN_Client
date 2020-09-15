@@ -5,7 +5,7 @@ import {
     Row,
     Col,
 } from "reactstrap";
-// import MediaEdit from './MediaEdit';
+import MediaEdit from './MediaEdit';
 
 const MediaActions = (props) => {
 
@@ -13,7 +13,7 @@ const MediaActions = (props) => {
 return (
     <div class="Main">
         <div className = "box1">
-        <h1>Welcome *user*</h1>
+          <h1>Welcome *user*</h1>
      
         <Button onClick={props.MediaTable}>Go to your Collection</Button>
         </div>
@@ -24,9 +24,8 @@ return (
             </div>
             {/* <Col md ="3">
                 <h3>Media edit</h3>
-            <MediaEdit />
+            {props.updateOn() ? <MediaEdit editUpdateMedia={props.editUpdateMedia} mediaToUpdate={props.mediaToUpdate} token={props.token} /> : <></>}
         </Col> */}
-       
         {/* {viewConductor()} */}
         <div className = "box4">
             <UserEdit />
