@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MediaTable from './MediaTable';
+import APIURL from '../helpers/environment';
 // import MediaCreate from './MediaCreate';
 import MediaActions from './MediaActions';
 import {Container, Row, Col } from "reactstrap";
@@ -10,8 +11,8 @@ const MediaIndex = (props) => {
 
 
   const fetchMedia = () => {
-    // fetch("http://localhost:3025/media", {
-    fetch("http://localhost:3025/media/all", {
+    // fetch(`${APIURL}/media`, {
+    fetch(`${APIURL}/media/all`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import APIURL from '../helpers/environment';
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "./UserEdit.css"
 
@@ -12,7 +13,7 @@ const UserEdit = (props) => {
     event.preventDefault();
     console.log(firstName, lastName, email, password);
 
-    fetch("http://localhost:3025/user/", {
+    fetch(`${APIURL}/user/`, {
       method: "PUT",
       body: JSON.stringify({
         user: {

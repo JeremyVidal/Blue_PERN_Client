@@ -37,8 +37,10 @@ function App() {
   return (
     <div id="main">
       {/* <Header /> */}
+      <Router>
       <Sitebar clearToken={clearToken} />
       {protectedViews()}
+      </Router>
       {/* <MediaIndex /> */}
       <Footer />
     </div>

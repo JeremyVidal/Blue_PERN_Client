@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import APIURL from '../helpers/environment';
 import {
   Container,
   Row,
@@ -20,7 +21,7 @@ const Login = (props) => {
     event.preventDefault();
     console.log(email, password);
     if (email) {
-      fetch("http://localhost:3025/user/login", {
+      fetch(`${APIURL}/user/login`, {
         method: "POST",
         body: JSON.stringify({
           email: email,

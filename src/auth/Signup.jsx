@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, FormGroup, Label, Input, Button} from 'reactstrap';
-
+import APIURL from '../helpers/environment';
 
 const Signup = (props) => {
 
@@ -12,19 +12,21 @@ const Signup = (props) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(email, password);
-		fetch("http://localhost:3025/user/signup", {
-			method: 'POST',
-			body: JSON.stringify({firstName: firstName, lastName: lastName, email: email, password: password}),
-			headers: new Headers({
-				'Content-Type': 'application/json'
+		if(email){
+			fetch(`${APIURL}/user/signup`, {
+				method: 'POST',
+				body: JSON.stringify({firstName: firstName, lastName: lastName, email: email, password: password}),
+				headers: new Headers({
+					'Content-Type': 'application/json'
+				})
 			})
-		})
+		
 		.then((response) => response.json())
 		.then((data) => {props.updateToken(data.sessionToken)})
 		.catch(err => console.log(err))
 		}
 
-	
+	}
 	
 	return(
 			<Form className="form" onSubmit={handleSubmit}>

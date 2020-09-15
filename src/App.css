@@ -1,27 +1,21 @@
 
+body{
+  background-image: linear-gradient(#6B7D73,#31525E);
+  color: white;
+}
+.auth-container{
+  height:100vh;
+}
 
 *{
   color: white;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .mainNav{
   background-color: #363C45;
   color: white;
+  box-shadow: 0px 6px 9px -2px rgba(0,0,0,0.75);
   margin-bottom: 30px;
 }
 
@@ -44,6 +38,7 @@
 	height: 100vh;
 	  background-image: linear-gradient(#6B7D73,#31525E);
 }
+
 /* footer */
 footer {
   background-color: #363C45; 
