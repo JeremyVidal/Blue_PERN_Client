@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import APIURL from '../helpers/environment';
 import { Container, Row, Col, FormFeedback, Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
 
@@ -13,11 +14,13 @@ const Signup = (props) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(email, password);
-		fetch("http://localhost:3025/user/signup", {
-			method: 'POST',
-			body: JSON.stringify({firstName: firstName, lastName: lastName, email: email, password: password}),
-			headers: new Headers({
-				'Content-Type': 'application/json'
+		if(email){
+			fetch(`${APIURL}/user/signup`, {
+				method: 'POST',
+				body: JSON.stringify({firstName: firstName, lastName: lastName, email: email, password: password}),
+				headers: new Headers({
+					'Content-Type': 'application/json'
+				})
 			})
 		})
 		.then((response) => response.json())

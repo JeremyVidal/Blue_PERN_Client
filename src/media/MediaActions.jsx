@@ -15,12 +15,9 @@ return (
     <div class="Main">
         <div class = "box1">
         <h1>Welcome *user*</h1>
-        <Button /*onClick={MediaTable}*/>Go to your Collection</Button>
-        </div>
-        <div class = "box2">
-            <p>welcom text here</p>
-        </div>
-        <div class ="box3">
+        <Col md ="10">
+        <Button onClick={props.MediaTable}>Go to your Collection</Button>
+
         {/* <h3>Select Media Type</h3> */}
         <MediaCreate />
         </div>
@@ -28,6 +25,7 @@ return (
             <h3>Media edit</h3>
         <MediaEdit />
         </Col> */}
+        </Row>
         {/* {viewConductor()} */}
         <div class = "box4">
             <UserEdit />
