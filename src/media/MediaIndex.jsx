@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
-// import MediaTable from "./MediaTable";
+import MediaTable from "./MediaTable";
 import MediaActions from "./MediaActions";
 import MediaEdit from "./MediaEdit";
 
@@ -111,7 +111,7 @@ useEffect(() => {
       ) : (
         <></>
       )}
-
+      </Col>
       </Row>
     </Container>
   );
