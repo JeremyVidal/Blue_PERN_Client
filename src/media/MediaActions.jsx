@@ -18,7 +18,7 @@ return (
         <Button /*onClick={MediaTable}*/>Go to your Collection</Button>
         </div>
         <div class = "box2">
-            <p>welcom text here</p>
+            <p>welcome text here</p>
         </div>
         <div class ="box3">
         {/* <h3>Select Media Type</h3> */}
