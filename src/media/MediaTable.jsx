@@ -1,14 +1,36 @@
 import React, { useState, useEffect } from "react";
+import APIURL from '../helpers/environment';
 import { Table, Button } from "reactstrap";
 import "./media.css";
 
 const MediaTable = (props) => {
+	const [media, setMedia] = useState([]);
 	const [deleteId, setDeleteId] = useState('');
 	
+	const fetchMedia = () => {
+		fetch(`${APIURL}/media`, {
+		  method: "GET",
+		  headers: new Headers({
+			"Content-Type": "application/json",
+			Authorization: props.token,
+		  }),
+		})
+		  .then((res) => res.json())
+		  .then((mediaData) => {
+			setMedia(mediaData);
+			console.log(mediaData);
+		  });
+	  };
+	
+	  useEffect(() => {
+		fetchMedia();
+	  }, []);
+
+
 	const deleteMedia = () => {
 		console.log(deleteId);
 		if (deleteId){
-			let url = `http://localhost:3025/media/${deleteId}`;
+			let url = `${APIURL}/${deleteId}`;
 			fetch(url, {
 					method: 'DELETE',
 					headers: new Headers({
@@ -26,8 +48,10 @@ const MediaTable = (props) => {
 		setDeleteId('');
 	}, [deleteId]);
 
+
+
   	const mediaMapper = () => {
-    return props.media.map((media, index) => {
+    return media.map((media, index) => {
       return (
         <tr key={index}>
           	<th scope="row">{media.id}</th>

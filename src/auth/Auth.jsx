@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import UserEdit from "./UserEdit";
+import APIURL from '../helpers/environment';
 import "./Auth.css";
 
 import {
@@ -74,7 +74,8 @@ const Auth = (props) => {
     ) : null;
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+	event.preventDefault();
+	console.log(email, password);
     let userObject = {
       email: email,
       password: password,
@@ -82,8 +83,8 @@ const Auth = (props) => {
       lastName: lastName,
     };
     let url = login
-      ? "http://localhost:3025/user/login"
-      : "http://localhost:3025/user/signup";
+      ? `${APIURL}/user/login`
+      : `${APIURL}/user/signup`;
     console.log(url);
     fetch(url, {
       method: "POST",
@@ -95,12 +96,13 @@ const Auth = (props) => {
       .then((res) => res.json())
       .then((data) => {
         props.updateToken(data.sessionToken);
-      })
+		console.log(data.sessionToken);
+	  })
       .catch((err) => console.log(err));
   };
 
   return (
-    <Container>
+    <Container className="auth-container">
       <Form className="form" onSubmit={handleSubmit}>
         <Col sm="4">
           <h3>{title()}</h3>
@@ -146,8 +148,7 @@ const Auth = (props) => {
         </Col>
       </Form>
 
-      {/* <UserEdit /> */}
-    </Container>
+        </Container>
 
     // <Container className="auth-container">
     //     <Row>

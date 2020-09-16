@@ -1,6 +1,7 @@
 import React/*, {useState, useEffect}*/ from 'react'
 import MediaCreate from './MediaCreate';
 import UserEdit from '../auth/UserEdit';
+import MediaTable from './MediaTable'
 import {
     Row,
     Col,
@@ -9,6 +10,7 @@ import {
 import MediaEdit from './MediaEdit';
 
 const MediaActions = (props) => {
+    // console.log(props.user.email);
 
 
 return (
@@ -29,7 +31,7 @@ return (
         </Col> */}
         {/* {viewConductor()} */}
         <div className = "box4">
-            <UserEdit />
+            {/* <UserEdit /> */}
         </div>
     </div>
 )

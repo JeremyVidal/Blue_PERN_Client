@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Auth from "./auth/Auth";
 import MediaIndex from "./media/MediaIndex";
+import MediaActions from "./media/MediaActions";
 import Header from './site/Header'
 import Sitebar from "./site/Navbar";
 import Footer from './site/Footer'
