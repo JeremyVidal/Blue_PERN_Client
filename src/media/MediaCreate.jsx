@@ -1,13 +1,11 @@
 import React, { useState } from "react";
+import APIURL from '../helpers/environment';
 import {
   Button,
   Form,
   FormGroup,
   Label,
   Input,
-  UncontrolledCollapse,
-  Card,
-  CardBody,
 } from "reactstrap";
 
 const MediaCreate = (props) => {
@@ -22,7 +20,7 @@ const MediaCreate = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3025/media/create", {
+    fetch(`${APIURL}/media/create`, {
       method: "POST",
       body: JSON.stringify({
         media: {

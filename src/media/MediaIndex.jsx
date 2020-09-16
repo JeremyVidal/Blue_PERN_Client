@@ -1,18 +1,32 @@
 import React, { useState, useEffect } from "react";
-import MediaTable from './MediaTable';
-// import MediaCreate from './MediaCreate';
-import MediaActions from './MediaActions';
+import APIURL from "../helpers/environment";
+import MediaTable from "./MediaTable";
+import MediaActions from "./MediaActions";
+import MediaEdit from "./MediaEdit";
 
 import { Container, Row, Col } from "reactstrap";
 
-
 const MediaIndex = (props) => {
   const [media, setMedia] = useState([]);
+  const [updateActive, setUpdateActive] = useState(false);
+  const [mediaToUpdate, setMediaToUpdate] = useState({});
 
+  const editUpdateMedia = (mediaEntry) => {
+    setMediaToUpdate(mediaEntry);
+    console.log(mediaEntry);
+  };
+
+  const updateOn = () => {
+    setUpdateActive(true);
+  };
+
+  const updateOff = () => {
+    setUpdateActive(false);
+  };
 
   const fetchMedia = () => {
-    // fetch("http://localhost:3025/media", {
-    fetch("http://localhost:3025/media/all", {
+    // fetch(`${APIURL}/media`, {
+      fetch(`${APIURL}/media/all`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -25,34 +39,33 @@ const MediaIndex = (props) => {
         console.log(mediaData);
       });
   };
+
   useEffect(() => {
     fetchMedia();
   }, []);
-  
+
+
   return (
     <Container>
       <Row>
-        {/* <Col md="3">
-    
-        
-        </Col> */}
         <Col md="12">
-          <MediaTable
-            media={media}
-            // editUpdateMedia={editUpdateMedia}
-            // updateOn={updateOn}
-            token={props.token}
-          />
-        </Col>
-        <Col md="6">
-          <MediaActions
-            media={media}
-            // editUpdateMedia={editUpdateMedia}
-            // updateOn={updateOn}
-            token={props.token}
-          />
-        </Col>
-                   
+
+        <MediaTable media={media} />
+               </Col>
+  
+          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} />
+             {updateActive ? (
+        <MediaEdit 
+          updateOn={updateOn}
+          mediaToUpdate={mediaToUpdate}
+          updateOff={updateOff}
+          token={props.token}
+          fetchMedia={fetchMedia}
+        />
+      ) : (
+        <></>
+      )}
+
       </Row>
     </Container>
   );
