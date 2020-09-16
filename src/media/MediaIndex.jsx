@@ -30,13 +30,13 @@ const MediaIndex = (props) => {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        // Authorization: props.token,
+        Authorization: props.token,
       }),
     })
       .then((res) => res.json())
       .then((mediaData) => {
         setMedia(mediaData);
-        console.log(mediaData);
+        // console.log(mediaData);
       });
   };
 
@@ -50,11 +50,11 @@ const MediaIndex = (props) => {
       <Row>
         <Col md="12">
 
-        <MediaTable media={media} editUpdateMedia={editUpdateMedia}
-          updateOn={updateOn} />
+        {/* <MediaTable media={media} editUpdateMedia={editUpdateMedia}
+          updateOn={updateOn} /> */}
                </Col>
   
-          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} />
+          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
              {updateActive ? (
         <MediaEdit
           updateOn={updateOn}

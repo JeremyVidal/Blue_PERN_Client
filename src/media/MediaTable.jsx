@@ -5,7 +5,8 @@ import "./media.css";
 
 const MediaTable = (props) => {
 	const [media, setMedia] = useState([]);
-	const [deleteId, setDeleteId] = useState('');
+	
+	
 	
 	const fetchMedia = () => {
 		fetch(`${APIURL}/media`, {
@@ -13,43 +14,23 @@ const MediaTable = (props) => {
 		  method: "GET",
 		  headers: new Headers({
 			"Content-Type": "application/json",
-			// Authorization: props.token,
+			"Authorization": props.token,
 		  }),
-		})
+		// }.then(()=> props.fetchMedia))
+	// }
+})
 		  .then((res) => res.json())
 		  .then((mediaData) => {
+			  console.log(mediaData);
 			setMedia(mediaData);
-			console.log(mediaData);
-		  });
+		  })
 	  };
 	
 	  useEffect(() => {
 		fetchMedia();
-	  }, []);
-
-
-	const deleteMedia = () => {
-		console.log(deleteId);
-		if (deleteId){
-			let url = `${APIURL}/${deleteId}`;
-			fetch(url, {
-					method: 'DELETE',
-					headers: new Headers({
-						'Content-Type': 'application/json',
-						'Authorization': props.token
-					})
-			})
-			.then(res => res.json())
-			// .then(setDeleteId(''))
-			.catch(err => console.log(err))
-		}
-	}
-	useEffect(() => {
-		deleteMedia();
-		setDeleteId('');
-	}, [deleteId]);
-
-  
+	  }, []);		
+		
+		console.log(props.token);
   	const mediaMapper = () => {
     return media.map((media, index) => {
       return (
@@ -77,7 +58,7 @@ const MediaTable = (props) => {
             <Button
               color="dark"
               onClick={() => {
-                setDeleteId(media.id);
+                // setDeleteId(media.id);
               }}
             >
               Delete
@@ -110,5 +91,5 @@ const MediaTable = (props) => {
       </Table>
     </div>
   );
-};
+}
 export default MediaTable;

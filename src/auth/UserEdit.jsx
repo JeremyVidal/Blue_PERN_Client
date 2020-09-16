@@ -99,7 +99,7 @@ const UserEdit = (props) => {
             />
           </FormGroup>
           <br />
-          <Button className="toggle" type="submit">
+          <Button className="submitEdit" type="submit">
             Update
           </Button>
         </Form>
