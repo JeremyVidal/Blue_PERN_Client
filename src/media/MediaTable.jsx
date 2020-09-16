@@ -8,7 +8,8 @@ const MediaTable = (props) => {
 	const [deleteId, setDeleteId] = useState('');
 	
 	const fetchMedia = () => {
-		fetch(`${APIURL}/media`, {
+		// fetch(`${APIURL}/media`, {
+			fetch(`${APIURL}/media/all`, {
 		  method: "GET",
 		  headers: new Headers({
 			"Content-Type": "application/json",
