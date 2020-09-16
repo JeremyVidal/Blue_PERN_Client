@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
 import {Table} from "reactstrap";
 
-const MediaAll = () => {
+const MediaAll = (props) => {
   const [media, setMedia] = useState([]);
 
   const fetchMedia = () => {
