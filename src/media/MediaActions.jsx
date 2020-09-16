@@ -11,17 +11,17 @@ import MediaEdit from './MediaEdit';
 
 const MediaActions = (props) => { 
 
-  const [updateActive, setUpdateActive] = useState(false);
-   // console.log(props.user.email);
+//   const [updateActive, setUpdateActive] = useState(false);
+//    // console.log(props.user.email);
 
 
-  const updateOn = () => {
-    setUpdateActive(true);
-  };
+//   const updateOn = () => {
+//     setUpdateActive(true);
+//   };
 
-  const updateOff = () => {
-    setUpdateActive(false);
-  };
+//   const updateOff = () => {
+//     setUpdateActive(false);
+//   };
 
   return (
     <div className="Main">
@@ -35,7 +35,7 @@ const MediaActions = (props) => {
       </div>
 
       <h3>Media edit</h3>
-      {updateActive ? (
+      {/* {updateActive ? (
         <MediaEdit 
           updateOn={updateOn}
           mediaToUpdate={props.mediaToUpdate}
@@ -44,7 +44,7 @@ const MediaActions = (props) => {
         />
       ) : (
         <></>
-      )}
+      )} */}
 
       {/* {viewConductor()} */}
       <div className="box4">
