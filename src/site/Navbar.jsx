@@ -23,8 +23,8 @@ const Sitebar = (props) => {
   };
   return (
     <div className="mainNav">
-      <div className="1">
-        <ul className="2">
+      <div className="one">
+        <ul className="two">
           <li>
             <Link to="/">Home</Link>
           </li>

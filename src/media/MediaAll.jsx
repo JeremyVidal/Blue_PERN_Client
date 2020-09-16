@@ -58,7 +58,7 @@ const MediaAll = (props) => {
   };
 
   return (
-    <div>
+    <div id= "main">
       <h3>Media in All Collections</h3>
       <hr />
       <Table striped>
