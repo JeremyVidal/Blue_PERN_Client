@@ -145,7 +145,6 @@ const Auth = (props) => {
           </div>
         </Col>
       </Form>
-
       {/* <UserEdit /> */}
     </Container>
 
