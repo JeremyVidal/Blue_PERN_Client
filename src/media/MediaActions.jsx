@@ -14,6 +14,7 @@ const MediaActions = (props) => {
   const [updateActive, setUpdateActive] = useState(false);
    // console.log(props.user.email);
 
+
   const updateOn = () => {
     setUpdateActive(true);
   };
