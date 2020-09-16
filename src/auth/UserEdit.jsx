@@ -51,7 +51,7 @@ const UserEdit = (props) => {
                 placeholder="Enter First Name"
                 onChange={(e) => setFirstName(e.target.value)}
                 value={firstName}
-                required
+                // required
               />
             </FormGroup>
             <FormGroup className="lname">
@@ -64,7 +64,7 @@ const UserEdit = (props) => {
                 placeholder="Enter Last Name"
                 onChange={(e) => setLastName(e.target.value)}
                 value={lastName}
-                required
+                // required
               />
             </FormGroup>
           </div>
@@ -80,7 +80,7 @@ const UserEdit = (props) => {
               placeholder="Enter Email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
-              required
+              // required
             />
           </FormGroup>
           <br />
@@ -95,7 +95,7 @@ const UserEdit = (props) => {
               placeholder="Enter Password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
-              required
+              // required
             />
           </FormGroup>
           <br />

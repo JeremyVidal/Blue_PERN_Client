@@ -64,7 +64,7 @@ const Sitebar = (props) => {
             <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia} token={props.token} updateOn={props.updateOn}/>
           </Route>
           <Route exact path="/userEdit">
-            <UserEdit />
+            <UserEdit token={props.token} />
           </Route>
           {/* <Route exact path="/userDelete">
             <UserDelete />
