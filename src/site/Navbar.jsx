@@ -25,9 +25,7 @@ const Sitebar = (props) => {
     <div className="mainNav">
       <div className="one">
         <ul className="two">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
+          <li><Link to="/">Home</Link></li>
           <li><Link to="/mediaAll">View All Media</Link></li>
           <li><Link to="/mediaMine">View My Media</Link></li>
           <li><Link to="/userEdit">User Edit</Link></li>
