@@ -3,6 +3,7 @@ import MediaCreate from './MediaCreate';
 import UserEdit from '../auth/UserEdit';
 import MediaTable from './MediaTable'
 import {
+	Button,
     Row,
     Col,
     Button
