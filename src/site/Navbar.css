@@ -1,6 +1,7 @@
-NavItem{
+/* NavItem{
     display: flex;
     justify-content: space-between;
+<<<<<<< HEAD
 }
 .nav_buttons{
     margin: 0 5px;
@@ -12,3 +13,9 @@ NavItem{
 .nav_links:hover{
     text-decoration: none;
 }
+=======
+} */
+.nav_buttons {margin-left: 5px; margin-right: 5px;}
+.nav_links {text-decoration: none; color: white;}
+.nav_links:hover {text-decoration: none;}
+>>>>>>> develop

@@ -6,7 +6,11 @@ import MediaIndex from "../media/MediaIndex";
 import MediaActions from "../media/MediaActions";
 import MediaAll from "../media/MediaAll";
 import UserEdit from "../auth/UserEdit";
+<<<<<<< HEAD
 import "./Navbar.css";
+=======
+import './Navbar.css';
+>>>>>>> develop
 import {
   Navbar,
   NavbarBrand,
@@ -37,13 +41,21 @@ const Sitebar = (props) => {
          
             navbar
           >
-          <NavItem>         
+          <NavItem className="justify-content-between">         
           {/* <Button><Link to="/">Home</Link></Button> */}
+<<<<<<< HEAD
           <Button className="nav_buttons"><Link className="nav_links" to="/mediaIndex">Home</Link></Button>
            <Button className="nav_buttons"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
            <Button className="nav_buttons"><Link className="nav_links" to="/mediaMine">View My Media</Link></Button>
            <Button className="nav_buttons"><Link className="nav_links" to="/userEdit">User Edit</Link></Button>
           <Button className="nav_buttons" onClick={props.clearToken}> <Link className="nav_links"to="">Logout</Link></Button>
+=======
+          <Button className="nav_buttons" ><Link className="nav_links" to="/mediaIndex">Home</Link></Button>
+          <Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
+          <Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaMine">View My Media</Link></Button>
+          <Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/userEdit">User Edit</Link></Button>
+          <Button className="nav_buttons" color="secondary" onClick={props.clearToken}><Link className="nav_links" to="">Logout</Link></Button>
+>>>>>>> develop
           {/* <li><Link to="/userDelete">User Delete</Link></li> */}
           </NavItem>
           </Nav>
@@ -61,7 +73,11 @@ const Sitebar = (props) => {
             <MediaAll />
           </Route>
           <Route exact path="/mediaMine">
+<<<<<<< HEAD
             <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia}  token = {props.token} updateOn={props.updateOn}/>
+=======
+            <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia} token={props.token} updateOn={props.updateOn}/>
+>>>>>>> develop
           </Route>
           <Route exact path="/userEdit">
             <UserEdit />

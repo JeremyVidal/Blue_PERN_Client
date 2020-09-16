@@ -100,8 +100,9 @@ const Auth = (props) => {
 	  })
       .catch((err) => console.log(err));
   };
+	
+    return(
 
-  return (
     <Container className="auth-container">
       <Form className="form" onSubmit={handleSubmit}>
         <Col sm="4">
