@@ -94,16 +94,7 @@ useEffect(() => {
             // updateOn={updateOn}
             token={props.token}
           /> */}
-        </Col>
-                   
-		{/* </Row>
-		<Row>
-		<Col>
-        <MediaTable media={media} editUpdateMedia={editUpdateMedia}
-          updateOn={updateOn} />*/
-
-          </Col>
-
+        </Col>                   
           <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
              {updateActive ? (
         <MediaEdit
@@ -121,4 +112,5 @@ useEffect(() => {
     </Container>
   );
 };
+
 export default MediaIndex;
