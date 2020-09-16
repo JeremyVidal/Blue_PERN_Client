@@ -102,7 +102,6 @@ const Auth = (props) => {
   };
 	
     return(
-
     <Container className="auth-container">
       <Form className="form" onSubmit={handleSubmit}>
         <Col sm="4">
@@ -149,20 +148,6 @@ const Auth = (props) => {
         </Col>
       </Form>
         </Container>
-
-    // <Container className="auth-container">
-    //     <Row>
-    //         <Col md="4">
-    //             <Signup updateToken={props.updateToken}/>
-    //         </Col>
-    //         <Col md="4">
-    //             <Login updateToken={props.updateToken}/>
-    //         </Col>
-    //         <Col md="4">
-    //             {/* <UserEdit updateToken={props.updateToken}/> */}
-    //         </Col>
-    //     </Row>
-    // </Container>
   );
 };
 

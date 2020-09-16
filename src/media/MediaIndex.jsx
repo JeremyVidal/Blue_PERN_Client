@@ -94,7 +94,11 @@ useEffect(() => {
             // updateOn={updateOn}
             token={props.token}
           /> */}
-        </Col>                   
+ 
+
+        <MediaTable media={media} editUpdateMedia={editUpdateMedia}
+          updateOn={updateOn} />
+
           <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
              {updateActive ? (
         <MediaEdit
