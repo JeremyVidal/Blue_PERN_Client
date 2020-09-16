@@ -6,7 +6,7 @@ import {
 	Button,
     Row,
     Col,
-    Button
+ 
 } from "reactstrap";
 import MediaEdit from './MediaEdit';
 
