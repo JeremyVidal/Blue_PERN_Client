@@ -29,7 +29,7 @@ const Sitebar = (props) => {
         className="ml-auto" navbar>
           <NavItem>
             {/* <Button onClick ={props.media}><Link to ="/mediaindex">ViewMedia</Link></Button> */}
-            <Button onClick ={props.media}>View Media</Button>
+            <Button onClick ={props.MediaTable}>View Media</Button>
             <Button onClick={props.MediaActions}>Home</Button>
             <Button onClick={props.clearToken}>Logout</Button>
           </NavItem>

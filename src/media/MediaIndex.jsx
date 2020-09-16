@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import MediaTable from './MediaTable';
-import APIURL from '../helpers/environment';
+import MediaTable from "./MediaTable";
+import APIURL from "../helpers/environment";
 // import MediaCreate from './MediaCreate';
-import MediaActions from './MediaActions';
-import {Container, Row, Col } from "reactstrap";
-
+import MediaActions from "./MediaActions";
+import MediaEdit from "./MediaEdit";
+import { Container, Row, Col } from "reactstrap";
 
 const MediaIndex = (props) => {
   const [media, setMedia] = useState([]);
@@ -14,15 +14,16 @@ const MediaIndex = (props) => {
   const editUpdateMedia = (mediaEntry) => {
     setMediaToUpdate(mediaEntry);
     console.log(mediaEntry);
-  }
+  };
 
   const updateOn = () => {
     setUpdateActive(true);
-  }
+  };
 
   const updateOff = () => {
     setUpdateActive(false);
-  }
+  };
+
 
   const fetchMedia = () => {
     // fetch(`${APIURL}/media`, {
@@ -40,12 +41,9 @@ const MediaIndex = (props) => {
       });
   };
 
-
   useEffect(() => {
     fetchMedia();
   }, []);
-  
- 
 
   return (
     <Container>
@@ -56,23 +54,26 @@ const MediaIndex = (props) => {
         </Col> */}
         <Col md="12">
           <MediaTable
-            media={media}
             editUpdateMedia={editUpdateMedia}
             updateOn={updateOn}
-            updateOff={updateOff}
+            media={media}
             token={props.token}
           />
         </Col>
-        <Col md="6">
-          {/* <MediaActions
-            media={media}
-            editUpdateMedia={editUpdateMedia}
-            updateOn={updateOn}
-            updateOff={updateOff}
-            token={props.token}
-          /> */}
+        <Col md="12">
+          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} />
         </Col>
-                   
+        {updateActive ? (
+        <MediaEdit 
+          updateOn={updateOn}
+          mediaToUpdate={mediaToUpdate}
+          updateOff={updateOff}
+          token={props.token}
+          fetchMedia={fetchMedia}
+        />
+      ) : (
+        <></>
+      )}
       </Row>
     </Container>
   );

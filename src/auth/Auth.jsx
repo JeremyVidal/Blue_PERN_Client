@@ -73,8 +73,8 @@ const Auth = (props) => {
 	
 	
     return(
-		<Container >
-			<Form className="form" onSubmit={handleSubmit}>
+			<Container className="auth-container">
+				<Form className="form" onSubmit={handleSubmit}>
 				<Col sm="4">
 					<h5>{ title() }</h5>
 					{signupFields()}
@@ -102,19 +102,19 @@ const Auth = (props) => {
 			<UserEdit />
 		</Container>
 
-        <Container className="auth-container">
-            <Row>
-                <Col md="4">
-                    <Signup updateToken={props.updateToken}/>
-                </Col>
-                <Col md="4">
-                    <Login updateToken={props.updateToken}/>
-                </Col>
-                <Col md="4">
-                    {/* <UserEdit updateToken={props.updateToken}/> */}
-                </Col>
-            </Row>
-        </Container>
+        // <Container className="auth-container">
+        //     <Row>
+        //         <Col md="4">
+        //             <Signup updateToken={props.updateToken}/>
+        //         </Col>
+        //         <Col md="4">
+        //             <Login updateToken={props.updateToken}/>
+        //         </Col>
+        //         <Col md="4">
+        //             {/* <UserEdit updateToken={props.updateToken}/> */}
+        //         </Col>
+        //     </Row>
+        // </Container>
 
     )
 }
