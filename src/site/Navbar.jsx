@@ -34,7 +34,7 @@ const Sitebar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav fill
             justify 
-            className=""
+         
             navbar
           >
           <NavItem className="justify-content-between">         
