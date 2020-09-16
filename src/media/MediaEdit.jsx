@@ -54,9 +54,9 @@ const MediaEdit = (props) => {
   };
 
   return (
-    <Modal className="edit-form" isOpen={true}>
+    <Modal isOpen={true}>
       <ModalHeader>Edit Your Media</ModalHeader>
-      <ModalBody>
+      <ModalBody id="edit-form">
         <Form onSubmit={mediaUpdate}>
           <FormGroup>
             <Label htmlFor="type">Edit Type:</Label>

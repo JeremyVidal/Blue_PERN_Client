@@ -147,7 +147,6 @@ const Auth = (props) => {
           </div>
         </Col>
       </Form>
-
         </Container>
 
     // <Container className="auth-container">

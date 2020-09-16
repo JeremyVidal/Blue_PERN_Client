@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import MediaTable from "./MediaTable";
 import APIURL from "../helpers/environment";
+import MediaTable from "./MediaTable";
 import MediaActions from "./MediaActions";
+import MediaEdit from "./MediaEdit";
+
 import { Container, Row, Col } from "reactstrap";
 
 const MediaIndex = (props) => {
@@ -41,20 +43,28 @@ const MediaIndex = (props) => {
   //   fetchMedia();
   // }, []);
 
+
   return (
     <Container>
       <Row>
         <Col md="12">
-          {/* <MediaTable media={media} /> */}
-        </Col>
 
-        <MediaActions
-          media={media}
-          editUpdateMedia={editUpdateMedia}
+        {/* <MediaTable media={media} /> */}
+               </Col>
+  
+          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} />
+             {updateActive ? (
+        <MediaEdit 
           updateOn={updateOn}
+          mediaToUpdate={mediaToUpdate}
           updateOff={updateOff}
           token={props.token}
+          fetchMedia={fetchMedia}
         />
+      ) : (
+        <></>
+      )}
+
       </Row>
     </Container>
   );
