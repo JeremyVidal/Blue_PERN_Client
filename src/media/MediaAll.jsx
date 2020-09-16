@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
 import {Table} from "reactstrap";
 
-const MediaAll = (props) => {
+const MediaAll = () => {
   const [media, setMedia] = useState([]);
-  
+
   const fetchMedia = () => {
       // fetch(`${APIURL}/media`, {
       fetch(`${APIURL}/media/all`, {
@@ -16,8 +16,8 @@ const MediaAll = (props) => {
     })
       .then((res) => res.json())
       .then((mediaData) => {
+		//   console.log(mediaData);
         setMedia(mediaData);
-        console.log(mediaData);
       });
   };
 

@@ -5,8 +5,7 @@ import MediaTable from './MediaTable'
 import {
 	Button,
     Row,
-    Col,
-    Button
+    Col
 } from "reactstrap";
 import MediaEdit from './MediaEdit';
 

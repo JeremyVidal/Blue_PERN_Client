@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
-import MediaTable from "./MediaTable";
+// import MediaTable from "./MediaTable";
 import MediaActions from "./MediaActions";
 import MediaEdit from "./MediaEdit";
 
@@ -54,7 +54,7 @@ const MediaIndex = (props) => {
   const deleteMedia = (deleteId) => {
 	console.log(deleteId);
 	if (deleteId){
-		let url = `http://localhost:3025/media/${deleteId}`;
+		let url = `${APIURL}/media/${deleteId}`;
 		fetch(url, {
 				method: 'DELETE',
 				headers: new Headers({
@@ -79,7 +79,6 @@ useEffect(() => {
       <Row>
         <Col md="12">
 
-
           {/* <MediaTable
             media={media}
             editUpdateMedia={editUpdateMedia}
@@ -97,13 +96,14 @@ useEffect(() => {
           /> */}
         </Col>
                    
-
-
+		{/* </Row>
+		<Row>
+		<Col>
         <MediaTable media={media} editUpdateMedia={editUpdateMedia}
-          updateOn={updateOn} />
+          updateOn={updateOn} />*/
 
-               </Col>
-  
+          </Col>
+
           <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
              {updateActive ? (
         <MediaEdit
