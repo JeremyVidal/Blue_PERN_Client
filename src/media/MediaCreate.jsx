@@ -62,13 +62,13 @@ const MediaCreate = (props) => {
       <Form id="create" onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="type"> Type: </Label>
-          <Input
+          <Input id = "formTypes"
             type="select"
             name="type"
             value={type}
             onChange={(e) => setType(e.target.value)}
           >
-            <option></option>
+            
             <option value="Movie">Movie</option>
             <option value="Book">Book</option>
             <option value="Game">Game</option>
