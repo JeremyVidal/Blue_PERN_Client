@@ -6,7 +6,6 @@ import "./media.css";
 const MediaTable = (props) => {
 
 	const [media, setMedia] = useState([]);
-
 	
 	const fetchMedia = () => {
 		fetch(`${APIURL}/media`, {
@@ -14,27 +13,28 @@ const MediaTable = (props) => {
 		  method: "GET",
 		  headers: new Headers({
 			"Content-Type": "application/json",
-			// Authorization: props.token,
+			"Authorization": props.token,
 		  }),
-		})
+		// }.then(()=> props.fetchMedia))
+	// }
+})
 		  .then((res) => res.json())
 		  .then((mediaData) => {
+			  console.log(mediaData);
 			setMedia(mediaData);
-			console.log(mediaData);
-		  });
+		  })
 	  };
 	
 	  useEffect(() => {
 		fetchMedia();
-	  }, []);
+	  }, []);		
+		
+		console.log(props.token);
 
-
-  
   	const mediaMapper = () => {
     return media.map((media, index) => {
       return (
         <tr key={index}>
-
           	<th scope="row">{media.id}</th>
           	<td>{media.type}</td>
           	<td>{media.title}</td>
@@ -46,7 +46,6 @@ const MediaTable = (props) => {
           	<td>{media.rating}</td>
           	<td><Button color ="info" onClick={()=> {props.editUpdateMedia(media); props.updateOn()}}>Update</Button></td>
             <td><Button color="dark" onClick={() => {props.setDeleteId(media.id)}}>Delete</Button></td>
-
         </tr>
       );
     });
@@ -74,5 +73,5 @@ const MediaTable = (props) => {
       </Table>
     </div>
   );
-};
+}
 export default MediaTable;

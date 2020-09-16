@@ -1,30 +1,17 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
-import { Container, Row, Col, Table } from "reactstrap";
+import {Table} from "reactstrap";
 
 const MediaAll = (props) => {
   const [media, setMedia] = useState([]);
-  // const [updateActive, setUpdateActive] = useState(false);
-  // const [mediaToUpdate, setMediaToUpdate] = useState({});
-
-  // const editUpdateMedia = (mediaEntry) => {
-  //   setMediaToUpdate(mediaEntry);
-  //   console.log(mediaEntry);
-  // }
-
-  // const updateOn = () => {
-  //   setUpdateActive(true);
-  // }
-
-  // const updateOff = () => {
-  //   setUpdateActive(false);
-  // }
-
+  
   const fetchMedia = () => {
+      // fetch(`${APIURL}/media`, {
       fetch(`${APIURL}/media/all`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
+       "Authorization": props.token,
        }),
     })
       .then((res) => res.json())
@@ -59,7 +46,7 @@ const MediaAll = (props) => {
 
   return (
     <div id= "main">
-      <h3>Media in All Collections</h3>
+      <h5>Media in All Collections</h5>
       <hr />
       <Table striped>
         <thead>
@@ -76,7 +63,7 @@ const MediaAll = (props) => {
             {/* <th>My Rating</th> */}
           </tr>
         </thead>
-        <tbody>{mediaMapper()}</tbody>
+        <tbody>{mediaMapper(props.token)}</tbody>
       </Table>
     </div>
   );

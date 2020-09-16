@@ -31,18 +31,18 @@ const MediaIndex = (props) => {
   const fetchMedia = () => {
     // fetch(`${APIURL}/media`, {
 
-    fetch(`${APIURL}/media/all`, {
-      	method: "GET",
-      	headers: new Headers({
-        	"Content-Type": "application/json",
-        	// Authorization: props.token,
-      	}),
+      fetch(`${APIURL}/media/all`, {
+      method: "GET",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: props.token,
+      }),
 
     })
       	.then((res) => res.json())
       	.then((mediaData) => {
         setMedia(mediaData);
-        console.log(mediaData);
+        // console.log(mediaData);
       });
   };
 
@@ -79,13 +79,14 @@ useEffect(() => {
       <Row>
         <Col md="12">
 
-          <MediaTable
+
+          {/* <MediaTable
             media={media}
             editUpdateMedia={editUpdateMedia}
 			      updateOn={updateOn}
 			      setDeleteId={setDeleteId}
             token={props.token}
-          />
+          /> */}
         </Col>
         <Col md="6">
           {/* <MediaActions
@@ -100,9 +101,10 @@ useEffect(() => {
 
         <MediaTable media={media} editUpdateMedia={editUpdateMedia}
           updateOn={updateOn} />
+
                </Col>
   
-          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} />
+          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
              {updateActive ? (
         <MediaEdit
           updateOn={updateOn}

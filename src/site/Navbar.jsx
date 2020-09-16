@@ -34,7 +34,7 @@ const Sitebar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav fill
             justify 
-            className=""
+         
             navbar
           >
           <NavItem>         
@@ -61,7 +61,7 @@ const Sitebar = (props) => {
             <MediaAll />
           </Route>
           <Route exact path="/mediaMine">
-            <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia}     updateOn={props.updateOn}/>
+            <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia}  token = {props}   updateOn={props.updateOn}/>
           </Route>
           <Route exact path="/userEdit">
             <UserEdit />
