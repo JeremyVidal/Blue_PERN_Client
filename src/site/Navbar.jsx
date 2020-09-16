@@ -26,7 +26,7 @@ const Sitebar = (props) => {
       <div className="one">
         <ul className="two">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li><Link to="/mediaAll">View All Media</Link></li>
           <li><Link to="/mediaMine">View My Media</Link></li>
