@@ -73,102 +73,81 @@ const Auth = (props) => {
       </div>
     ) : null;
 
-  // const handleSubmit = (event) => {
-	// event.preventDefault();
-	// console.log(email, password);
-  //   let userObject = {
-  //     email: email,
-  //     password: password,
-  //     firstName: firstName,
-  //     lastName: lastName,
-  //   };
-  //   let url = login
-  //     ? `${APIURL}/user/login`
-  //     : `${APIURL}/user/signup`;
-  //   console.log(url);
-  //   fetch(url, {
-  //     method: "POST",
-  //     headers: new Headers({
-  //       "Content-Type": "application/json",
-  //     }),
-  //     body: JSON.stringify(userObject),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       props.updateToken(data.sessionToken);
-	// 	console.log(data.sessionToken);
-	//   })
-  //     .catch((err) => console.log(err));
-  // };
-
-
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		let userObject = {
-			email: email,
-			password: password,
-			firstName: firstName,
-			lastName: lastName
-		}
-		let url = login ? 'http://localhost:3025/user/login' : 'http://localhost:3025/user/signup'
-		console.log(url);
-		fetch(url, {
-			method: 'POST',
-			headers: new Headers({
-				'Content-Type': 'application/json'
-			}),
-			body: JSON.stringify(userObject)
-		})
-		.then(res => res.json())
-		.then(data => { props.updateToken(data.sessionToken) })
-		.catch(err => console.log(err))
-	}
-	
+  const handleSubmit = (event) => {
+	event.preventDefault();
+	console.log(email, password);
+    let userObject = {
+      email: email,
+      password: password,
+      firstName: firstName,
+      lastName: lastName,
+    };
+    let url = login
+      ? `${APIURL}/user/login`
+      : `${APIURL}/user/signup`;
+    console.log(url);
+    fetch(url, {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json",
+      }),
+      body: JSON.stringify(userObject),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        props.updateToken(data.sessionToken);
+		console.log(data.sessionToken);
+	  })
+      .catch((err) => console.log(err));
+  };
 	
     return(
-		<Container >
-			<Form className="form" onSubmit={handleSubmit}>
-				<Col sm="4">
-					<h5>{ title() }</h5>
-					{signupFields()}
-					<Row>
-						<Col md={10}>
-							<FormGroup row>
-							<Input name="email" type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-							</FormGroup>
-						</Col>
-					</Row>
-					<Row>
-						<Col md={10}>
-							<FormGroup row>
-							<Input name="password" type={inputType} placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-							</FormGroup>
-						</Col>
-					</Row>
-					<div>
-						<Button type="submit">{title()}</Button>
-						<Button className="toggle_button" onClick={loginToggle}>Login/Signup</Button>
-					</div>
-				</Col>
-			</Form>
-
-			{/* <UserEdit /> */}
-		</Container>
- 
-
-    // <Container className="auth-container">
-    //     <Row>
-    //         <Col md="4">
-    //             <Signup updateToken={props.updateToken}/>
-    //         </Col>
-    //         <Col md="4">
-    //             <Login updateToken={props.updateToken}/>
-    //         </Col>
-    //         <Col md="4">
-    //             {/* <UserEdit updateToken={props.updateToken}/> */}
-    //         </Col>
-    //     </Row>
-    // </Container>
+    <Container className="auth-container">
+      <Form className="form" onSubmit={handleSubmit}>
+        <Col sm="4">
+          <h3>{title()}</h3>
+          {signupFields()}
+          <Row>
+            <Col md={10}>
+              <FormGroup row>
+                <Label htmlFor="email">Email:</Label>
+                <br />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </FormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={10}>
+              <FormGroup row>
+                <Label htmlFor="password">Password:</Label>
+                <br />
+                <Input
+                  name="password"
+                  type={inputType}
+                  placeholder="Password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </FormGroup>
+            </Col>
+          </Row>
+          <div>
+            <Button type="submit">{title()}</Button>
+            <Button className="toggle_button" onClick={loginToggle}>
+              Login/Signup
+            </Button>
+          </div>
+        </Col>
+      </Form>
+        </Container>
   );
 };
 

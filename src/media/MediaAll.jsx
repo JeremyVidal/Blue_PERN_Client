@@ -4,7 +4,7 @@ import {Table} from "reactstrap";
 
 const MediaAll = (props) => {
   const [media, setMedia] = useState([]);
-  
+
   const fetchMedia = () => {
       // fetch(`${APIURL}/media`, {
       fetch(`${APIURL}/media/all`, {
@@ -16,8 +16,8 @@ const MediaAll = (props) => {
     })
       .then((res) => res.json())
       .then((mediaData) => {
+		//   console.log(mediaData);
         setMedia(mediaData);
-        console.log(mediaData);
       });
   };
 

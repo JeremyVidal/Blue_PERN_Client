@@ -1,4 +1,14 @@
-NavItem{
+/* NavItem{
     display: flex;
     justify-content: space-between;
+} */
+.nav_buttons{
+    margin: 0 5px;
+}
+.nav_links{
+    text-decoration: none;
+    color: white;
+}
+.nav_links:hover{
+    text-decoration: none;
 }
