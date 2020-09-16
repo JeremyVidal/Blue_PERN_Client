@@ -2,23 +2,8 @@ import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
 import { Container, Row, Col, Table } from "reactstrap";
 
-const MediaAll = (props) => {
+const MediaAll = () => {
   const [media, setMedia] = useState([]);
-  // const [updateActive, setUpdateActive] = useState(false);
-  // const [mediaToUpdate, setMediaToUpdate] = useState({});
-
-  // const editUpdateMedia = (mediaEntry) => {
-  //   setMediaToUpdate(mediaEntry);
-  //   console.log(mediaEntry);
-  // }
-
-  // const updateOn = () => {
-  //   setUpdateActive(true);
-  // }
-
-  // const updateOff = () => {
-  //   setUpdateActive(false);
-  // }
 
   const fetchMedia = () => {
       fetch(`${APIURL}/media/all`, {
@@ -29,8 +14,8 @@ const MediaAll = (props) => {
     })
       .then((res) => res.json())
       .then((mediaData) => {
+		//   console.log(mediaData);
         setMedia(mediaData);
-        console.log(mediaData);
       });
   };
 

@@ -39,7 +39,7 @@ function App() {
     <div id="main">
       {/* <Header /> */}
       <Router>
-      <Sitebar clearToken={clearToken} />
+      <Sitebar clearToken={clearToken} token={sessionToken} />
       {protectedViews()}
       </Router>
       {/* <MediaIndex /> */}

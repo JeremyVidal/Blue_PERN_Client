@@ -8,15 +8,17 @@ const MediaTable = (props) => {
 	const [media, setMedia] = useState([]);
 
 	
-	const fetchMedia = () => {
+	const fetchMedia = (token) => {
 		fetch(`${APIURL}/media`, {
 			// fetch(`${APIURL}/media/all`, {
 		  method: "GET",
 		  headers: new Headers({
 			"Content-Type": "application/json",
-			// Authorization: props.token,
+			"Authorization": token,
 		  }),
 		})
+		// .then(() => props.fetchMedia())
+	
 		  .then((res) => res.json())
 		  .then((mediaData) => {
 			setMedia(mediaData);
@@ -25,11 +27,10 @@ const MediaTable = (props) => {
 	  };
 	
 	  useEffect(() => {
-		fetchMedia();
+		fetchMedia(localStorage.getItem('token'));
 	  }, []);
-
-
-  
+	  
+	// console.log(props.token);
   	const mediaMapper = () => {
     return media.map((media, index) => {
       return (
@@ -53,7 +54,7 @@ const MediaTable = (props) => {
   };
 
   return (
-    <div>
+    <div id= "main">
       <h3>Media Collection</h3>
       <hr />
       <Table striped>
