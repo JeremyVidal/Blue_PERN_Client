@@ -24,24 +24,25 @@ const MediaIndex = (props) => {
     setUpdateActive(false);
   };
 
-  // const fetchMedia = () => {
-  //   fetch(`${APIURL}/media`, {
-  //     method: "GET",
-  //     headers: new Headers({
-  //       "Content-Type": "application/json",
-  //       Authorization: props.token,
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((mediaData) => {
-  //       setMedia(mediaData);
-  //       console.log(mediaData);
-  //     });
-  // };
+  const fetchMedia = () => {
+    // fetch(`${APIURL}/media`, {
+      fetch(`${APIURL}/media/all`, {
+      method: "GET",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        // Authorization: props.token,
+      }),
+    })
+      .then((res) => res.json())
+      .then((mediaData) => {
+        setMedia(mediaData);
+        console.log(mediaData);
+      });
+  };
 
-  // useEffect(() => {
-  //   fetchMedia();
-  // }, []);
+  useEffect(() => {
+    fetchMedia();
+  }, []);
 
 
   return (
@@ -49,7 +50,7 @@ const MediaIndex = (props) => {
       <Row>
         <Col md="12">
 
-        {/* <MediaTable media={media} /> */}
+        <MediaTable media={media} />
                </Col>
   
           <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} />
