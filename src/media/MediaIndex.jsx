@@ -50,12 +50,13 @@ const MediaIndex = (props) => {
       <Row>
         <Col md="12">
 
-        <MediaTable media={media} />
+        <MediaTable media={media} editUpdateMedia={editUpdateMedia}
+          updateOn={updateOn} />
                </Col>
   
           <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} />
              {updateActive ? (
-        <MediaEdit 
+        <MediaEdit
           updateOn={updateOn}
           mediaToUpdate={mediaToUpdate}
           updateOff={updateOff}
