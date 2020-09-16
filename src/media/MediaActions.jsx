@@ -1,6 +1,7 @@
 import React/*, {useState, useEffect}*/ from 'react'
 import MediaCreate from './MediaCreate';
 import UserEdit from '../auth/UserEdit';
+import MediaTable from './MediaTable'
 import {
     Row,
     Col,
@@ -8,8 +9,10 @@ import {
 } from "reactstrap";
 import MediaEdit from './MediaEdit';
 
-const MediaActions = (props) => {
+const MediaActions = (props) => { 
+
   const [updateActive, setUpdateActive] = useState(false);
+   // console.log(props.user.email);
 
   const updateOn = () => {
     setUpdateActive(true);
@@ -27,8 +30,7 @@ const MediaActions = (props) => {
         <Button onClick={props.MediaTable}>Go to your Collection</Button>
       </div>
       <div className="box2">
-        {/* <h3>Select Media Type</h3> */}
-        <MediaCreate />
+              <MediaCreate />
       </div>
 
       <h3>Media edit</h3>
@@ -45,7 +47,7 @@ const MediaActions = (props) => {
 
       {/* {viewConductor()} */}
       <div className="box4">
-        <UserEdit />
+         {/* <UserEdit /> */}
       </div>
     </div>
   );
