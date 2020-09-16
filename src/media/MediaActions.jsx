@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
-import MediaCreate from "./MediaCreate";
-import UserEdit from "../auth/UserEdit";
-import { Row, Col, Button } from "reactstrap";
-import MediaEdit from "./MediaEdit";
+import React/*, {useState, useEffect}*/ from 'react'
+import MediaCreate from './MediaCreate';
+import UserEdit from '../auth/UserEdit';
+import {
+    Row,
+    Col,
+    Button
+} from "reactstrap";
+import MediaEdit from './MediaEdit';
 
 const MediaActions = (props) => {
   const [updateActive, setUpdateActive] = useState(false);
