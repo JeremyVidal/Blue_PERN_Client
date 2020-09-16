@@ -6,7 +6,7 @@ import MediaIndex from "../media/MediaIndex";
 import MediaActions from "../media/MediaActions";
 import MediaAll from "../media/MediaAll";
 import UserEdit from "../auth/UserEdit";
-// import ./Navbar.css;
+import "./Navbar.css";
 import {
   Navbar,
   NavbarBrand,
@@ -39,11 +39,11 @@ const Sitebar = (props) => {
           >
           <NavItem>         
           {/* <Button><Link to="/">Home</Link></Button> */}
-          <Button><Link to="/mediaIndex">Home</Link></Button>
-          <Button><Link to="/mediaAll">View All Media</Link></Button>
-          <Button><Link to="/mediaMine">View My Media</Link></Button>
-          <Button><Link to="/userEdit">User Edit</Link></Button>
-          <Button onClick={props.clearToken}><Link to="">Logout</Link></Button>
+          <Button className="nav_buttons"><Link className="nav_links" to="/mediaIndex">Home</Link></Button>
+           <Button className="nav_buttons"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
+           <Button className="nav_buttons"><Link className="nav_links" to="/mediaMine">View My Media</Link></Button>
+           <Button className="nav_buttons"><Link className="nav_links" to="/userEdit">User Edit</Link></Button>
+          <Button className="nav_buttons" onClick={props.clearToken}> <Link className="nav_links"to="">Logout</Link></Button>
           {/* <li><Link to="/userDelete">User Delete</Link></li> */}
           </NavItem>
           </Nav>
@@ -61,7 +61,7 @@ const Sitebar = (props) => {
             <MediaAll />
           </Route>
           <Route exact path="/mediaMine">
-            <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia}  token = {props}   updateOn={props.updateOn}/>
+            <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia}  token = {props.token} updateOn={props.updateOn}/>
           </Route>
           <Route exact path="/userEdit">
             <UserEdit />

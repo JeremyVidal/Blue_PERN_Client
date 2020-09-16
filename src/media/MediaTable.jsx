@@ -21,7 +21,7 @@ const MediaTable = (props) => {
 })
 		  .then((res) => res.json())
 		  .then((mediaData) => {
-			  console.log(mediaData);
+			console.log(mediaData);
 			setMedia(mediaData);
 		  })
 	  };
