@@ -8,28 +8,50 @@ import {Container, Row, Col } from "reactstrap";
 
 const MediaIndex = (props) => {
   const [media, setMedia] = useState([]);
+  const [deleteId, setDeleteId] = useState('');
 
 
   const fetchMedia = () => {
     // fetch(`${APIURL}/media`, {
     fetch(`${APIURL}/media/all`, {
-      method: "GET",
-      headers: new Headers({
-        "Content-Type": "application/json",
-        // Authorization: props.token,
-      }),
+      	method: "GET",
+      	headers: new Headers({
+        	"Content-Type": "application/json",
+        	// Authorization: props.token,
+      	}),
     })
-      .then((res) => res.json())
-      .then((mediaData) => {
+      	.then((res) => res.json())
+      	.then((mediaData) => {
         setMedia(mediaData);
         console.log(mediaData);
       });
   };
+
   useEffect(() => {
-    fetchMedia();
+    	fetchMedia();
   }, []);
   
- 
+  const deleteMedia = (deleteId) => {
+	console.log(deleteId);
+	if (deleteId){
+		let url = `http://localhost:3025/media/${deleteId}`;
+		fetch(url, {
+				method: 'DELETE',
+				headers: new Headers({
+					'Content-Type': 'application/json',
+					'Authorization': props.token
+				})
+		})
+		.then(res => res.json())
+		.then(setDeleteId(''))
+		.catch(err => console.log(err))
+	}
+}
+
+useEffect(() => {
+	deleteMedia(deleteId);
+	// setDeleteId('');
+}, [deleteId]);
 
   return (
     <Container>
@@ -43,6 +65,7 @@ const MediaIndex = (props) => {
             media={media}
             // editUpdateMedia={editUpdateMedia}
 			// updateOn={updateOn}
+			setDeleteId={setDeleteId}
             token={props.token}
           />
         </Col>
