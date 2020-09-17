@@ -11,11 +11,11 @@ const MediaCreate = (props) => {
   const [rating, setRating] = useState("");
   const [consumed, setConsumed] = useState("");
   const [platform, setPlatform] = useState("");
+  const [media, setMedia] = useState([]);
 
   const fetchMedia = (token) => {
 		fetch(`${APIURL}/media`, {
-			// fetch(`${APIURL}/media/all`, {
-		  method: "GET",
+			  method: "GET",
 		  headers: new Headers({
 			"Content-Type": "application/json",
 			"Authorization": token,
@@ -33,6 +33,7 @@ const MediaCreate = (props) => {
 
 		fetchMedia(localStorage.getItem('token'));
 	  }, []);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,11 +53,7 @@ const MediaCreate = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-<<<<<<< HEAD
-        "Authorization": props.token,
-=======
         'Authorization': localStorage.getItem('token'),
->>>>>>> develop
       }),
     })
       .then((res) => res.json())
@@ -71,6 +68,7 @@ const MediaCreate = (props) => {
         setConsumed("");
         setPlatform("");
         fetchMedia(localStorage.getItem('token'));
+
       });
     };
     
