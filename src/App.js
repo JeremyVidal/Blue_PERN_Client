@@ -64,6 +64,7 @@ function App() {
           token={sessionToken}
           editUpdateMedia={editUpdateMedia}
           media={media}
+          setMedia={setMedia}
           updateActive={updateActive}
           mediaToUpdate={mediaToUpdate}
           updateOn={updateOn}

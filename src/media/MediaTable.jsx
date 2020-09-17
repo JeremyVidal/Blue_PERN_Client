@@ -11,8 +11,7 @@ const MediaTable = (props) => {
 	
 	const fetchMedia = (token) => {
 		fetch(`${APIURL}/media`, {
-			// fetch(`${APIURL}/media/all`, {
-		  method: "GET",
+			  method: "GET",
 		  headers: new Headers({
 			"Content-Type": "application/json",
 			"Authorization": token,
