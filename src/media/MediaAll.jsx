@@ -52,10 +52,10 @@ const MediaAll = (props) => {
   return (
         <div className="main">
         <div className="mainDiv">
-      <h5>Media in All Collections</h5>
+      <h5  className="mediaTable">Media in All Collections</h5>
       <hr />
       <Table striped>
-        <thead>
+        <thead  className="mediaTable"> 
           <tr>
             <th>#</th>
             <th>Type</th>
@@ -69,7 +69,7 @@ const MediaAll = (props) => {
             {/* <th>My Rating</th> */}
           </tr>
         </thead>
-        <tbody>{mediaMapper(props.token)}</tbody>
+        <tbody  className="mediaTable">{mediaMapper(props.token)}</tbody>
       </Table>
     </div>
     </div>

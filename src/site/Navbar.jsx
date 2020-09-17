@@ -32,7 +32,7 @@ const Sitebar = (props) => {
     <div className="sidebar">
       <div className="mainNav">
       <Navbar color="black" light expand="md">
-        <NavbarBrand>
+        <NavbarBrand style={{color: "white"}}>
          <h3>My Media Collection</h3>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />

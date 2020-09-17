@@ -35,7 +35,7 @@ const MediaTable = (props) => {
   	const mediaMapper = () => {
     return media.map((media, index) => {
       return (
-        <tr key={index}>
+		        <tr key={index}>
           	<th scope="row">{media.id}</th>
           	<td>{media.type}</td>
           	<td>{media.title}</td>
@@ -48,7 +48,7 @@ const MediaTable = (props) => {
           	<td><Button color ="info" onClick={()=> {props.editUpdateMedia(media); props.updateOn()}}>Update</Button></td>
             <td><Button color="dark" onClick={() => {props.setDeleteId(media.id)}}>Delete</Button></td>
         </tr>
-      );
+	      );
     });
   };
 
@@ -58,8 +58,8 @@ const MediaTable = (props) => {
       <h3>Media Collection</h3>
       <hr />
       <Table striped>
-        <thead>
-          <tr>
+        <thead className="mediaTable">
+          <tr >
             <th>#</th>
             <th>Type</th>
             <th>Title</th>
@@ -71,7 +71,7 @@ const MediaTable = (props) => {
             {/* <th>My Rating</th> */}
           </tr>
         </thead>
-        <tbody>{mediaMapper()}</tbody>
+        <tbody className="mediaTable">{mediaMapper()}</tbody>
       </Table>
       {props.updateActive ? (
           <MediaEdit

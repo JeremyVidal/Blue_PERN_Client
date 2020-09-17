@@ -14,6 +14,15 @@ const MediaIndex = (props) => {
   const [updateActive, setUpdateActive] = useState(false);
   const [mediaToUpdate, setMediaToUpdate] = useState({});
 
+  const editUpdateMedia = (mediaEntry) => {
+    setMediaToUpdate(mediaEntry);
+    console.log(mediaEntry);
+  };
+
+  const updateOn = () => {
+    setUpdateActive(true);
+  };
+
 
   const editUpdateMedia = (mediaEntry) => {
     setMediaToUpdate(mediaEntry);
@@ -75,31 +84,11 @@ useEffect(() => {
 
 
   return (
-  
       <div>
       {/* <MediaCreate /> */}
       </div>
+  );
 
-);
 };
 export default MediaIndex;
 
-{/* <MediaTable
-  media={media}
-  editUpdateMedia={editUpdateMedia}
-  updateOn={updateOn}
-  setDeleteId={setDeleteId}
-  token={props.token}
-/> */}
-{/* <MediaActions
-  media={media}
-  // editUpdateMedia={editUpdateMedia}
-  // updateOn={updateOn}
-  token={props.token}
-/>
-</Col>
-
-{/* <MediaTable media={media} editUpdateMedia={editUpdateMedia}
-updateOn={updateOn} /> */}
-
-{/* <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/> */}
