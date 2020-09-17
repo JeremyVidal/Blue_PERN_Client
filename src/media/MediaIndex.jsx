@@ -75,31 +75,11 @@ useEffect(() => {
 
 
   return (
-  
       <div>
       {/* <MediaCreate /> */}
       </div>
+  );
 
-);
 };
 export default MediaIndex;
 
-{/* <MediaTable
-  media={media}
-  editUpdateMedia={editUpdateMedia}
-  updateOn={updateOn}
-  setDeleteId={setDeleteId}
-  token={props.token}
-/> */}
-{/* <MediaActions
-  media={media}
-  // editUpdateMedia={editUpdateMedia}
-  // updateOn={updateOn}
-  token={props.token}
-/>
-</Col>
-
-{/* <MediaTable media={media} editUpdateMedia={editUpdateMedia}
-updateOn={updateOn} /> */}
-
-{/* <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/> */}
