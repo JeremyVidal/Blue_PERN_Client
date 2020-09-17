@@ -28,12 +28,12 @@ const MediaEdit = (props) => {
     props.mediaToUpdate.platform
   );
 
-  const mediaUpdate = (event, mediaEntry) => {
+  const mediaUpdate = (event) => {
     event.preventDefault();
     fetch(`${APIURL}/media/update/${props.mediaToUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
-        mediaEntry: {
+        media: {
           type: editType,
           title: editTitle,
           genre: editGenre,
@@ -50,6 +50,9 @@ const MediaEdit = (props) => {
       }),
     }).then((res) => {
       props.fetchMedia(localStorage.getItem('token'));
+      console.log(`${APIURL}/media/update/${props.mediaToUpdate.id}`);
+      console.log(res);
+      console.log(localStorage.getItem('token'))
       props.updateOff();
     });
   };
@@ -129,7 +132,7 @@ const MediaEdit = (props) => {
               onChange={(e) => setEditPlatform(e.target.value)}
             />
           </FormGroup>
-          <Button type="submit">Update</Button>
+          <Input type="submit" value="Submit"/>
         </Form>
       </ModalBody>
     </Modal>
