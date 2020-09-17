@@ -27,7 +27,7 @@ const Auth = (props) => {
   };
 
   const label = () => {
-    return !login ? "Login" : "Signup";
+    return !login ? "Go to Login" : "Go to Signup";
 
   }
   const loginToggle = (event) => {
@@ -43,9 +43,7 @@ const Auth = (props) => {
 
   const signupFields = () =>
     !login ? (
-      <div>
-        <Row>
-          <Col md={12}>
+		<div>
             <FormGroup row>
               <Label htmlFor="firstName">First Name:</Label>
               <br />
@@ -58,10 +56,6 @@ const Auth = (props) => {
                 onChange={(e) => setFirstName(e.target.value)}
               />
             </FormGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
             <FormGroup row>
               <Label htmlFor="lastName">Last Name:</Label>
               <br />
@@ -74,8 +68,6 @@ const Auth = (props) => {
                 onChange={(e) => setLastName(e.target.value)}
               />
             </FormGroup>
-          </Col>
-        </Row>
       </div>
     ) : null;
 
@@ -118,45 +110,45 @@ const Auth = (props) => {
 	
     return(
     <Container className="auth-container">
-			<Form size="sm" className="form" onSubmit={handleSubmit} style={{margin: "50px auto 0 auto", maxWidth: "300px"}}>
-				<div className="d-flex justify-content-center"><h3>{title()}</h3></div>
-				{signupFields()}
-				<FormGroup row>
-					<Label htmlFor="email">Email:</Label>
-					<br />
-					<Input
-					name="email"
-					type="email"
-					placeholder="Email"
-					required
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					/>
-				</FormGroup>
-			
-				<FormGroup row>
-					<Label htmlFor="password">Password:</Label>
-					<br />
-					<Input
-					name="password"
-					type={inputType}
-					placeholder="Password"
-					required
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-					/>
-					{passError}
-					{/* <span className="pass_error">{passError}</span> */}
-				</FormGroup>
-			
-				<div className="d-flex justify-content-between">
-					<Button type="submit">{title()}</Button>
-					<Button className="toggle_button" onClick={loginToggle}>
-					{label()}
-					</Button>
-				</div>
-			</Form>
-        </Container>
+		<Form className="form" onSubmit={handleSubmit} style={{margin: "50px auto 0 auto", maxWidth: "300px"}}>
+			<div className="d-flex justify-content-center"><h3>{title()}</h3></div>
+			{signupFields()}
+			<FormGroup row>
+				<Label htmlFor="email">Email:</Label>
+				<br />
+				<Input
+				name="email"
+				type="email"
+				placeholder="Email"
+				required
+				value={email}
+				onChange={(e) => setEmail(e.target.value)}
+				/>
+			</FormGroup>
+		
+			<FormGroup row>
+				<Label htmlFor="password">Password:</Label>
+				<br />
+				<Input
+				name="password"
+				type={inputType}
+				placeholder="Password"
+				required
+				value={password}
+				onChange={(e) => setPassword(e.target.value)}
+				/>
+				{passError}
+				{/* <span className="pass_error">{passError}</span> */}
+			</FormGroup>
+		
+			<div className="d-flex justify-content-between">
+				<Button type="submit">{title()}</Button>
+				<Button color="warning" className="toggle_button" onClick={loginToggle}>
+				{label()}
+				</Button>
+			</div>
+		</Form>
+    </Container>
   );
 };
 

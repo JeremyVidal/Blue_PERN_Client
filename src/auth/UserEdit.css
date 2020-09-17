@@ -1,21 +1,3 @@
-#editForm {
-  text-align: center;
-}
-
-.name {
-  display: flex;
-  justify-content: center;
-}
-.fname,
-.lname {
-  margin: 25px;
-}
-.buttons {
-  margin: 20px;
-}
-.toggle {
-  margin: 25px;
-}
-input {
-  pointer-events: fill;
-}
+.toggle_button {text-decoration: none; color: white;}
+.toggle_button:hover {color: white;}
+.updateButtons{margin: 20px 0 20px 0;}
