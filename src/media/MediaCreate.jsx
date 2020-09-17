@@ -52,12 +52,16 @@ const MediaCreate = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
+<<<<<<< HEAD
+        "Authorization": props.token,
+=======
         'Authorization': localStorage.getItem('token'),
+>>>>>>> develop
       }),
     })
       .then((res) => res.json())
-      .then((logData) => {
-        console.log(logData);
+      .then((logMedia) => {
+        console.log(logMedia);
         setType("");
         setTitle("");
         setGenre("");
@@ -68,8 +72,8 @@ const MediaCreate = (props) => {
         setPlatform("");
         fetchMedia(localStorage.getItem('token'));
       });
-  };
-
+    };
+    
   return (
     <div className="main">
 		<div className="mainDiv">
