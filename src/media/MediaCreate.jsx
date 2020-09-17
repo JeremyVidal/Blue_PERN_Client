@@ -13,26 +13,26 @@ const MediaCreate = (props) => {
   const [platform, setPlatform] = useState("");
   const [media, setMedia] = useState([]);
 
-  const fetchMedia = (token) => {
-		fetch(`${APIURL}/media`, {
-			  method: "GET",
-		  headers: new Headers({
-			"Content-Type": "application/json",
-			"Authorization": token,
-		  }),
-		})
-		// .then(() => props.fetchMedia())
-		  .then((res) => res.json())
-		  .then((mediaData) => {
-			  console.log(mediaData);
-			  props.setMedia(mediaData);
-		  })
-	  };
+  // const fetchMedia = (token) => {
+	// 	fetch(`${APIURL}/media`, {
+	// 		  method: "GET",
+	// 	  headers: new Headers({
+	// 		"Content-Type": "application/json",
+	// 		"Authorization": token,
+	// 	  }),
+	// 	})
+	// 	// .then(() => props.fetchMedia())
+	// 	  .then((res) => res.json())
+	// 	  .then((mediaData) => {
+	// 		  console.log(mediaData);
+	// 		  props.setMedia(mediaData);
+	// 	  })
+	//   };
 	
-	  useEffect(() => {
+	//   useEffect(() => {
 
-		fetchMedia(localStorage.getItem('token'));
-	  }, []);
+	// 	fetchMedia(localStorage.getItem('token'));
+	//   }, []);
 
 
   const handleSubmit = (e) => {
@@ -67,7 +67,7 @@ const MediaCreate = (props) => {
         setRating("");
         setConsumed("");
         setPlatform("");
-        fetchMedia(localStorage.getItem('token'));
+        //fetchMedia(localStorage.getItem('token'));
 
       });
     };
