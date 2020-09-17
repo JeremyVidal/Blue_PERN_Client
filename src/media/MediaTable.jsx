@@ -30,7 +30,7 @@ const MediaTable = (props) => {
 		fetchMedia(localStorage.getItem('token'));
 	  }, []);
 	  
-	// console.log(props.token);
+	console.log(props.token);
   	const mediaMapper = () => {
     return media.map((media, index) => {
       return (

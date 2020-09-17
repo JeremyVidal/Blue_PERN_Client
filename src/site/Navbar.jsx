@@ -32,25 +32,27 @@ const Sitebar = (props) => {
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav fill
-            justify 
-            className=""
-            navbar
-          >
-          <NavItem className="justify-content-between">         
-          {/* <Button><Link to="/">Home</Link></Button> */}
-          <Button className="nav_buttons" ><Link className="nav_links" to="/mediaIndex">Home</Link></Button>
-          <Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
-          <Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaMine">View My Media</Link></Button>
-          <Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/userEdit">User Edit</Link></Button>
-          <Button className="nav_buttons" color="secondary" onClick={props.clearToken}><Link className="nav_links" to="">Logout</Link></Button>
-          {/* <li><Link to="/userDelete">User Delete</Link></li> */}
-          </NavItem>
+          <Nav className="nav-fill w-100" >
+				<NavItem>
+					<Button className="nav_buttons" ><Link className="nav_links" to="/mediaIndex">Home</Link></Button>
+				</NavItem>
+				<NavItem>
+					<Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
+				</NavItem>
+				<NavItem>
+					<Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaMine">View My Media</Link></Button>
+				</NavItem>
+				<NavItem>
+					<Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/userEdit">User Edit</Link></Button>
+				</NavItem>
+				<NavItem>
+					<Button className="nav_buttons" color="secondary" onClick={props.clearToken}><Link className="nav_links" to="">Logout</Link></Button>
+				</NavItem>
           </Nav>
         </Collapse>
       </Navbar>
       
-             </div>
+    	</div>
 
       <div className="route">
         <Switch>
