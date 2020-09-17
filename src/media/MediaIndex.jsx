@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
-// import MediaTable from "./MediaTable";
+import MediaTable from "./MediaTable";
 import MediaActions from "./MediaActions";
 import MediaEdit from "./MediaEdit";
 
@@ -72,6 +72,43 @@ const MediaIndex = (props) => {
 
   return (
     <Container>
+      <Row>
+        <Col md="12">
+
+          {/* <MediaTable
+            media={media}
+            editUpdateMedia={editUpdateMedia}
+			      updateOn={updateOn}
+			      setDeleteId={setDeleteId}
+            token={props.token}
+          /> */}
+        </Col>
+        <Col md="6">
+          {/* <MediaActions
+            media={media}
+            // editUpdateMedia={editUpdateMedia}
+            // updateOn={updateOn}
+            token={props.token}
+          /> */}
+ 
+
+        <MediaTable media={media} editUpdateMedia={editUpdateMedia}
+          updateOn={updateOn} />
+
+          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
+             {updateActive ? (
+        <MediaEdit
+          updateOn={updateOn}
+          mediaToUpdate={mediaToUpdate}
+          updateOff={updateOff}
+          token={props.token}
+          fetchMedia={fetchMedia}
+        />
+      ) : (
+        <></>
+      )}
+      </Col>
+      </Row>
         {/* <MediaActions editUpdateMedia={props.editUpdateMedia} mediaToUpdate={props.mediaToUpdate} media={props.media} token={props.token} fetchMedia={fetchMedia}/> */}
     </Container>
   );
