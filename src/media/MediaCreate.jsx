@@ -8,9 +8,10 @@ const MediaCreate = (props) => {
   const [genre, setGenre] = useState("");
   const [description, setDescription] = useState("");
   const [rated, setRated] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(0);
   const [consumed, setConsumed] = useState("");
   const [platform, setPlatform] = useState("");
+  const [media, setMedia] = useState([]);
 
   const fetchMedia = (token) => {
 		fetch(`${APIURL}/media`, {
@@ -25,7 +26,7 @@ const MediaCreate = (props) => {
 		  .then((res) => res.json())
 		  .then((mediaData) => {
 			  console.log(mediaData);
-			  props.setMedia(mediaData);
+			  setMedia(mediaData);
 		  })
 	  };
 	
@@ -47,29 +48,27 @@ const MediaCreate = (props) => {
           rated: rated,
           rating: rating,
           consumed: consumed,
-          platform: platform,
-        },
+          platform: platform
+        }
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-<<<<<<< HEAD
-        "Authorization": props.token,
-=======
-        'Authorization': localStorage.getItem('token'),
->>>>>>> develop
-      }),
+        'Authorization':  localStorage.getItem('token'),
+        // 'Authorization': localStorage.getItem('token'),
+      })
     })
       .then((res) => res.json())
-      .then((logMedia) => {
-        console.log(logMedia);
+      .then((logData) => {
+        console.log(logData);
         setType("");
         setTitle("");
         setGenre("");
         setDescription("");
         setRated("");
-        setRating("");
+        setRating(0);
         setConsumed("");
         setPlatform("");
+        // props.fetchMedia();
         fetchMedia(localStorage.getItem('token'));
       });
     };
@@ -153,7 +152,7 @@ const MediaCreate = (props) => {
             onChange={(e) => setPlatform(e.target.value)}
           />
         </FormGroup>
-        <input type="submit" />
+        <Button type="submit">Submit</Button>
       </Form>
     </div>
     </div>

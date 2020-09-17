@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
 import MediaCreate from "./MediaCreate";
+import MediaTable from "./MediaTable";
 import MediaActions from "./MediaActions";
 import MediaEdit from "./MediaEdit";
 
@@ -18,7 +19,7 @@ const MediaIndex = (props) => {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.token,
+        'Authorization': props.token,
       }),
 
     })
@@ -59,7 +60,14 @@ useEffect(() => {
 
   return (
       <div>
-      {/* <MediaCreate /> */}
+         {/* <MediaCreate fetchMedia={fetchMedia} token={props.token}/> */}
+        {/* <Col md="3">
+       <MediaCreate fetchMedia={fetchMedia} token={props.token}/>
+       </Col>
+       <Col md='9'>
+         <MediaTable media={media} fetchMedia ={fetchMedia}/>
+
+       </Col> */}
       </div>
   );
 
