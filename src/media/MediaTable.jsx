@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import APIURL from '../helpers/environment';
 import { Table, Button } from "reactstrap";
+import MediaEdit from './MediaEdit';
 import "./media.css";
 
 const MediaTable = (props) => {
@@ -71,6 +72,18 @@ const MediaTable = (props) => {
         </thead>
         <tbody>{mediaMapper()}</tbody>
       </Table>
+      {props.updateActive ? (
+          <MediaEdit
+            updateOn={props.updateOn}
+            mediaToUpdate={props.mediaToUpdate}
+            updateOff={props.updateOff}
+            token={props.token}
+            fetchMedia={fetchMedia}
+            updateOn={props.updateOn}
+          />
+        ) : (
+          <></>
+        )}
     </div>
   );
 }

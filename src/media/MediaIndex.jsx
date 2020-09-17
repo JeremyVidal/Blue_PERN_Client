@@ -11,21 +11,21 @@ const MediaIndex = (props) => {
 
   const [deleteId, setDeleteId] = useState("");
 
-  const [updateActive, setUpdateActive] = useState(false);
-  const [mediaToUpdate, setMediaToUpdate] = useState({});
+  // const [updateActive, setUpdateActive] = useState(false);
+  // const [mediaToUpdate, setMediaToUpdate] = useState({});
 
-  const editUpdateMedia = (mediaEntry) => {
-    setMediaToUpdate(mediaEntry);
-    console.log(mediaEntry);
-  };
+  // const editUpdateMedia = (mediaEntry) => {
+  //   setMediaToUpdate(mediaEntry);
+  //   console.log(mediaEntry);
+  // };
 
-  const updateOn = () => {
-    setUpdateActive(true);
-  };
+  // const updateOn = () => {
+  //   setUpdateActive(true);
+  // };
 
-  const updateOff = () => {
-    setUpdateActive(false);
-  };
+  // const updateOff = () => {
+  //   setUpdateActive(false);
+  // };
 
   const fetchMedia = () => {
     // fetch(`${APIURL}/media`, {
@@ -72,32 +72,7 @@ const MediaIndex = (props) => {
 
   return (
     <Container>
-      <Row>
-        {/* <MediaTable
-          media={media}
-          editUpdateMedia={editUpdateMedia}
-          updateOn={updateOn}
-        /> */}
-
-        <MediaActions
-          editUpdateMedia={editUpdateMedia}
-          mediaToUpdate={mediaToUpdate}
-          media={media}
-          token={props.token}
-          fetchMedia={fetchMedia}
-        />
-        {updateActive ? (
-          <MediaEdit
-            updateOn={updateOn}
-            mediaToUpdate={mediaToUpdate}
-            updateOff={updateOff}
-            token={props.token}
-            fetchMedia={fetchMedia}
-          />
-        ) : (
-          <></>
-        )}
-      </Row>
+        {/* <MediaActions editUpdateMedia={props.editUpdateMedia} mediaToUpdate={props.mediaToUpdate} media={props.media} token={props.token} fetchMedia={fetchMedia}/> */}
     </Container>
   );
 };
