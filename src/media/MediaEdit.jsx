@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./MediaEdit.css";
+import APIURL from '../helpers/environment';
 import {
   Button,
   Form,
@@ -29,7 +30,7 @@ const MediaEdit = (props) => {
 
   const mediaUpdate = (event, mediaEntry) => {
     event.preventDefault();
-    fetch(`http://localhost:3025/media/update/${props.mediaToUpdate.id}`, {
+    fetch(`${APIURL}/media/update/${props.mediaToUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
         mediaEntry: {
@@ -45,10 +46,10 @@ const MediaEdit = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.token,
+        "Authorization": localStorage.getItem('token'),
       }),
     }).then((res) => {
-      props.fetchMedia();
+      props.fetchMedia(localStorage.getItem('token'));
       props.updateOff();
     });
   };
