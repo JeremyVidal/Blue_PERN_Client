@@ -77,7 +77,8 @@ const Sitebar = (props) => {
           <Route exact path="/userEdit">
             <UserEdit token={props.token} />
           </Route>
-               </Switch>
+        </Switch>
+
       </div>
     </div>
   );

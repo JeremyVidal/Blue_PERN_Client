@@ -36,7 +36,7 @@ function App() {
 
   const editUpdateMedia = (mediaEntry) => {
     setMediaToUpdate(mediaEntry);
-    console.log(mediaEntry);
+    // console.log(mediaEntry);
   };
 
   const updateOn = () => {

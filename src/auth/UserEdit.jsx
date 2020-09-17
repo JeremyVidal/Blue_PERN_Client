@@ -5,17 +5,20 @@ import "./UserEdit.css";
 
 
 const UserEdit = (props) => {
-  	const [firstName, setFirstName] = useState("");
-  	const [lastName, setLastName] = useState("");
-  	const [email, setEmail] = useState("");
-  	const [password, setPassword] = useState("");
-  	const [changePasswordToggle, setChangePasswordToggle] = useState(true);
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [changePasswordToggle, setChangePasswordToggle] = useState(true);
+	const[successMessage, setSuccessMessage] = useState('');
+
 	// const [userData, setUserData] = useState('');
 
   	const loginToggle = (event) => {
    		event.preventDefault();
     	setChangePasswordToggle(!changePasswordToggle);
-    	setPassword("");
+		setPassword('');
+		setSuccessMessage('');
   	};
 
 	useEffect(() => {
@@ -33,9 +36,10 @@ const UserEdit = (props) => {
 			setFirstName(data.firstName)
 			setLastName(data.lastName)
 			setEmail(data.email)
+			setPassword(data.password)
 
 		})
-		.then((err) => {console.log(err);})
+		// .then((err) => {console.log(err);})
 	}, []);	
 
   const handleSubmit = (event) => {
@@ -46,23 +50,29 @@ const UserEdit = (props) => {
     fetch(`${APIURL}/user/`, {
       method: "PUT",
       body: JSON.stringify({
-        user: {
+        // user: {
+			
           firstName: firstName,
           lastName: lastName,
           email: email,
-		  password: password,
-        },
+		  password: password
+        // },
       }),
       headers: new Headers({
-        "Content-Type": "application/json",
-        "Authorization": props.token,
+		"Content-Type": "application/json",
+		'Accept': 'application/json',
+        "Authorization": localStorage.getItem("token"),
+        // "Authorization": props.token,
       }),
     })
       .then((response) => response.json())
       .then((data) => {
-        props.updateToken(data.sessionToken);
-        console.log(data.sessionToken);
-      });
+        // props.updateToken(data.sessionToken);
+        // console.log(data.sessionToken);
+	  });
+	  setChangePasswordToggle(!changePasswordToggle);
+	  setSuccessMessage(<span className="success_message" >Successfully Updated Your Password!</span>)
+	  
   };
 
   const changePasswordField = () =>
@@ -71,15 +81,17 @@ const UserEdit = (props) => {
   			<FormGroup className="password">
 				  <br />
 				<Label htmlFor="password">Password:</Label>
-				<Input id="password" type="password" name="password" placeholder="Enter New Password" onChange={(e) => setPassword(e.target.value)}/>
+				<Input id="password" type="text" name="password" placeholder="Enter New Password" onChange={(e) => setPassword(e.target.value)} value={password} />
 			</FormGroup>
       	</div>
 	  ) : null;
 
   return (
-	<Container>
-	 	<div className="d-flex justify-content-center"><h2>Update User</h2></div>
-	 	<Form className="form" onSubmit={handleSubmit} style={{margin: "50px auto 0 auto", maxWidth: "300px"}}s>
+	<Container style={{marginTop: "60px"}}>
+	 	<div className="d-flex justify-content-center" ><h2>Update User</h2></div>
+	 	<div className="d-flex justify-content-center" >{successMessage}</div>
+		 
+	 	<Form className="form" onSubmit={handleSubmit} style={{margin: "10px auto 0 auto", maxWidth: "300px"}}s>
 	 		<FormGroup className="fname">
 	 			<Label htmlFor="firstName">First Name:</Label>
 	 			<Input id="firstName" type="text" name="firstName" placeholder="Enter First Name" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
@@ -95,6 +107,7 @@ const UserEdit = (props) => {
 			</FormGroup>
 			<div >
 				<a className="toggle_button" onClick={loginToggle}>Change Password?</a>
+			
 			</div>
 			{changePasswordField()}
 			<div className="d-flex justify-content-between">
