@@ -3,6 +3,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import MediaTable from "../media/MediaTable";
 import MediaIndex from "../media/MediaIndex";
+import MediaCreate from "../media/MediaCreate";
 import MediaActions from "../media/MediaActions";
 import MediaAll from "../media/MediaAll";
 import UserEdit from "../auth/UserEdit";
@@ -38,7 +39,7 @@ const Sitebar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="nav-fill w-100" >
 				<NavItem>
-					<Button className="nav_buttons" ><Link className="nav_links" to="/mediaindex">Home</Link></Button>
+					<Button className="nav_buttons" ><Link className="nav_links" to="/mediacreate">Add Media</Link></Button>
 				</NavItem>
 				<NavItem>
 					<Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
@@ -60,8 +61,8 @@ const Sitebar = (props) => {
 
       <div className="route">
         <Switch>
-          <Route exact path="/mediaindex">
-            <MediaIndex />
+          <Route exact path="/mediacreate">
+            <MediaCreate />
           </Route>
           <Route exact path="/mediaAll">
             <MediaAll />

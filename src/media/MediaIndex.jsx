@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
-import MediaTable from "./MediaTable";
+import MediaCreate from "./MediaCreate";
 import MediaActions from "./MediaActions";
 import MediaEdit from "./MediaEdit";
 
@@ -75,28 +75,11 @@ useEffect(() => {
 
 
   return (
-    <Container>
-          {/* <MediaTable
-            media={media}
-            editUpdateMedia={editUpdateMedia}
-			      updateOn={updateOn}
-			      setDeleteId={setDeleteId}
-            token={props.token}
-          /> */}
-          {/* <MediaActions
-            media={media}
-            // editUpdateMedia={editUpdateMedia}
-            // updateOn={updateOn}
-            token={props.token}
-          />
-        </Col>
-
-        {/* <MediaTable media={media} editUpdateMedia={editUpdateMedia}
-          updateOn={updateOn} /> */}
-{/* 
-          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/> */}
-
-    </Container>
+      <div>
+      {/* <MediaCreate /> */}
+      </div>
   );
+
 };
 export default MediaIndex;
+
