@@ -14,6 +14,15 @@ const MediaIndex = (props) => {
   const [updateActive, setUpdateActive] = useState(false);
   const [mediaToUpdate, setMediaToUpdate] = useState({});
 
+  const editUpdateMedia = (mediaEntry) => {
+    setMediaToUpdate(mediaEntry);
+    console.log(mediaEntry);
+  };
+
+  const updateOn = () => {
+    setUpdateActive(true);
+  };
+
 
   const editUpdateMedia = (mediaEntry) => {
     setMediaToUpdate(mediaEntry);

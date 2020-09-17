@@ -20,14 +20,15 @@ const UserEdit = (props) => {
 
 	useEffect(() => {
 		fetch(`${APIURL}/user`, {
-		method: "GET",
-		headers: new Headers({
-			"Content-Type": "application/json",
-			"Authorization": localStorage.getItem('token')
-		}),
+			method: "GET",
+			headers: new Headers({
+				"Content-Type": "application/json",
+				"Authorization": localStorage.getItem('token'),
+			}),
 		})
-		// .then((res) => res.json())
+		.then((res) => res.json())
 		.then((data) => {
+			// console.log(`User data: ${data.firstName}`);
 			// setUserData(data);
 			setFirstName(data.firstName)
 			setLastName(data.lastName)
@@ -37,7 +38,7 @@ const UserEdit = (props) => {
 		.then((err) => {console.log(err);})
 	}, []);	
 
-  const handleSubmit = (event, user) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     console.log(firstName, lastName, email, password);
     console.log(props.token);
@@ -46,11 +47,10 @@ const UserEdit = (props) => {
       method: "PUT",
       body: JSON.stringify({
         user: {
-          // firstName: firstName,
-          // lastName: lastName,
-          // email: email,
-		  // password: password,
-		  // userId: userId????
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+		  password: password,
         },
       }),
       headers: new Headers({
