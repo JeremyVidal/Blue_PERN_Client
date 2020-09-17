@@ -27,7 +27,7 @@ const Sitebar = (props) => {
     <div className="mainNav">
       <div className="one">
       <Navbar color="black" light expand="md">
-        <NavbarBrand>
+        <NavbarBrand style={{color: "white"}}>
          <h3>My Media Collection</h3>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
