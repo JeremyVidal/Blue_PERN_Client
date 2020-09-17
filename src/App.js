@@ -56,18 +56,6 @@ function App() {
   };
 
   return (
-<<<<<<< HEAD
-     <div className="main">
-      <div className="mainDiv">
-        {/* <Header /> */}
-        <Router>
-        <Sitebar clearToken={clearToken} token={sessionToken}/>
-        {protectedViews()}
-        </Router>
-        {/* <MediaIndex /> */}
-        <Footer />
-      </div>
-=======
     <div id="main">
       {/* <Header /> */}
       <Router>
@@ -85,7 +73,6 @@ function App() {
       </Router>
       {/* <MediaIndex /> */}
       <Footer />
->>>>>>> develop
     </div>
   );
 }

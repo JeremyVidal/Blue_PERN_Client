@@ -91,38 +91,3 @@ const Sitebar = (props) => {
 export default Sitebar;
 
 
-// const Sitebar = (props) => {
-//   return (
-//     <div className="sitebar">
-//       <div className="mainNav">
-//         <ul className = "sidebarlist">
-//           <li><Link to ="/mediaIndex">Home</Link></li>
-//           <li><Link to ="/mediaAll">View All Media</Link></li>
-//           <li><Link to ="/mediaMine">View My Media</Link></li>
-//           <li><Link to ="/userEdit">User Edit</Link></li>
-//           {/* <li><Link to =onClick={props.clearToken}>Logout</Link></li> */}
-//         </ul>
-//       </div>
-//       <div className="route">
-//         <Switch>
-//           <Route exact path="/mediaIndex">
-//             <mediaIndex />
-//           </Route>
-//           <Route exact path="/mediaAll">
-//             <MediaAll />
-//           </Route>
-//           <Route exact path="/mediaMine">
-//             <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia} token={props.token} updateOn={props.updateOn}/>
-//           </Route>
-//           <Route exact path="/userEdit">
-//             <UserEdit />
-//           </Route>
-//           <Route exact path="/userDelete">
-//             <UserDelete />
-//           </Route>
-//           </Switch>
-//       </div>
-//     </div>
-//   );
-// };
-// export default Sitebar;

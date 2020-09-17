@@ -9,10 +9,11 @@ import { Container, Row, Col } from "reactstrap";
 const MediaIndex = (props) => {
   const [media, setMedia] = useState([]);
 
-  const [deleteId, setDeleteId] = useState("");
+  const [deleteId, setDeleteId] = useState('');
 
-  // const [updateActive, setUpdateActive] = useState(false);
-  // const [mediaToUpdate, setMediaToUpdate] = useState({});
+  const [updateActive, setUpdateActive] = useState(false);
+  const [mediaToUpdate, setMediaToUpdate] = useState({});
+
 
   // const editUpdateMedia = (mediaEntry) => {
   //   setMediaToUpdate(mediaEntry);
@@ -30,72 +31,76 @@ const MediaIndex = (props) => {
   const fetchMedia = () => {
     // fetch(`${APIURL}/media`, {
 
-    fetch(`${APIURL}/media/all`, {
+      fetch(`${APIURL}/media/all`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
         Authorization: props.token,
       }),
+
     })
-      .then((res) => res.json())
-      .then((mediaData) => {
+      	.then((res) => res.json())
+      	.then((mediaData) => {
         setMedia(mediaData);
         // console.log(mediaData);
       });
   };
 
   useEffect(() => {
-    fetchMedia();
+    	fetchMedia();
   }, []);
 
+  
   const deleteMedia = (deleteId) => {
-    console.log(deleteId);
-    if (deleteId) {
-      let url = `${APIURL}/media/${deleteId}`;
-      fetch(url, {
-        method: "DELETE",
-        headers: new Headers({
-          "Content-Type": "application/json",
-          Authorization: props.token,
-        }),
-      })
-        .then((res) => res.json())
-        .then(setDeleteId(""))
-        .catch((err) => console.log(err));
-    }
-  };
+	console.log(deleteId);
+	if (deleteId){
+		let url = `http://localhost:3025/media/${deleteId}`;
+		fetch(url, {
+				method: 'DELETE',
+				headers: new Headers({
+					'Content-Type': 'application/json',
+					'Authorization': props.token
+				})
+		})
+		.then(res => res.json())
+		.then(setDeleteId(''))
+		.catch(err => console.log(err))
+	}
+}
 
-  useEffect(() => {
-    deleteMedia(deleteId);
-    // setDeleteId('');
-  }, [deleteId]);
+useEffect(() => {
+	deleteMedia(deleteId);
+	// setDeleteId('');
+}, [deleteId]);
+
 
   return (
-    <div className="main">
-		<div className="mainDiv">
-      <Row>
+    <Container>
+      {/* <Row>
         <Col md="12">
 
-          {/* <MediaTable
+
+          <MediaTable
             media={media}
             editUpdateMedia={editUpdateMedia}
 			      updateOn={updateOn}
 			      setDeleteId={setDeleteId}
             token={props.token}
-          /> */}
+          />
         </Col>
         <Col md="6">
-          {/* <MediaActions
+          <MediaActions
             media={media}
             // editUpdateMedia={editUpdateMedia}
             // updateOn={updateOn}
             token={props.token}
-          /> */}
- 
+          />
+        </Col>
 
         <MediaTable media={media} editUpdateMedia={editUpdateMedia}
           updateOn={updateOn} />
 
+  
           <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
              {updateActive ? (
         <MediaEdit
@@ -108,15 +113,9 @@ const MediaIndex = (props) => {
       ) : (
         <></>
       )}
-      </Col>
-      </Row>
 
-        {/* <MediaActions editUpdateMedia={props.editUpdateMedia} mediaToUpdate={props.mediaToUpdate} media={props.media} token={props.token} fetchMedia={fetchMedia}/> */}
-    </div>
-    </div>
-
-
+      </Row> */}
+    </Container>
   );
 };
-
 export default MediaIndex;

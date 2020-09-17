@@ -115,58 +115,8 @@ const Auth = (props) => {
 		setPassError(<span className="pass_error" style={{width: "100%", textAlign: "center"}}>Password must be 5 characters or Longer!</span>);
 	}
   };
-	
+
     return(
-<<<<<<< HEAD
-    	<div className="main">
-		<div className="mainDiv">
-      <Form className="form" onSubmit={handleSubmit}>
-        <Col sm="4">
-          <h3>{title()}</h3>
-          {signupFields()}
-          <Row>
-            <Col md={10}>
-              <FormGroup row>
-                <Label htmlFor="email">Email:</Label>
-                <br />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </FormGroup>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={10}>
-              <FormGroup row>
-                <Label htmlFor="password">Password:</Label>
-                <br />
-                <Input
-                  name="password"
-                  type={inputType}
-                  placeholder="Password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </FormGroup>
-            </Col>
-          </Row>
-          <div>
-            <Button type="submit">{title()}</Button>
-            <Button className="toggle_button" onClick={loginToggle}>
-              Login/Signup
-            </Button>
-          </div>
-        </Col>
-      </Form>
-        </div>
-        </div>
-=======
     <Container className="auth-container">
 			<Form size="sm" className="form" onSubmit={handleSubmit} style={{margin: "50px auto 0 auto", maxWidth: "300px"}}>
 				<div className="d-flex justify-content-center"><h3>{title()}</h3></div>
@@ -183,7 +133,6 @@ const Auth = (props) => {
 					onChange={(e) => setEmail(e.target.value)}
 					/>
 				</FormGroup>
-			
 				<FormGroup row>
 					<Label htmlFor="password">Password:</Label>
 					<br />
@@ -207,7 +156,6 @@ const Auth = (props) => {
 				</div>
 			</Form>
         </Container>
->>>>>>> develop
   );
 };
 
