@@ -75,21 +75,15 @@ useEffect(() => {
 
 
   return (
-    <Container>
-      {/* <Row>
-        <Col md="12">
-
-
-          <MediaTable
+    <Container>   
+          {/* <MediaTable
             media={media}
             editUpdateMedia={editUpdateMedia}
 			      updateOn={updateOn}
 			      setDeleteId={setDeleteId}
             token={props.token}
-          />
-        </Col>
-        <Col md="6">
-          <MediaActions
+          /> */}
+          {/* <MediaActions
             media={media}
             // editUpdateMedia={editUpdateMedia}
             // updateOn={updateOn}
@@ -97,24 +91,10 @@ useEffect(() => {
           />
         </Col>
 
-        <MediaTable media={media} editUpdateMedia={editUpdateMedia}
-          updateOn={updateOn} />
-
+        {/* <MediaTable media={media} editUpdateMedia={editUpdateMedia}
+          updateOn={updateOn} /> */}
   
           <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
-             {updateActive ? (
-        <MediaEdit
-          updateOn={updateOn}
-          mediaToUpdate={mediaToUpdate}
-          updateOff={updateOff}
-          token={props.token}
-          fetchMedia={fetchMedia}
-        />
-      ) : (
-        <></>
-      )}
-
-      </Row> */}
     </Container>
   );
 };
