@@ -11,32 +11,6 @@ const MediaIndex = (props) => {
 
   const [deleteId, setDeleteId] = useState('');
 
-  const [updateActive, setUpdateActive] = useState(false);
-  const [mediaToUpdate, setMediaToUpdate] = useState({});
-
-  const editUpdateMedia = (mediaEntry) => {
-    setMediaToUpdate(mediaEntry);
-    console.log(mediaEntry);
-  };
-
-  const updateOn = () => {
-    setUpdateActive(true);
-  };
-
-
-  const editUpdateMedia = (mediaEntry) => {
-    setMediaToUpdate(mediaEntry);
-    console.log(mediaEntry);
-  };
-
-  const updateOn = () => {
-    setUpdateActive(true);
-  };
-
-  const updateOff = () => {
-    setUpdateActive(false);
-  };
-
   const fetchMedia = () => {
     // fetch(`${APIURL}/media`, {
 
