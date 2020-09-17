@@ -71,7 +71,6 @@ const MediaIndex = (props) => {
   }, [deleteId]);
 
   return (
-<<<<<<< HEAD
     <div className="main">
 		<div className="mainDiv">
       <Row>
@@ -97,7 +96,7 @@ const MediaIndex = (props) => {
         <MediaTable media={media} editUpdateMedia={editUpdateMedia}
           updateOn={updateOn} />
 
-          {/* <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
+          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
              {updateActive ? (
         <MediaEdit
           updateOn={updateOn}
@@ -108,16 +107,15 @@ const MediaIndex = (props) => {
         />
       ) : (
         <></>
-      )} */}
+      )}
       </Col>
       </Row>
-    </div>
-    </div>
-=======
-    <Container>
+
         {/* <MediaActions editUpdateMedia={props.editUpdateMedia} mediaToUpdate={props.mediaToUpdate} media={props.media} token={props.token} fetchMedia={fetchMedia}/> */}
-    </Container>
->>>>>>> develop
+    </div>
+    </div>
+
+
   );
 };
 
