@@ -6,7 +6,7 @@ import MediaIndex from "../media/MediaIndex";
 import MediaActions from "../media/MediaActions";
 import MediaAll from "../media/MediaAll";
 import UserEdit from "../auth/UserEdit";
-import './Navbar.css';
+import "./Navbar.css";
 import {
   Navbar,
   NavbarBrand,
@@ -36,25 +36,27 @@ const Sitebar = (props) => {
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav fill
-            justify 
-         
-            navbar
-          >
-          <NavItem className="justify-content-between">         
-          {/* <Button><Link to="/">Home</Link></Button> */}
-          <Button className="nav_buttons" ><Link className="nav_links" to="/mediaIndex">Home</Link></Button>
-          <Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
-          <Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaMine">View My Media</Link></Button>
-          <Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/userEdit">User Edit</Link></Button>
-          <Button className="nav_buttons" color="secondary" onClick={props.clearToken}><Link className="nav_links" to="">Logout</Link></Button>
-          {/* <li><Link to="/userDelete">User Delete</Link></li> */}
-          </NavItem>
+          <Nav className="nav-fill w-100" >
+				<NavItem>
+					<Button className="nav_buttons" ><Link className="nav_links" to="/mediaIndex">Home</Link></Button>
+				</NavItem>
+				<NavItem>
+					<Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
+				</NavItem>
+				<NavItem>
+					<Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaMine">View My Media</Link></Button>
+				</NavItem>
+				<NavItem>
+					<Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/userEdit">User Edit</Link></Button>
+				</NavItem>
+				<NavItem>
+					<Button className="nav_buttons" color="secondary" onClick={props.clearToken}><Link className="nav_links" to="">Logout</Link></Button>
+				</NavItem>
           </Nav>
         </Collapse>
       </Navbar>
       
-             </div>
+    	</div>
 
       <div className="route">
         <Switch>
@@ -65,15 +67,23 @@ const Sitebar = (props) => {
             <MediaAll />
           </Route>
           <Route exact path="/mediaMine">
-            <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia} token={props.token} updateOn={props.updateOn}/>
+            <MediaTable
+              media={props.media}
+              editUpdateMedia={props.editUpdateMedia}
+              token={props.token}
+              updateOn={props.updateOn}
+              updateActive={props.updateActive}
+              mediaToUpdate={props.mediaToUpdate}
+              updateOff={props.updateOff}
+            />
           </Route>
           <Route exact path="/userEdit">
-            <UserEdit />
+            <UserEdit token={props.token} />
           </Route>
           {/* <Route exact path="/userDelete">
             <UserDelete />
           </Route> */}
-          </Switch>
+        </Switch>
       </div>
     </div>
   );
