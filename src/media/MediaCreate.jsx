@@ -15,25 +15,26 @@ const MediaCreate = (props) => {
 
   const fetchMedia = (token) => {
 		fetch(`${APIURL}/media`, {
-			method: "GET",
+			  method: "GET",
 		  headers: new Headers({
 			"Content-Type": "application/json",
-			"Authorization": props.token,
+			"Authorization": token,
 		  }),
 		})
-
+		// .then(() => props.fetchMedia())
 		  .then((res) => res.json())
 		  .then((mediaData) => {
 			  console.log(mediaData);
-			  setMedia(mediaData);
+			  props.setMedia(mediaData);
 		  })
 	  };
 	
 	  useEffect(() => {
 
 		fetchMedia(localStorage.getItem('token'));
-    }, []);
-    
+	  }, []);
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`${APIURL}/media/create`, {
@@ -56,8 +57,8 @@ const MediaCreate = (props) => {
       }),
     })
       .then((res) => res.json())
-      .then((logData) => {
-        console.log(logData);
+      .then((logMedia) => {
+        console.log(logMedia);
         setType("");
         setTitle("");
         setGenre("");
@@ -66,10 +67,11 @@ const MediaCreate = (props) => {
         setRating("");
         setConsumed("");
         setPlatform("");
-        fetchMedia();
-      });
-  };
+        fetchMedia(localStorage.getItem('token'));
 
+      });
+    };
+    
   return (
     <div className="main">
 		<div className="mainDiv">
