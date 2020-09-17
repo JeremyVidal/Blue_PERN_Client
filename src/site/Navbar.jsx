@@ -1,10 +1,10 @@
 import React, {useState, UseEffect}from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import Home from "./Home";
+// import Home from "./Home";
 import MediaTable from "../media/MediaTable";
-import MediaIndex from "../media/MediaIndex";
+// import MediaIndex from "../media/MediaIndex";
 import MediaCreate from "../media/MediaCreate";
-import MediaActions from "../media/MediaActions";
+// import MediaActions from "../media/MediaActions";
 import MediaAll from "../media/MediaAll";
 import UserEdit from "../auth/UserEdit";
 import "./Navbar.css";
@@ -17,10 +17,6 @@ import {
   NavItem,
   Button,
 } from "reactstrap";
-
-
-
-
 
 const Sitebar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,7 +58,7 @@ const Sitebar = (props) => {
       <div className="route">
         <Switch>
           <Route exact path="/mediacreate">
-            <MediaCreate />
+            <MediaCreate setMedia={props.setMedia} />
           </Route>
           <Route exact path="/mediaAll">
             <MediaAll />
@@ -82,6 +78,7 @@ const Sitebar = (props) => {
             <UserEdit token={props.token} />
           </Route>
         </Switch>
+
       </div>
     </div>
   );
