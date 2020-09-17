@@ -14,7 +14,7 @@ const MediaCreate = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${APIURL}/media/all`, {
+    fetch(`${APIURL}/media/create`, {
       method: "POST",
       body: JSON.stringify({
         media: {
@@ -54,7 +54,8 @@ const MediaCreate = (props) => {
       <h3>Add to your Media Collection</h3>
       <br />
       <h5>Select Media Type</h5>
-      <Form onSubmit={handleSubmit}>
+      <Form className="form" onSubmit={handleSubmit} style={{margin: "50px", maxWidth: "300px"}}>
+			<div className="d-flex justify-content-right"></div>
         <FormGroup>
           <Label htmlFor="type"> Type: </Label>
           <Input
