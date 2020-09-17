@@ -28,6 +28,8 @@ const MediaAll = (props) => {
   const mediaMapper = () => {
     return media.map((media, index) => {
       return (
+        <div className="main">
+        <div className="mainDiv">
         <tr key={index}>
           <th scope="row">{media.id}</th>
           <td>{media.type}</td>
@@ -40,6 +42,9 @@ const MediaAll = (props) => {
           {/* <td>{media.consumed}</td> */}
           {/* <td>{media.rating}</td> */}
         </tr>
+
+         </div>
+        </div>
       );
     });
   };

@@ -107,7 +107,7 @@ const Auth = (props) => {
 		setPassError(<span className="pass_error" style={{width: "100%", textAlign: "center"}}>Password must be 5 characters or Longer!</span>);
 	}
   };
-	
+
     return(
     <Container className="auth-container">
 		<Form className="form" onSubmit={handleSubmit} style={{margin: "50px auto 0 auto", maxWidth: "300px"}}>

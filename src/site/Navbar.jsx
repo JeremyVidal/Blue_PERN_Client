@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState, UseEffect}from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import MediaTable from "../media/MediaTable";
@@ -17,6 +17,10 @@ import {
   Button,
 } from "reactstrap";
 
+
+
+
+
 const Sitebar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
@@ -24,8 +28,8 @@ const Sitebar = (props) => {
     setIsOpen(newIsOpen);
   };
   return (
-    <div className="mainNav">
-      <div className="one">
+    <div className="sidebar">
+      <div className="mainNav">
       <Navbar color="black" light expand="md">
         <NavbarBrand>
          <h3>My Media Collection</h3>
@@ -57,7 +61,7 @@ const Sitebar = (props) => {
       <div className="route">
         <Switch>
           <Route exact path="/mediaIndex">
-            <Home />
+            <mediaIde />
           </Route>
           <Route exact path="/mediaAll">
             <MediaAll />
@@ -85,3 +89,5 @@ const Sitebar = (props) => {
   );
 };
 export default Sitebar;
+
+
