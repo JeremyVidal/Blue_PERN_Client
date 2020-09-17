@@ -72,9 +72,7 @@ const MediaIndex = (props) => {
 
   return (
     <Container>
-      <Row>
-        <Col md="12">
-
+     
           {/* <MediaTable
             media={media}
             editUpdateMedia={editUpdateMedia}
@@ -82,8 +80,7 @@ const MediaIndex = (props) => {
 			      setDeleteId={setDeleteId}
             token={props.token}
           /> */}
-        </Col>
-        <Col md="6">
+   
           {/* <MediaActions
             media={media}
             // editUpdateMedia={editUpdateMedia}
@@ -92,11 +89,12 @@ const MediaIndex = (props) => {
           /> */}
  
 
-        <MediaTable media={media} editUpdateMedia={editUpdateMedia}
-          updateOn={updateOn} />
+        {/* <MediaTable media={media} editUpdateMedia={editUpdateMedia}
+          updateOn={updateOn} /> */}
 
-          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
-             {updateActive ? (
+          {/* <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
+          {updateActive ? ( */}
+{/* 
         <MediaEdit
           updateOn={updateOn}
           mediaToUpdate={mediaToUpdate}
@@ -106,9 +104,9 @@ const MediaIndex = (props) => {
         />
       ) : (
         <></>
-      )}
-      </Col>
-      </Row>
+       */}
+      
+    
         {/* <MediaActions editUpdateMedia={props.editUpdateMedia} mediaToUpdate={props.mediaToUpdate} media={props.media} token={props.token} fetchMedia={fetchMedia}/> */}
     </Container>
   );
