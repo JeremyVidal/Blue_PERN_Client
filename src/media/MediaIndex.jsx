@@ -95,6 +95,7 @@ useEffect(() => {
           updateOn={updateOn} /> */}
   
           <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
+
     </Container>
   );
 };
