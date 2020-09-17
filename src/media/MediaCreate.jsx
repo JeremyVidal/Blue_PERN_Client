@@ -8,7 +8,7 @@ const MediaCreate = (props) => {
   const [genre, setGenre] = useState("");
   const [description, setDescription] = useState("");
   const [rated, setRated] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(0);
   const [consumed, setConsumed] = useState("");
   const [platform, setPlatform] = useState("");
   const [media, setMedia] = useState([]);
@@ -64,7 +64,7 @@ const MediaCreate = (props) => {
         setGenre("");
         setDescription("");
         setRated("");
-        setRating("");
+        setRating(0);
         setConsumed("");
         setPlatform("");
         //fetchMedia(localStorage.getItem('token'));
