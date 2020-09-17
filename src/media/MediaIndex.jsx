@@ -8,60 +8,61 @@ import MediaTable from "./MediaTable";
 import { Container, Row, Col } from "reactstrap";
 
 const MediaIndex = (props) => {
-	const [media, setMedia] = useState([]);
-	const [deleteId, setDeleteId] = useState('');
+	// const [media, setMedia] = useState([]);
+	// const [deleteId, setDeleteId] = useState('');
 
-	const fetchMedia = () => {
-		// fetch(`${APIURL}/media`, {
+	// const fetchMedia = () => {
+	// 	// fetch(`${APIURL}/media`, {
 
-		fetch(`${APIURL}/media/all`, {
-		method: "GET",
-		headers: new Headers({
-			"Content-Type": "application/json",
-			Authorization: props.token,
-		}),
+	// 	fetch(`${APIURL}/media/all`, {
+	// 	method: "GET",
+	// 	headers: new Headers({
+	// 		"Content-Type": "application/json",
+	// 		Authorization: props.token,
+	// 	}),
 
-		})
-			.then((res) => res.json())
-			.then((mediaData) => {
-			setMedia(mediaData);
-			// console.log(mediaData);
-		});
-	};
+	// 	})
+	// 		.then((res) => res.json())
+	// 		.then((mediaData) => {
+	// 		setMedia(mediaData);
+	// 		// console.log(mediaData);
+	// 	});
+	// };
 
-	useEffect(() => {
-			fetchMedia();
-	}, []);
+	// useEffect(() => {
+	// 		fetchMedia();
+	// }, []);
 
-	const getDeleteId = (id) => {
-			setDeleteId(id);
-	}
+	// const getDeleteId = (id) => {
+	// 		setDeleteId(id);
+	// }
   
-	useEffect(() => {
-		deleteMedia(deleteId);
-	}, []);
+	// useEffect(() => {
+	// 	deleteMedia(deleteId);
+	// }, []);
 
-  	const deleteMedia = (deleteId) => {
-		// console.log(deleteId);
-		if (deleteId){
-			let url = `http://localhost:3025/media/${deleteId}`;
-			fetch(url, {
-				method: 'DELETE',
-				headers: new Headers({
-					'Content-Type': 'application/json',
-					'Authorization': props.token
-				})
-			})
-		.then(res => res.json())
-		.then(setDeleteId(''))
-		.catch(err => console.log(err))
-		}
-	}
+  // 	const deleteMedia = (deleteId) => {
+	// 	// console.log(deleteId);
+	// 	if (deleteId){
+	// 		let url = `${APIURL}/media/${deleteId}`;
+	// 		fetch(url, {
+	// 			method: 'DELETE',
+	// 			headers: new Headers({
+	// 				'Content-Type': 'application/json',
+	// 				'Authorization': props.token
+	// 			})
+	// 		})
+	// 	.then(res => res.json())
+	// 	.then(setDeleteId(''))
+	// 	.catch(err => console.log(err))
+	// 	}
+	// }
 	
 
   return (
       <div>
       {/* <MediaCreate /> */}
+      <h1>HI</h1>
       </div>
   );
 

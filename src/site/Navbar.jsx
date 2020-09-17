@@ -1,5 +1,5 @@
 import React, {useState, useEffect}from "react";
-import { Route, Link, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import Home from "./Home";
 import MediaTable from "../media/MediaTable";
 // import MediaIndex from "../media/MediaIndex";
@@ -20,13 +20,14 @@ import {
 
 
 const Sitebar = (props) => {
-  	const [isOpen, setIsOpen] = useState(false);
-	const [deleteId, setDeleteId] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+	// const [deleteId, setDeleteId] = useState('');
 
 	const toggle = () => {
 		let newIsOpen = !isOpen;
 		setIsOpen(newIsOpen);
-	};
+  };
+
 
   return (
     <div className="sidebar">
@@ -39,7 +40,7 @@ const Sitebar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="nav-fill w-100" >
 				<NavItem>
-					<Button className="nav_buttons" ><Link className="nav_links" to="/mediacreate">Add Media</Link></Button>
+					<Button className="nav_buttons" ><Link className="nav_links" to="/mediaCreate">Add Media</Link></Button>
 				</NavItem>
 				<NavItem>
 					<Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
@@ -59,7 +60,7 @@ const Sitebar = (props) => {
       
     	</div>
 
-      <div className="route">
+      {/* <div className="route">
         <Switch>
           <Route exact path="/mediacreate">
             <MediaCreate setMedia={props.setMedia} />
@@ -83,7 +84,7 @@ const Sitebar = (props) => {
           </Route>
         </Switch>
 
-      </div>
+      </div> */}
     </div>
   );
 };
