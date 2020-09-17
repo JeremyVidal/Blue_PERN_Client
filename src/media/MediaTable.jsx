@@ -17,16 +17,14 @@ const MediaTable = (props) => {
 			"Authorization": token,
 		  }),
 		})
-		// .then(() => props.fetchMedia())
 		  .then((res) => res.json())
 		  .then((mediaData) => {
-			  console.log(mediaData);
+			//   console.log(mediaData);
 			  setMedia(mediaData);
 		  })
 	  };
 	
 	  useEffect(() => {
-
 		fetchMedia(localStorage.getItem('token'));
 	  }, []);
 
