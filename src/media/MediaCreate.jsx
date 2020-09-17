@@ -30,12 +30,12 @@ const MediaCreate = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        'Authorization': props.token,
+        "Authorization": props.token,
       }),
     })
       .then((res) => res.json())
-      .then((logData) => {
-        console.log(logData);
+      .then((logMedia) => {
+        console.log(logMedia);
         setType("");
         setTitle("");
         setGenre("");
@@ -46,8 +46,8 @@ const MediaCreate = (props) => {
         setPlatform("");
         props.fetchMedia();
       });
-  };
-
+    };
+    
   return (
     <div className="main">
 		<div className="mainDiv">
