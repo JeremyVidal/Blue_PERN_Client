@@ -10,30 +10,32 @@ const UserEdit = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event, user) => {
     event.preventDefault();
     console.log(firstName, lastName, email, password);
+    console.log(props.token);
 
     fetch(`${APIURL}/user/`, {
       method: "PUT",
       body: JSON.stringify({
         user: {
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          password: password,
+          // firstName: firstName,
+          // lastName: lastName,
+          // email: email,
+          // password: password,
         },
       }),
       headers: new Headers({
         "Content-Type": "application/json",
+        "Authorization": props.token,
       }),
     })
       .then((response) => response.json())
       .then((data) => {
         props.updateToken(data.sessionToken);
+        console.log(data.sessionToken);
       });
   };
-
   return (
     <div className="main">
       <div className="mainDiv"></div>{" "}
@@ -102,6 +104,7 @@ const UserEdit = (props) => {
           <Button className="submitEdit" type="submit">
             Update
           </Button>
+          <Button className="editDel" color="warning" onClick={() => {props.DeleteUser(/*user.id*/)}}>Delete</Button>
         </Form>
       </div>
     </div>

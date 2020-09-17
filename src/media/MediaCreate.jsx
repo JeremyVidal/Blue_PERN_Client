@@ -63,6 +63,7 @@ const MediaCreate = (props) => {
             value={type}
             onChange={(e) => setType(e.target.value)}
           >
+            <option></option>
             <option value="Movie">Movie</option>
             <option value="Book">Book</option>
             <option value="Game">Game</option>
