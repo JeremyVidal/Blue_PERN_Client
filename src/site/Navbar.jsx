@@ -1,4 +1,4 @@
-import React, {useState, UseEffect}from "react";
+import React, {useState, useEffect}from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import MediaTable from "../media/MediaTable";
@@ -19,15 +19,15 @@ import {
 } from "reactstrap";
 
 
-
-
-
 const Sitebar = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    let newIsOpen = !isOpen;
-    setIsOpen(newIsOpen);
-  };
+  	const [isOpen, setIsOpen] = useState(false);
+	const [deleteId, setDeleteId] = useState('');
+
+	const toggle = () => {
+		let newIsOpen = !isOpen;
+		setIsOpen(newIsOpen);
+	};
+
   return (
     <div className="sidebar">
       <div className="mainNav">
@@ -75,7 +75,7 @@ const Sitebar = (props) => {
               updateOn={props.updateOn}
               updateActive={props.updateActive}
               mediaToUpdate={props.mediaToUpdate}
-              updateOff={props.updateOff}
+			  updateOff={props.updateOff}
             />
           </Route>
           <Route exact path="/userEdit">
