@@ -30,12 +30,12 @@ const MediaCreate = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.updateToken,
+        'Authorization': props.token,
       }),
     })
       .then((res) => res.json())
-      .then((logMedia) => {
-        console.log(logMedia);
+      .then((logData) => {
+        console.log(logData);
         setType("");
         setTitle("");
         setGenre("");
@@ -49,11 +49,13 @@ const MediaCreate = (props) => {
   };
 
   return (
-    <div>
+    <div className="main">
+		<div className="mainDiv">
       <h3>Add to your Media Collection</h3>
       <br />
       <h5>Select Media Type</h5>
-      <Form id="create" onSubmit={handleSubmit}>
+      <Form className="form" onSubmit={handleSubmit} style={{margin: "50px", maxWidth: "300px"}}>
+			<div className="d-flex justify-content-right"></div>
         <FormGroup>
           <Label htmlFor="type"> Type: </Label>
           <Input
@@ -125,8 +127,9 @@ const MediaCreate = (props) => {
             onChange={(e) => setPlatform(e.target.value)}
           />
         </FormGroup>
-        <Button type="submit">Click to Submit</Button>
+        <input type="submit" />
       </Form>
+    </div>
     </div>
   );
 };
