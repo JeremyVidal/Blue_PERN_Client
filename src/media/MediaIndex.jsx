@@ -93,8 +93,8 @@ useEffect(() => {
 
         {/* <MediaTable media={media} editUpdateMedia={editUpdateMedia}
           updateOn={updateOn} /> */}
-
-          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
+{/* 
+          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/> */}
 
     </Container>
   );
