@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
@@ -11,7 +11,29 @@ const MediaCreate = (props) => {
   const [rating, setRating] = useState("");
   const [consumed, setConsumed] = useState("");
   const [platform, setPlatform] = useState("");
+  const [media, setMedia] = useState([]);
 
+  const fetchMedia = (token) => {
+		fetch(`${APIURL}/media`, {
+			method: "GET",
+		  headers: new Headers({
+			"Content-Type": "application/json",
+			"Authorization": props.token,
+		  }),
+		})
+
+		  .then((res) => res.json())
+		  .then((mediaData) => {
+			  console.log(mediaData);
+			  setMedia(mediaData);
+		  })
+	  };
+	
+	  useEffect(() => {
+
+		fetchMedia(localStorage.getItem('token'));
+    }, []);
+    
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`${APIURL}/media/create`, {
@@ -30,7 +52,7 @@ const MediaCreate = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        'Authorization': props.token,
+        'Authorization': localStorage.getItem('token'),
       }),
     })
       .then((res) => res.json())
@@ -44,7 +66,7 @@ const MediaCreate = (props) => {
         setRating("");
         setConsumed("");
         setPlatform("");
-        props.fetchMedia();
+        fetchMedia();
       });
   };
 
