@@ -29,7 +29,7 @@ const MediaTable = (props) => {
 
 		fetchMedia(localStorage.getItem('token'));
 	  }, []);
-	 
+
 	//console.log(props.token);
 
   	const mediaMapper = () => {
