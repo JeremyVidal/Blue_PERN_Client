@@ -62,7 +62,7 @@ const Sitebar = (props) => {
       <div className="route">
         <Switch>
           <Route exact path="/mediacreate">
-            <MediaCreate />
+            <MediaCreate setMedia={props.setMedia} />
           </Route>
           <Route exact path="/mediaAll">
             <MediaAll />
