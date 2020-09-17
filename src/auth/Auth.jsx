@@ -102,7 +102,8 @@ const Auth = (props) => {
   };
 	
     return(
-    <Container className="auth-container">
+    	<div className="main">
+		<div className="mainDiv">
       <Form className="form" onSubmit={handleSubmit}>
         <Col sm="4">
           <h3>{title()}</h3>
@@ -147,7 +148,8 @@ const Auth = (props) => {
           </div>
         </Col>
       </Form>
-        </Container>
+        </div>
+        </div>
   );
 };
 

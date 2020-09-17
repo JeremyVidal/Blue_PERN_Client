@@ -75,7 +75,8 @@ useEffect(() => {
 
 
   return (
-    <Container>
+    <div className="main">
+		<div className="mainDiv">
       <Row>
         <Col md="12">
 
@@ -99,7 +100,7 @@ useEffect(() => {
         <MediaTable media={media} editUpdateMedia={editUpdateMedia}
           updateOn={updateOn} />
 
-          <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
+          {/* <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
              {updateActive ? (
         <MediaEdit
           updateOn={updateOn}
@@ -110,10 +111,11 @@ useEffect(() => {
         />
       ) : (
         <></>
-      )}
+      )} */}
       </Col>
       </Row>
-    </Container>
+    </div>
+    </div>
   );
 };
 

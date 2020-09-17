@@ -36,15 +36,16 @@ function App() {
   };
 
   return (
-    <div id="main">
-      {/* <Header /> */}
-      <Router>
-
-      <Sitebar clearToken={clearToken} token={sessionToken} />
-      {protectedViews()}
-      </Router>
-      {/* <MediaIndex /> */}
-      <Footer />
+     <div className="main">
+      <div className="mainDiv">
+        {/* <Header /> */}
+        <Router>
+        <Sitebar clearToken={clearToken} token={sessionToken}/>
+        {protectedViews()}
+        </Router>
+        {/* <MediaIndex /> */}
+        <Footer />
+      </div>
     </div>
   );
 }

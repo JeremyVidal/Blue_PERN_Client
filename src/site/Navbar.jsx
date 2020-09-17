@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState, UseEffect}from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import MediaTable from "../media/MediaTable";
@@ -17,6 +17,10 @@ import {
   Button,
 } from "reactstrap";
 
+
+
+
+
 const Sitebar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
@@ -24,8 +28,8 @@ const Sitebar = (props) => {
     setIsOpen(newIsOpen);
   };
   return (
-    <div className="mainNav">
-      <div className="one">
+    <div className="sidebar">
+      <div className="mainNav">
       <Navbar color="black" light expand="md">
         <NavbarBrand>
          <h3>My Media Collection</h3>
@@ -55,7 +59,7 @@ const Sitebar = (props) => {
       <div className="route">
         <Switch>
           <Route exact path="/mediaIndex">
-            <Home />
+            <mediaIde />
           </Route>
           <Route exact path="/mediaAll">
             <MediaAll />
@@ -75,3 +79,40 @@ const Sitebar = (props) => {
   );
 };
 export default Sitebar;
+
+
+// const Sitebar = (props) => {
+//   return (
+//     <div className="sitebar">
+//       <div className="mainNav">
+//         <ul className = "sidebarlist">
+//           <li><Link to ="/mediaIndex">Home</Link></li>
+//           <li><Link to ="/mediaAll">View All Media</Link></li>
+//           <li><Link to ="/mediaMine">View My Media</Link></li>
+//           <li><Link to ="/userEdit">User Edit</Link></li>
+//           {/* <li><Link to =onClick={props.clearToken}>Logout</Link></li> */}
+//         </ul>
+//       </div>
+//       <div className="route">
+//         <Switch>
+//           <Route exact path="/mediaIndex">
+//             <mediaIndex />
+//           </Route>
+//           <Route exact path="/mediaAll">
+//             <MediaAll />
+//           </Route>
+//           <Route exact path="/mediaMine">
+//             <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia} token={props.token} updateOn={props.updateOn}/>
+//           </Route>
+//           <Route exact path="/userEdit">
+//             <UserEdit />
+//           </Route>
+//           <Route exact path="/userDelete">
+//             <UserDelete />
+//           </Route>
+//           </Switch>
+//       </div>
+//     </div>
+//   );
+// };
+// export default Sitebar;

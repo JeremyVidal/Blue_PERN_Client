@@ -55,7 +55,8 @@ const MediaCreate = (props) => {
   };
 
   return (
-    <div>
+    <div className="main">
+		<div className="mainDiv">
       <h3>Add to your Media Collection</h3>
       <br />
       <h5>Select Media Type</h5>
@@ -151,6 +152,7 @@ const MediaCreate = (props) => {
         </FormGroup>
         <Button type="submit">Click to Submit</Button>
       </Form>
+    </div>
     </div>
   );
 };

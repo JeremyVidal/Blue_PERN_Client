@@ -34,6 +34,8 @@ const MediaTable = (props) => {
   	const mediaMapper = () => {
     return media.map((media, index) => {
       return (
+		<div className="main">
+		<div className="mainDiv">
         <tr key={index}>
           	<th scope="row">{media.id}</th>
           	<td>{media.type}</td>
@@ -47,12 +49,15 @@ const MediaTable = (props) => {
           	<td><Button color ="info" onClick={()=> {props.editUpdateMedia(media); props.updateOn()}}>Update</Button></td>
             <td><Button color="dark" onClick={() => {props.setDeleteId(media.id)}}>Delete</Button></td>
         </tr>
+		</div>
+		</div>
       );
     });
   };
 
   return (
-    <div id= "main">
+	<div className="main">
+	<div className="mainDiv">
       <h3>Media Collection</h3>
       <hr />
       <Table striped>
@@ -72,6 +77,7 @@ const MediaTable = (props) => {
         <tbody>{mediaMapper()}</tbody>
       </Table>
     </div>
+	</div>
   );
 }
 export default MediaTable;

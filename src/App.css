@@ -1,6 +1,7 @@
 
 body{
   background-image: linear-gradient(#6B7D73,#31525E);
+  height:100vh;
 }
 .auth-container {
   height: 100vh;
@@ -10,10 +11,10 @@ body{
   color: white;
 }
 
-.route {
+/* .route {
   background-image: linear-gradient(#6B7D73,#31525E);
 
-}
+} */
 
 /* user create */
 #formTypes {
