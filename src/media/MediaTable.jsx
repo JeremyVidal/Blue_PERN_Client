@@ -7,6 +7,7 @@ import "./media.css";
 const MediaTable = (props) => {
 
 	const [media, setMedia] = useState([]);
+	const [deleteId, setDeleteId] = useState('');
 	
 	const fetchMedia = (token) => {
 		fetch(`${APIURL}/media`, {
@@ -29,6 +30,36 @@ const MediaTable = (props) => {
 
 	//console.log(props.token);
 
+	const getDeleteId = (id) => {
+		setDeleteId(id);
+	}
+
+	useEffect(() => {
+		deleteMedia(deleteId);
+	}, [deleteId]);
+
+	const deleteMedia = (deleteId) => {
+		// console.log(deleteId);
+		if (deleteId){
+			let url = `${APIURL}/media/${deleteId}`;
+			fetch(url, {
+				method: 'DELETE',
+				headers: new Headers({
+					'Content-Type': 'application/json',
+					'Authorization': props.token
+				})
+			})
+		.then(res => res.json())
+		.then(
+			(logdata) => {
+				console.log(logdata);
+				setDeleteId('');
+				fetchMedia(localStorage.getItem('token'));})
+		.catch(err => console.log(err))
+		}
+		
+	}
+
   	const mediaMapper = () => {
     return media.map((media, index) => {
       return (
@@ -43,7 +74,7 @@ const MediaTable = (props) => {
           	<td>{media.consumed}</td>
           	<td>{media.rating}</td>
           	<td><Button color ="info" onClick={()=> {props.editUpdateMedia(media); props.updateOn()}}>Update</Button></td>
-            <td><Button color="dark" onClick={() => {props.setDeleteId(media.id)}}>Delete</Button></td>
+            <td><Button color="dark" onClick={() => {getDeleteId(media.id)}}>Delete</Button></td>
         </tr>
 	      );
     });
