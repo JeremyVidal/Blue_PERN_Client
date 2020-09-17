@@ -14,7 +14,7 @@ const UserEdit = (props) => {
 
 	// const [userData, setUserData] = useState('');
 
-  	const loginToggle = (event) => {
+  	const passwordToggle = (event) => {
    		event.preventDefault();
     	setChangePasswordToggle(!changePasswordToggle);
 		setPassword('');
@@ -36,7 +36,7 @@ const UserEdit = (props) => {
 			setFirstName(data.firstName)
 			setLastName(data.lastName)
 			setEmail(data.email)
-			setPassword(data.password)
+			// setPassword(data.password)
 
 		})
 		// .then((err) => {console.log(err);})
@@ -70,8 +70,11 @@ const UserEdit = (props) => {
         // props.updateToken(data.sessionToken);
         // console.log(data.sessionToken);
 	  });
-	  setChangePasswordToggle(!changePasswordToggle);
-	  setSuccessMessage(<span className="success_message" >Successfully Updated Your Password!</span>)
+	  if (password != ''){
+		setChangePasswordToggle(!changePasswordToggle);
+		  setSuccessMessage(<span className="success_message" >Successfully Updated Your Password!</span>)
+		  setPassword('');
+	  }
 	  
   };
 
@@ -88,7 +91,7 @@ const UserEdit = (props) => {
 
   return (
 	<Container style={{marginTop: "60px"}}>
-	 	<div className="d-flex justify-content-center" ><h2>Update User</h2></div>
+	 	<div className="d-flex justify-content-center user_heading"><h2>Update User</h2></div>
 	 	<div className="d-flex justify-content-center" >{successMessage}</div>
 		 
 	 	<Form className="form" onSubmit={handleSubmit} style={{margin: "10px auto 0 auto", maxWidth: "300px"}}s>
@@ -106,7 +109,7 @@ const UserEdit = (props) => {
 	 			<Input id="email" type="text" name="email" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} value={email} />
 			</FormGroup>
 			<div >
-				<a className="toggle_button" onClick={loginToggle}>Change Password?</a>
+				<a className="toggle_button" onClick={passwordToggle}>Change Password?</a>
 			
 			</div>
 			{changePasswordField()}
