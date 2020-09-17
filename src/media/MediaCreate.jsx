@@ -14,7 +14,7 @@ const MediaCreate = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${APIURL}/media/create`, {
+    fetch(`${APIURL}/media/all`, {
       method: "POST",
       body: JSON.stringify({
         media: {
@@ -30,12 +30,12 @@ const MediaCreate = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.updateToken,
+        'Authorization': props.token,
       }),
     })
       .then((res) => res.json())
-      .then((logMedia) => {
-        console.log(logMedia);
+      .then((logData) => {
+        console.log(logData);
         setType("");
         setTitle("");
         setGenre("");
@@ -54,7 +54,7 @@ const MediaCreate = (props) => {
       <h3>Add to your Media Collection</h3>
       <br />
       <h5>Select Media Type</h5>
-      <Form id="create" onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="type"> Type: </Label>
           <Input
@@ -126,7 +126,7 @@ const MediaCreate = (props) => {
             onChange={(e) => setPlatform(e.target.value)}
           />
         </FormGroup>
-        <Button type="submit">Click to Submit</Button>
+        <input type="submit" />
       </Form>
     </div>
     </div>

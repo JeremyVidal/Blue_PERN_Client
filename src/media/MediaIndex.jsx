@@ -15,18 +15,18 @@ const MediaIndex = (props) => {
   const [mediaToUpdate, setMediaToUpdate] = useState({});
 
 
-  // const editUpdateMedia = (mediaEntry) => {
-  //   setMediaToUpdate(mediaEntry);
-  //   console.log(mediaEntry);
-  // };
+  const editUpdateMedia = (mediaEntry) => {
+    setMediaToUpdate(mediaEntry);
+    console.log(mediaEntry);
+  };
 
-  // const updateOn = () => {
-  //   setUpdateActive(true);
-  // };
+  const updateOn = () => {
+    setUpdateActive(true);
+  };
 
-  // const updateOff = () => {
-  //   setUpdateActive(false);
-  // };
+  const updateOff = () => {
+    setUpdateActive(false);
+  };
 
   const fetchMedia = () => {
     // fetch(`${APIURL}/media`, {
@@ -75,7 +75,7 @@ useEffect(() => {
 
 
   return (
-    <Container>   
+    <Container>
           {/* <MediaTable
             media={media}
             editUpdateMedia={editUpdateMedia}
@@ -93,7 +93,7 @@ useEffect(() => {
 
         {/* <MediaTable media={media} editUpdateMedia={editUpdateMedia}
           updateOn={updateOn} /> */}
-  
+
           <MediaActions editUpdateMedia={editUpdateMedia} mediaToUpdate={mediaToUpdate} media={media} token={props.token} fetchMedia={fetchMedia}/>
 
     </Container>

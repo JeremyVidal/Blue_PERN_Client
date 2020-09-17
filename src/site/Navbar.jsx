@@ -38,7 +38,7 @@ const Sitebar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="nav-fill w-100" >
 				<NavItem>
-					<Button className="nav_buttons" ><Link className="nav_links" to="/mediaIndex">Home</Link></Button>
+					<Button className="nav_buttons" ><Link className="nav_links" to="/mediaindex">Home</Link></Button>
 				</NavItem>
 				<NavItem>
 					<Button className="nav_buttons" color="secondary"><Link className="nav_links" to="/mediaAll">View All Media</Link></Button>
@@ -60,8 +60,8 @@ const Sitebar = (props) => {
 
       <div className="route">
         <Switch>
-          <Route exact path="/mediaIndex">
-            <mediaIde />
+          <Route exact path="/mediaindex">
+            <MediaIndex />
           </Route>
           <Route exact path="/mediaAll">
             <MediaAll />

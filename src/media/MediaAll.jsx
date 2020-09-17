@@ -11,7 +11,7 @@ const MediaAll = (props) => {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.token,
+        'Authorization': props.token,
       }),
     })
       .then((res) => res.json())
@@ -28,8 +28,8 @@ const MediaAll = (props) => {
   const mediaMapper = () => {
     return media.map((media, index) => {
       return (
-        <div className="main">
-        <div className="mainDiv">
+        // <div className="main">
+        // <div className="mainDiv">
         <tr key={index}>
           <th scope="row">{media.id}</th>
           <td>{media.type}</td>
@@ -43,14 +43,15 @@ const MediaAll = (props) => {
           {/* <td>{media.rating}</td> */}
         </tr>
 
-         </div>
-        </div>
+        //  </div>
+        // </div>
       );
     });
   };
 
   return (
-    <div id="main">
+        <div className="main">
+        <div className="mainDiv">
       <h5>Media in All Collections</h5>
       <hr />
       <Table striped>
@@ -70,6 +71,7 @@ const MediaAll = (props) => {
         </thead>
         <tbody>{mediaMapper(props.token)}</tbody>
       </Table>
+    </div>
     </div>
   );
 };
