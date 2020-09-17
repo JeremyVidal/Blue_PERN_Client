@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import APIURL from '../helpers/environment';
-import {
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-} from "reactstrap";
+import APIURL from "../helpers/environment";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const MediaCreate = (props) => {
   const [type, setType] = useState("");
@@ -62,23 +56,21 @@ const MediaCreate = (props) => {
       <Form id="create" onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="type"> Type: </Label>
-          <Input id = "formTypes"
+          <Input
+            id="formTypes"
             type="select"
             name="type"
             value={type}
             onChange={(e) => setType(e.target.value)}
           >
-            
+            <option></option>
             <option value="Movie">Movie</option>
             <option value="Book">Book</option>
             <option value="Game">Game</option>
           </Input>
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="title">
-            {" "}
-            Title:{" "}
-          </Label>
+          <Label htmlFor="title">Title:</Label>
           <Input
             name="title"
             value={title}
@@ -86,10 +78,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="genre">
-            {" "}
-            Genre:{" "}
-          </Label>
+          <Label htmlFor="genre">Genre:</Label>
           <Input
             name="genre"
             value={genre}
@@ -97,10 +86,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="description">
-            {" "}
-            Description:{" "}
-          </Label>
+          <Label htmlFor="description">Description:</Label>
           <Input
             name="description"
             value={description}
@@ -108,10 +94,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="rated">
-            {" "}
-            Rated:{" "}
-          </Label>
+          <Label htmlFor="rated">Rated: </Label>
           <Input
             name="rated"
             value={rated}
@@ -119,10 +102,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="rating">
-            {" "}
-            Rating:{" "}
-          </Label>
+          <Label htmlFor="rating"> Rating: </Label>
           <Input
             name="rating"
             value={rating}
@@ -130,23 +110,19 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="consumed">
-            Consumed:{" "}
-          </Label>
+          <Label htmlFor="consumed">Consumed: </Label>
           <Input
-            name="rating"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
+            name="consumed"
+            value={consumed}
+            onChange={(e) => setConsumed(e.target.value)}
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="platform">
-            Platform:{" "}
-          </Label>
+          <Label htmlFor="platform">Platform: </Label>
           <Input
             name="platform"
             value={platform}
-            onChange={(e) => setRating(e.target.value)}
+            onChange={(e) => setPlatform(e.target.value)}
           />
         </FormGroup>
         <Button type="submit">Click to Submit</Button>
