@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
-import { Container, Row, Col, Table } from "reactstrap";
+import { Table } from "reactstrap";
 
-const MediaAll = () => {
+const MediaAll = (props) => {
   const [media, setMedia] = useState([]);
 
   const fetchMedia = () => {
-      fetch(`${APIURL}/media/all`, {
+    // fetch(`${APIURL}/media`, {
+    fetch(`${APIURL}/media/all`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-       }),
+        Authorization: props.token,
+      }),
     })
       .then((res) => res.json())
       .then((mediaData) => {
-		//   console.log(mediaData);
+        //   console.log(mediaData);
         setMedia(mediaData);
       });
   };
@@ -43,8 +45,8 @@ const MediaAll = () => {
   };
 
   return (
-    <div id= "main">
-      <h3>Media in All Collections</h3>
+    <div id="main">
+      <h5>Media in All Collections</h5>
       <hr />
       <Table striped>
         <thead>
@@ -61,7 +63,7 @@ const MediaAll = () => {
             {/* <th>My Rating</th> */}
           </tr>
         </thead>
-        <tbody>{mediaMapper()}</tbody>
+        <tbody>{mediaMapper(props.token)}</tbody>
       </Table>
     </div>
   );

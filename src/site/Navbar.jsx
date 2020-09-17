@@ -6,7 +6,7 @@ import MediaIndex from "../media/MediaIndex";
 import MediaActions from "../media/MediaActions";
 import MediaAll from "../media/MediaAll";
 import UserEdit from "../auth/UserEdit";
-import './Navbar.css';
+import "./Navbar.css";
 import {
   Navbar,
   NavbarBrand,
@@ -63,15 +63,23 @@ const Sitebar = (props) => {
             <MediaAll />
           </Route>
           <Route exact path="/mediaMine">
-            <MediaTable media={props.media} editUpdateMedia={props.editUpdateMedia} token={props.token} updateOn={props.updateOn}/>
+            <MediaTable
+              media={props.media}
+              editUpdateMedia={props.editUpdateMedia}
+              token={props.token}
+              updateOn={props.updateOn}
+              updateActive={props.updateActive}
+              mediaToUpdate={props.mediaToUpdate}
+              updateOff={props.updateOff}
+            />
           </Route>
           <Route exact path="/userEdit">
-            <UserEdit />
+            <UserEdit token={props.token} />
           </Route>
           {/* <Route exact path="/userDelete">
             <UserDelete />
           </Route> */}
-          </Switch>
+        </Switch>
       </div>
     </div>
   );

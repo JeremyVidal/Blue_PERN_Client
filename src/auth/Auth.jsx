@@ -117,7 +117,6 @@ const Auth = (props) => {
   };
 	
     return(
-
     <Container className="auth-container">
 			<Form size="sm" className="form" onSubmit={handleSubmit} style={{margin: "50px auto 0 auto", maxWidth: "300px"}}>
 				<div className="d-flex justify-content-center"><h3>{title()}</h3></div>
@@ -158,20 +157,6 @@ const Auth = (props) => {
 				</div>
 			</Form>
         </Container>
-
-    // <Container className="auth-container">
-    //     <Row>
-    //         <Col md="4">
-    //             <Signup updateToken={props.updateToken}/>
-    //         </Col>
-    //         <Col md="4">
-    //             <Login updateToken={props.updateToken}/>
-    //         </Col>
-    //         <Col md="4">
-    //             {/* <UserEdit updateToken={props.updateToken}/> */}
-    //         </Col>
-    //     </Row>
-    // </Container>
   );
 };
 
