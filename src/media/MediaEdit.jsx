@@ -28,6 +28,8 @@ const MediaEdit = (props) => {
     props.mediaToUpdate.platform
   );
 
+  const toggle = () => props.updateOff();
+
   const mediaUpdate = (event) => {
     event.preventDefault();
     fetch(`${APIURL}/media/update/${props.mediaToUpdate.id}`, {
@@ -101,7 +103,7 @@ const MediaEdit = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="rated">Edit MPAA Rating:</Label>
+            <Label htmlFor="rated">Edit MPAA/ESRB Rating:</Label>
             <Input
               name="rated"
               value={editRated}
@@ -112,12 +114,21 @@ const MediaEdit = (props) => {
             <Label htmlFor="rating">Edit User Rating:</Label>
             <Input
               name="rating"
+              type="select"
+              max="5"
               value={editRating}
               onChange={(e) => setEditRating(e.target.value)}
-            />
+            >
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="consumed">Edit Consumed:</Label>
+            <Label htmlFor="consumed">Watched/Read/Played?:</Label>
             <Input
               name="consumed"
               value={editConsumed}
@@ -132,7 +143,9 @@ const MediaEdit = (props) => {
               onChange={(e) => setEditPlatform(e.target.value)}
             />
           </FormGroup>
-          <Input type="submit" value="Submit"/>
+          <Button type="submit" color="success">Submit</Button>{' '}
+          <Button color="danger" onClick={toggle}>Cancel</Button>
+
         </Form>
       </ModalBody>
     </Modal>
