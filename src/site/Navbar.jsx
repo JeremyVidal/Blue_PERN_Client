@@ -1,5 +1,5 @@
 import React, {useState, useEffect}from "react";
-import { Link } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 // import Home from "./Home";
 import MediaTable from "../media/MediaTable";
 // import MediaIndex from "../media/MediaIndex";
@@ -63,11 +63,10 @@ const Sitebar = (props) => {
         <Switch>
           <Route exact path="/mediaCreate">
                <MediaCreate />
+               </Route>
              
-              {/* //  setMedia={props.setMedia}
-              //  media={props.media}
-              //  token={props.token}/> */}
-          </Route>
+  
+
           <Route exact path="/mediaAll">
             <MediaAll />
           </Route>

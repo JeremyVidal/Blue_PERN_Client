@@ -4,7 +4,7 @@ import MediaCreate from "./MediaCreate";
 import MediaTable from "./MediaTable";
 import MediaActions from "./MediaActions";
 import MediaEdit from "./MediaEdit";
-import MediaTable from "./MediaTable";
+// import MediaTable from "./MediaTable";
 
 import { Container, Row, Col } from "reactstrap";
 
@@ -63,7 +63,7 @@ const MediaIndex = (props) => {
   return (
       <div>
       {/* <MediaCreate /> */}
-      <h1>HI</h1>
+      {/* <h1>HI</h1> */}
       </div>
   );
 
