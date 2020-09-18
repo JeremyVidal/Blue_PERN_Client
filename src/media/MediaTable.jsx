@@ -69,7 +69,7 @@ const MediaTable = (props) => {
 		return (
 			<tr key={index}>
 				{/* <th scope="row">{media.id}</th> */}
-				<th scope="row"><img className="media_table_image" src={Play} alt=""/></th>
+				<td scope="row"><img className="media_table_image" src={Play} alt=""/></td>
 				<td>{media.type}</td>
 				<td>{media.title}</td>
 				<td>{media.genre}</td>
@@ -89,13 +89,10 @@ const MediaTable = (props) => {
 
 	<div className="main">
 	<div className="mainDiv">
+
 		<div className="d-flex" style={{padding: "20px"}}>
 			<img className="media_collection_image" src={Collection} alt=""/><h3>My Collection</h3>
 		</div>
-
-	<Container>
-      <h5>Media Collection</h5>
-      <hr />
       <Table striped>
         <thead className="mediaTable">
           <tr >
@@ -110,8 +107,8 @@ const MediaTable = (props) => {
 			<th></th>
             {/* <th>Consumed</th> */}
             {/* <th>My Rating</th> */}
-            <th>Watched/Read/Played</th>
-            <th>My Rating</th>
+            {/* <th>Watched/Read/Played</th>
+            <th>My Rating</th> */}
           </tr>
         </thead>
         <tbody className="mediaTable">{mediaMapper()}</tbody>
@@ -127,7 +124,8 @@ const MediaTable = (props) => {
         ) : (
           <></>
         )}
- </Container>
+ </div>
+ </div>
   );
 }
 export default MediaTable;

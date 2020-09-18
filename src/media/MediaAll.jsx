@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
 
-import { Table } from "reactstrap";
 import Play from '../assets/Play.png';
 import Collection from '../assets/Collection.png';
 import "./media.css";
@@ -66,9 +65,6 @@ const MediaAll = (props) => {
 		</div>
       {/* <h3  className="mediaTable">Media in All Collections</h3> */}
 
-    <Container>
-      <h5  className="mediaTable">Media in All Collections</h5>
-      <hr />
       <Table striped>
         <thead  className="mediaTable" > 
           <tr>
@@ -77,7 +73,7 @@ const MediaAll = (props) => {
             <th>Title</th>
             <th>Genre</th>
             <th>Description</th>
-            <th>Rated</th>
+            <th>MPAA/ESRB Rating</th>
             <th>UserId</th>
             {/* <th>Platform</th> */}
             {/* <th>Consumed</th> */}
@@ -86,7 +82,8 @@ const MediaAll = (props) => {
         </thead>
         <tbody  className="mediaTable">{mediaMapper(props.token)}</tbody>
       </Table>
-   </Container>
+	  </div>
+	  </div>
   );
 };
 export default MediaAll;
