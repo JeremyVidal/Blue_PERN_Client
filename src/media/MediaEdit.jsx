@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./MediaEdit.css";
 import APIURL from "../helpers/environment";
 import {

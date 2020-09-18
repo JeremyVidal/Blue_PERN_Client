@@ -7,8 +7,6 @@ import MediaAll from "./media/MediaAll";
 import MediaIndex from "./media/MediaIndex";
 import MediaActions from "./media/MediaActions";
 import Header from "./site/Header";
-// import ProtectedRoute from '../src/ProtectedRoute';
-// import LandingPage from "../src/LandingPage";
 import Sitebar from "./site/Navbar";
 import Footer from "./site/Footer";
 import "./App.css";
@@ -55,16 +53,16 @@ function App() {
 
   const protectedViews = () => {
     return sessionToken === localStorage.getItem("token") ? (
-      <Route exact path="/mediaCreate">
-      <MediaCreate token={sessionToken} setMedia={setMedia} />
-    </Route>
+		<Route exact path="/mediaCreate"> 
+      		<MediaCreate token={sessionToken} setMedia={setMedia}/>
+    	</Route>
     ) : (
-      <Route exact path="/">    <Auth updateToken={updateToken} /></Route>
+      <Route exact path="/"><Auth updateToken={updateToken} clearToken={clearToken}/></Route>
     );
   };
   
   return (
-    <div id="main">
+    <div id="main" className="sideBar">
       {/* <Header /> */}
       <Router>
         <Sitebar
@@ -102,7 +100,7 @@ function App() {
               />
           </Route>
           <Route exact path="/userEdit">
-            <UserEdit token={sessionToken} />
+            <UserEdit token={sessionToken} clearToken={clearToken}/>
           </Route>
         </Switch>
 

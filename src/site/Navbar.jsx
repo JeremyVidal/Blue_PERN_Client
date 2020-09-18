@@ -1,12 +1,17 @@
+import React, {useState}from "react";
+import { Link } from "react-router-dom";
+
 import React, {useState, useEffect}from "react";
 import { Route, Switch, Link } from "react-router-dom";
+
 // import Home from "./Home";
-import MediaTable from "../media/MediaTable";
+// import MediaTable from "../media/MediaTable";
 // import MediaIndex from "../media/MediaIndex";
-import MediaCreate from "../media/MediaCreate";
+// import MediaCreate from "../media/MediaCreate";
 // import MediaActions from "../media/MediaActions";
-import MediaAll from "../media/MediaAll";
-import UserEdit from "../auth/UserEdit";
+// import MediaAll from "../media/MediaAll";
+// import UserEdit from "../auth/UserEdit";
+import Media from '../assets/Media.png';
 import "./Navbar.css";
 import {
   Navbar,
@@ -34,7 +39,13 @@ const Sitebar = (props) => {
       <div className="mainNav">
         <div id="navContainer">
         <NavbarBrand style={{color: "white"}}>
+
+		<div className="d-flex">
+		<img className="media_image" src={Media} alt=""/><h3>My Media Collection</h3>
+		</div>
+
          <h4>My Media Collection</h4>
+
         </NavbarBrand>
       <Navbar color="black" light expand="md">
         <NavbarToggler onClick={toggle} />

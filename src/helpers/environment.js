@@ -7,6 +7,11 @@ switch (window.location.hostname) {
     break;
 
   case "tl-my-mediacollection-client.herokuapp.com":
-    APIURL = "https://tl-my-mediacollection.herokuapp.com";
+	APIURL = "https://tl-my-mediacollection.herokuapp.com";
+    break;
+	
+	default: 
+       alert('URL Error!');
+       break;
 }
 export default APIURL;
