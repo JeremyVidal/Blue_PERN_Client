@@ -10,5 +10,8 @@
     color: white;
 }
 .nav_links:hover{
-    text-decoration: none;
+    text-decoration: none; color: white;
 }
+.sidebar{position: fixed; top: 0; width: 100%;}
+
+.media_image {width: 60px;}

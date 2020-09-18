@@ -1,12 +1,13 @@
-import React, {useState, useEffect}from "react";
+import React, {useState}from "react";
 import { Link } from "react-router-dom";
 // import Home from "./Home";
-import MediaTable from "../media/MediaTable";
+// import MediaTable from "../media/MediaTable";
 // import MediaIndex from "../media/MediaIndex";
-import MediaCreate from "../media/MediaCreate";
+// import MediaCreate from "../media/MediaCreate";
 // import MediaActions from "../media/MediaActions";
-import MediaAll from "../media/MediaAll";
-import UserEdit from "../auth/UserEdit";
+// import MediaAll from "../media/MediaAll";
+// import UserEdit from "../auth/UserEdit";
+import Media from '../assets/Media.png';
 import "./Navbar.css";
 import {
   Navbar,
@@ -34,7 +35,9 @@ const Sitebar = (props) => {
       <div className="mainNav">
       <Navbar color="black" light expand="md">
         <NavbarBrand style={{color: "white"}}>
-         <h3>My Media Collection</h3>
+		<div className="d-flex">
+		<img className="media_image" src={Media} alt=""/><h3>My Media Collection</h3>
+		</div>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

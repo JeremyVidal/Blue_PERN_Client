@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
 import { Table } from "reactstrap";
+import Play from '../assets/Play.png';
+import Collection from '../assets/Collection.png';
+import "./media.css";
+
 
 const MediaAll = (props) => {
   const [media, setMedia] = useState([]);
@@ -31,7 +35,9 @@ const MediaAll = (props) => {
         // <div className="main">
         // <div className="mainDiv">
         <tr key={index}>
-          <th scope="row">{media.id}</th>
+          {/* <th scope="row">{media.id}</th> */}
+		  <th scope="row"><img className="media_table_image" src={Play} alt=""/></th>
+
           <td>{media.type}</td>
           <td>{media.title}</td>
           <td>{media.genre}</td>
@@ -52,12 +58,14 @@ const MediaAll = (props) => {
   return (
         <div className="main">
         <div className="mainDiv">
-      <h5  className="mediaTable">Media in All Collections</h5>
-      <hr />
+		<div className="d-flex" style={{padding: "20px"}}>
+			<img className="media_collection_image" src={Collection} alt=""/><h3>All Media Collections</h3>
+		</div>
+      {/* <h3  className="mediaTable">Media in All Collections</h3> */}
       <Table striped>
-        <thead  className="mediaTable"> 
+        <thead  className="mediaTable" > 
           <tr>
-            <th>#</th>
+            <th></th>
             <th>Type</th>
             <th>Title</th>
             <th>Genre</th>

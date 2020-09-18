@@ -12,7 +12,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "reactstrap": "^8.5.1",
+    "reactstrap": "^8.6.0",
     "webfontloader": "^1.6.28"
   },
   "scripts": {
@@ -21,8 +21,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
-
   "eslintConfig": {
     "extends": "react-app"
   },
