@@ -11,7 +11,7 @@ const UserEdit = (props) => {
 	const [password, setPassword] = useState('');
 	const [changePasswordToggle, setChangePasswordToggle] = useState(true);
 	const[successMessage, setSuccessMessage] = useState('');
-
+	const [deleteUserId, setDeleteUserId] = useState("");
 	// const [userData, setUserData] = useState('');
 
   	const passwordToggle = (event) => {
@@ -90,22 +90,38 @@ const UserEdit = (props) => {
       	</div>
 	  ) : null;
 
-	//   const deleteUser =() =>{
-    //     fetch(`${APIURL}/user`,{
-    //         method: 'DELETE',
-    //         headers: new Headers ({
-    //             'Content-Type': 'application/json',
-    //             'Authorization': props.token
-    //         })
-    //     })
-    //     .then(()=> props.fetchUser())
-    // }
+
+
+	  useEffect(() => {
+		deleteUser(deleteUserId);
+	  }, [deleteUserId]);
+	
+	  const deleteUser = () => {
+		if (deleteUserId) {
+		  let url = `${APIURL}/user/${deleteUserId}`;
+		  fetch(url, {
+			method: "DELETE",
+			headers: new Headers({
+			  "Content-Type": "application/json",
+			  Authorization: props.token,
+			}),
+		  })
+			.then((res) => res.json())
+			.then((userData) => {
+			  console.log(userData);
+			  setDeleteUserId("");
+			//   fetchMedia(localStorage.getItem("token"));
+			})
+			.catch((err) => console.log(err));
+		}
+	  };
+
 
   return (
 	<Container style={{marginTop: "60px"}}>
 	 	<div className="d-flex justify-content-center user_heading"><h2>Update User</h2></div>
 	 	<div className="d-flex justify-content-center" >{successMessage}</div>
-		 
+
 	 	<Form className="form" onSubmit={handleSubmit} style={{margin: "10px auto 0 auto", maxWidth: "300px"}}s>
 	 		<FormGroup className="fname">
 	 			<Label htmlFor="firstName">First Name:</Label>
@@ -115,7 +131,7 @@ const UserEdit = (props) => {
 	 			<Label htmlFor="lastName">Last Name:</Label>
 	 			<Input id="lastName" type="text" name="lastName" placeholder="Enter Last Name" onChange={(e) => setLastName(e.target.value)} value={lastName}/>
 	 		</FormGroup>	
-			
+
 	 		<FormGroup className="email">
 	 			<Label htmlFor="email">Email:</Label>
 	 			<Input id="email" type="text" name="email" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} value={email} />
@@ -127,7 +143,7 @@ const UserEdit = (props) => {
 			{changePasswordField()}
 			<div className="d-flex justify-content-between">
 				<Button className="updateButtons" type="submit">Update</Button>
-				{/* <Button className="updateButtons" onClick={() => {deleteUser(user)}}>Delete Account</Button> */}
+				<Button className="updateButtons" onClick={(deleteUserId) => {deleteUser(deleteUserId)}}>Delete Account</Button>
 			</div>
 		</Form>
 	</Container>
