@@ -3,12 +3,16 @@ import APIURL from '../helpers/environment';
 import { Table, Button, Container } from "reactstrap";
 import MediaEdit from './MediaEdit';
 import "./media.css";
+import Play from '../assets/Play.png';
+import Collection from '../assets/Collection.png';
+
+
 
 const MediaTable = (props) => {
 
 	const [media, setMedia] = useState([]);
 	const [deleteId, setDeleteId] = useState('');
-	
+
 	const fetchMedia = (token) => {
 		fetch(`${APIURL}/media`, {
 			  method: "GET",
@@ -62,38 +66,50 @@ const MediaTable = (props) => {
 
   	const mediaMapper = () => {
     return media.map((media, index) => {
-      return (
-		        <tr key={index}>
-          	<th scope="row">{media.id}</th>
-          	<td>{media.type}</td>
-          	<td>{media.title}</td>
-          	<td>{media.genre}</td>
-          	<td>{media.description}</td>
-          	<td>{media.rated}</td>
-          	<td>{media.platform}</td>
-          	<td>{media.consumed}</td>
-          	<td>{media.rating}</td>
-          	<td><Button color ="info" onClick={()=> {props.editUpdateMedia(media); props.updateOn()}}>Update</Button></td>
-            <td><Button color="dark" onClick={() => {getDeleteId(media.id)}}>Delete</Button></td>
-        </tr>
+		return (
+			<tr key={index}>
+				{/* <th scope="row">{media.id}</th> */}
+				<th scope="row"><img className="media_table_image" src={Play} alt=""/></th>
+				<td>{media.type}</td>
+				<td>{media.title}</td>
+				<td>{media.genre}</td>
+				<td>{media.description}</td>
+				<td>{media.rated}</td>
+				<td>{media.platform}</td>
+				{/* <td>{media.consumed}</td>
+				<td>{media.rating}</td> */}
+				<td><Button color ="success" onClick={()=> {props.editUpdateMedia(media); props.updateOn()}}>Update</Button></td>
+				<td><Button color="danger" onClick={() => {getDeleteId(media.id)}}>Delete</Button></td>
+        	</tr>
 	      );
     });
   };
 
   return (
+
+	<div className="main">
+	<div className="mainDiv">
+		<div className="d-flex" style={{padding: "20px"}}>
+			<img className="media_collection_image" src={Collection} alt=""/><h3>My Collection</h3>
+		</div>
+
 	<Container>
       <h5>Media Collection</h5>
       <hr />
       <Table striped>
         <thead className="mediaTable">
           <tr >
-            <th>#</th>
+            <th></th>
             <th>Type</th>
             <th>Title</th>
             <th>Genre</th>
             <th>Description</th>
             <th>MPAA/ESRB Rating</th>
             <th>Platform</th>
+			<th></th>
+			<th></th>
+            {/* <th>Consumed</th> */}
+            {/* <th>My Rating</th> */}
             <th>Watched/Read/Played</th>
             <th>My Rating</th>
           </tr>
@@ -107,7 +123,6 @@ const MediaTable = (props) => {
             updateOff={props.updateOff}
             token={props.token}
             fetchMedia={fetchMedia}
-            updateOn={props.updateOn}
           />
         ) : (
           <></>

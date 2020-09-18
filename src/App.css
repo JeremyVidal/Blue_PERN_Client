@@ -1,6 +1,11 @@
 
 body{
   background-image: linear-gradient(#6B7D73,#31525E);
+
+  /* color: white; */
+	width: 100%;
+  height:100vh;
+
   margin-top: 0%;
   margin-bottom: 0%;
   height: auto;
@@ -8,13 +13,17 @@ body{
 
   /* color: white; */
 
-
   font-family: 'Roboto Condensed', sans-serif;
-  color: white;
+  /* color: white; */
 
 
 }
+
+.auth-container {
+	/* background-image: linear-gradient(#6B7D73,#31525E); */
+
 .route {
+
 
   height: 100vh;
 }

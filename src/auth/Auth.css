@@ -1,2 +1,4 @@
 /* .toggle_button {background-color: green; color: green;} */
-.pass_error {color: white; background-color: red; margin-top: 10px; padding: 5px;}
+.auth {margin-top: 120px; height: 100vh;}
+.pass_error {color: white; background-color: #bf3a3a; margin-top: 10px; padding: 5px; font-weight: bold;}
+/* .mainNav{display: none;} */

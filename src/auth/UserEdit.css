@@ -1,7 +1,22 @@
+.user_edit {margin-top: 120px; height: 100vh;}
+.user_image {width: 60px; margin: 10px;}
 .toggle_button {text-decoration: none; color: white;}
 .toggle_button:hover {color: white;}
 .updateButtons{margin: 20px 0 20px 0;}
-.success_message {color: white;}
-.success_message {color: white; background-color: #363C45; margin-top: 10px; padding: 5px;}
+.success_message {color: white; background-color: #4CA746; margin: 10px; padding: 5px 20px 5px 20px; font-weight: bold;}
 .user_heading {color: white;}
 .form label {color: white;}
+
+.passError {width: 100%; color: white; background-color:#bf3a3a; padding: 5px; font-weight: bold;}
+
+.edit_change_button {
+	background: none!important;
+	border: none;
+	padding: 0!important;
+	color: white;
+  }
+  .edit_change_button:active{
+	background: none!important;
+	border: none;
+	padding: 0!important;
+	color: white;}

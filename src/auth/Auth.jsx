@@ -4,8 +4,6 @@ import "./Auth.css";
 
 import {
   Container,
-  Row,
-  Col,
   Form,
   FormGroup,
   Label,
@@ -109,7 +107,7 @@ const Auth = (props) => {
   };
 
     return(
-    <Container className="auth-container">
+    <Container className="auth">
 		<Form className="form" onSubmit={handleSubmit} style={{margin: "50px auto 0 auto", maxWidth: "300px"}}>
 			<div className="d-flex justify-content-center"><h3>{title()}</h3></div>
 			{signupFields()}
@@ -142,8 +140,8 @@ const Auth = (props) => {
 			</FormGroup>
 		
 			<div className="d-flex justify-content-between">
-				<Button type="submit">{title()}</Button>
-				<Button color="warning" className="toggle_button" onClick={loginToggle}>
+				<Button color="warning" type="submit">{title()}</Button>
+				<Button color="success" className="toggle_button" onClick={loginToggle}>
 				{label()}
 				</Button>
 			</div>
