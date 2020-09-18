@@ -134,9 +134,17 @@ const MediaCreate = (props) => {
           <Label htmlFor="rating"> Rating: </Label>
           <Input
             name="rating"
+            type="select"
             value={rating}
             onChange={(e) => setRating(e.target.value)}
-          />
+          >
+            <option></option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </Input>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="consumed">Consumed: </Label>

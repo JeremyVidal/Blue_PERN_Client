@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./MediaEdit.css";
-import APIURL from '../helpers/environment';
+import APIURL from "../helpers/environment";
 import {
   Button,
+  Row,
+  Col,
   Form,
   FormGroup,
   Label,
@@ -28,6 +30,8 @@ const MediaEdit = (props) => {
     props.mediaToUpdate.platform
   );
 
+  const toggle = () => props.updateOff();
+
   const mediaUpdate = (event) => {
     event.preventDefault();
     fetch(`${APIURL}/media/update/${props.mediaToUpdate.id}`, {
@@ -46,13 +50,13 @@ const MediaEdit = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        "Authorization": localStorage.getItem('token'),
+        Authorization: localStorage.getItem("token"),
       }),
     }).then((res) => {
-      props.fetchMedia(localStorage.getItem('token'));
+      props.fetchMedia(localStorage.getItem("token"));
       console.log(`${APIURL}/media/update/${props.mediaToUpdate.id}`);
       console.log(res);
-      console.log(localStorage.getItem('token'))
+      console.log(localStorage.getItem("token"));
       props.updateOff();
     });
   };
@@ -101,7 +105,7 @@ const MediaEdit = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="rated">Edit MPAA Rating:</Label>
+            <Label htmlFor="rated">Edit MPAA or ESRB Rating:</Label>
             <Input
               name="rated"
               value={editRated}
@@ -112,9 +116,17 @@ const MediaEdit = (props) => {
             <Label htmlFor="rating">Edit User Rating:</Label>
             <Input
               name="rating"
+              type="select"
               value={editRating}
               onChange={(e) => setEditRating(e.target.value)}
-            />
+            >
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </Input>
           </FormGroup>
           <FormGroup>
             <Label htmlFor="consumed">Edit Consumed:</Label>
@@ -132,7 +144,18 @@ const MediaEdit = (props) => {
               onChange={(e) => setEditPlatform(e.target.value)}
             />
           </FormGroup>
-          <Input type="submit" value="Submit"/>
+          <Row>
+            <Col>
+              <Button type="submit" color="success">
+                Submit
+              </Button>
+            </Col>
+            <Col>
+              <Button type="button" color="danger" onClick={toggle}>
+                Cancel
+              </Button>
+            </Col>
+          </Row>
         </Form>
       </ModalBody>
     </Modal>

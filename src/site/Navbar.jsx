@@ -66,7 +66,7 @@ const Sitebar = (props) => {
              
               {/* //  setMedia={props.setMedia}
               //  media={props.media}
-              //  token={props.token}/> */}
+              //  token={props.token}/> 
           </Route>
           <Route exact path="/mediaAll">
             <MediaAll />
