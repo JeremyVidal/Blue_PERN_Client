@@ -3,6 +3,7 @@ import APIURL from "../helpers/environment";
 import { Link } from "react-router-dom";
 import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
 import "./media.css";
+import Plus from '../assets/Plus.png';
 
 const MediaCreate = (props) => {
   const [type, setType] = useState("");
@@ -76,9 +77,13 @@ const MediaCreate = (props) => {
   };
 
   return (
-    <Container >
+
+	<div className="main">
+	<div className="mainDiv">
     <Form className="form" onSubmit={handleSubmit} style={{margin:"auto", maxWidth: "500px"}}>
-     <h5>Add to Your Media Collection</h5>
+	<div className="d-flex justify-content-center align-items-center media_heading"><img className="user_image" src={Plus} alt=""/><h3>Add to Your Media Collection</h3></div>
+
+
           <div className="d-flex justify-content-right"></div>
           <FormGroup style={{marginBottom: '5px'}}>
             <Label htmlFor="type" style ={{marginBottom: '1px'}} > Type: </Label>
@@ -132,7 +137,7 @@ const MediaCreate = (props) => {
             />
           </FormGroup>
           <FormGroup style={{marginBottom: '5px'}}>
-            <Label htmlFor="rating"  style ={{marginBottom: '1px'}}> Rating: </Label>
+            <Label htmlFor="rating"  style ={{marginBottom: '1px'}}> My Rating: </Label>
             <Input bsSize="sm" 
               name="rating"
               type="select"
@@ -164,10 +169,14 @@ const MediaCreate = (props) => {
               onChange={(e) => setPlatform(e.target.value)}
             />
           </FormGroup>
-          <Button type="submit">Submit</Button>
+		  <div className="d-flex justify-content-between">
+
+          <Button color="success" type="submit">Submit</Button>
           <Button className="nav_buttons" color="info"><Link className="nav_links" to="/mediaMine">View My Collection</Link></Button>
+		  </div>
         </Form>
-   </Container>
+   </div>
+   </div>
 
   )
 };

@@ -1,4 +1,4 @@
-.user_edit {margin-top: 120px; height: 100vh;}
+.user_edit {margin-top: 120px; margin-bottom: 25px; height: 100vh;}
 .user_image {width: 60px; margin: 10px;}
 .toggle_button {text-decoration: none; color: white;}
 .toggle_button:hover {color: white;}

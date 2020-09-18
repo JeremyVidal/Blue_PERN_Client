@@ -1,7 +1,4 @@
 import React, {useState}from "react";
-import { Link } from "react-router-dom";
-
-import React, {useState, useEffect}from "react";
 import { Route, Switch, Link } from "react-router-dom";
 
 // import Home from "./Home";
@@ -44,7 +41,6 @@ const Sitebar = (props) => {
 		<img className="media_image" src={Media} alt=""/><h3>My Media Collection</h3>
 		</div>
 
-         <h4>My Media Collection</h4>
 
         </NavbarBrand>
       <Navbar color="black" light expand="md">

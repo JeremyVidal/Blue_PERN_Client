@@ -101,16 +101,12 @@ const UserEdit = (props) => {
 	}
 	  
   };
-  	// const getDeleteId = (id) => {
-	// 	setDeleteId(id)
-  	// }
-
 
 	useEffect(() => {
 		if(deleteUser === true){
 			deleteAccount();
 			setDeleteUser(false);
-			props.clearToken(localStorage.getItem('token'));
+			// props.clearToken(localStorage.getItem('token'));
 		}
 	}, [deleteUser]);
 	
@@ -130,19 +126,6 @@ const UserEdit = (props) => {
 		.catch(err => console.log(err))
     }
 	
-	const changePasswordField = () =>
-	  !changePasswordToggle ? (
-		  <div>
-				<FormGroup className="password">
-				  <Label htmlFor="password">Password:</Label>
-				  <Input id="password" type="text" name="password" placeholder="Enter New Password" onChange={(e) => setPassword(e.target.value)} value={password} />
-			  </FormGroup>
-			</div>
-		) : null;
-
-  return (
-	<Container className="user_edit" >
-
 
   const changePasswordField = () =>
     !changePasswordToggle ? (
@@ -155,41 +138,19 @@ const UserEdit = (props) => {
       	</div>
 	  ) : null;
 
-	  const getDeleteUserId = (id) => {
-		setDeleteUserId(id);
-	}
+	//   const getDeleteUserId = (id) => {
+	// 	setDeleteUserId(id);
+	// }
 
 
-	  useEffect(() => {
-		deleteUser(deleteUserId);
-	  }, [deleteUserId]);
+	//   useEffect(() => {
+	// 	deleteUser(deleteUserId);
+	//   }, [deleteUserId]);
 
-	  const deleteUser = (token) => {
-		if (deleteUserId) {
-		  let url = `${APIURL}/user/`;
-		  fetch(url, {
-			method: "DELETE",
-			headers: new Headers({
-			  "Content-Type": "application/json",
-			  Authorization: token,
-			}),
-		  })
-			.then((res) => res.json())
-			.then((userData) => {
-			  console.log(userData);
-			  setDeleteUserId('');
-			//   fetchMedia(localStorage.getItem("token"));
-			})
-			.catch((err) => console.log(err));
-		}
-	  };
 
 
   return (
-	<Container style={{marginTop: "60px"}}>
-	 	<div className="d-flex justify-content-center user_heading"><h5>Update User</h5></div>
-	 	<div className="d-flex justify-content-center" >{successMessage}</div>
-
+	<Container style={{marginTop: "120px"}}>
 	 	<Form className="form" onSubmit={handleSubmit} style={{margin: "10px auto 0 auto", maxWidth: "300px"}}s>
 	 	<div className="d-flex justify-content-center align-items-center user_heading"><img className="user_image" src={User} alt=""/><h2>Update User</h2></div>
 	 	<div className="d-flex justify-content-center" style={{marginBottom: '20px'}}>{ successMessage }{ passError }</div>
@@ -214,8 +175,8 @@ const UserEdit = (props) => {
 			
 			<div className="d-flex justify-content-between">
 
-				<Button className="updateButtons" type="submit">Update</Button>
-				<Button className="updateButtons" onClick={() =>{getDeleteUserId(false)}}>Delete Account</Button>
+				<Button className="updateButtons" color="success" type="submit">Update</Button>
+				<Button className="updateButtons" color="danger" onClick={() =>{deleteAccount()}}>Delete Account</Button>
 
 			</div>
 		</Form>
