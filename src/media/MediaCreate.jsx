@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
+import { Link } from "react-router-dom";
 import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
 import "./media.css";
 
@@ -77,7 +78,7 @@ const MediaCreate = (props) => {
   return (
     <Container >
     <Form className="form" onSubmit={handleSubmit} style={{margin:"auto", maxWidth: "500px"}}>
-     <h5>Add to your Media Collection</h5>
+     <h5>Add to Your Media Collection</h5>
           <div className="d-flex justify-content-right"></div>
           <FormGroup style={{marginBottom: '5px'}}>
             <Label htmlFor="type" style ={{marginBottom: '1px'}} > Type: </Label>
@@ -164,6 +165,7 @@ const MediaCreate = (props) => {
             />
           </FormGroup>
           <Button type="submit">Submit</Button>
+          <Button className="nav_buttons" color="info"><Link className="nav_links" to="/mediaMine">View My Collection</Link></Button>
         </Form>
    </Container>
 

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Auth from "./auth/Auth";
 import MediaTable from "./media/MediaTable";
-// import MediaIndex from "../media/MediaIndex";
 import MediaCreate from "./media/MediaCreate";
-// import MediaActions from "../media/MediaActions";
 import UserEdit from "./auth/UserEdit";
 import MediaAll from "./media/MediaAll";
 import MediaIndex from "./media/MediaIndex";
 import MediaActions from "./media/MediaActions";
 import Header from "./site/Header";
+// import ProtectedRoute from '../src/ProtectedRoute';
+// import LandingPage from "../src/LandingPage";
 import Sitebar from "./site/Navbar";
 import Footer from "./site/Footer";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -62,7 +62,7 @@ function App() {
       <Route exact path="/">    <Auth updateToken={updateToken} /></Route>
     );
   };
-
+  
   return (
     <div id="main">
       {/* <Header /> */}
@@ -77,10 +77,13 @@ function App() {
           mediaToUpdate={mediaToUpdate}
           updateOn={updateOn}
           updateOff={updateOff}
-        />
+          />
         <div className="route">
         <Switch>
-        {protectedViews()}
+          <Route exact path="/">
+          {sessionToken === localStorage.getItem("token")  ?  <Redirect to="/mediaCreate" /> : <Auth updateToken={updateToken} />}
+          </Route> 
+          {protectedViews()}
           <Route exact path="/mediaCreate">
             <MediaCreate setMedia={setMedia} />
           </Route>
@@ -96,7 +99,7 @@ function App() {
               updateActive={updateActive}
               mediaToUpdate={mediaToUpdate}
 			        updateOff={updateOff}
-            />
+              />
           </Route>
           <Route exact path="/userEdit">
             <UserEdit token={sessionToken} />
@@ -112,3 +115,9 @@ function App() {
 }
 
 export default App;
+
+  {/* <Route exact path='/' token={sessionToken} render={
+   <Auth updateToken={updateToken} />} />
+  
+  <ProtectedRoute exact path='/mediaCreate'><MediaCreate setMedia={setMedia} /> </ProtectedRoute>
+  <Route exact path='/landingpage'><LandingPage /></Route>  */}
