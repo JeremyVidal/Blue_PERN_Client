@@ -13,6 +13,7 @@ const MediaCreate = (props) => {
   const [consumed, setConsumed] = useState("");
   const [platform, setPlatform] = useState("");
   const [media, setMedia] = useState([]);
+  const [conf, setConf] = useState('form submitted');
 
   const fetchMedia = (token) => {
     fetch(`${APIURL}/media`, {
@@ -70,21 +71,17 @@ const MediaCreate = (props) => {
         setPlatform("");
         fetchMedia(localStorage.getItem("token"));
       });
+      
   };
 
   return (
-     <Container >
+    <Container >
+    <Form className="form" onSubmit={handleSubmit} style={{margin:"auto", maxWidth: "500px"}}>
      <h5>Add to your Media Collection</h5>
-      <Form className="form" onSubmit={handleSubmit} style={{margin:"auto", maxWidth: "500px"}}>
-        <Form
-          className="form"
-          onSubmit={handleSubmit}
-          style={{ margin: "50px", maxWidth: "300px" }}
-        >
           <div className="d-flex justify-content-right"></div>
-          <FormGroup>
-            <Label htmlFor="type"> Type: </Label>
-            <Input
+          <FormGroup style={{marginBottom: '5px'}}>
+            <Label htmlFor="type" style ={{marginBottom: '1px'}} > Type: </Label>
+            <Input bsSize="sm" 
               id="formTypes"
               type="select"
               name="type"
@@ -98,44 +95,44 @@ const MediaCreate = (props) => {
               <option value="Game">Game</option>
             </Input>
           </FormGroup>
-          <FormGroup>
-            <Label htmlFor="title">Title:</Label>
-            <Input
+           <FormGroup style={{marginBottom: '5px'}}>
+            <Label htmlFor="title"  style ={{marginBottom: '1px'}}>Title:</Label>
+            <Input bsSize="sm" 
               name="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
             />
           </FormGroup>
-          <FormGroup>
-            <Label htmlFor="genre">Genre:</Label>
-            <Input
+           <FormGroup style={{marginBottom: '5px'}}>
+            <Label htmlFor="genre"  style ={{marginBottom: '1px'}}>Genre:</Label>
+            <Input bsSize="sm" 
               name="genre"
               value={genre}
               onChange={(e) => setGenre(e.target.value)}
               required
             />
           </FormGroup>
-          <FormGroup>
-            <Label htmlFor="description">Description:</Label>
-            <Input
+          <FormGroup style={{marginBottom: '5px'}}>
+            <Label htmlFor="description"  style ={{marginBottom: '1px'}}>Description:</Label>
+            <Input bsSize="sm" 
               name="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
             />
           </FormGroup>
-          <FormGroup>
-            <Label htmlFor="rated"> MPAA/ESRB Rating: </Label>
-            <Input
+          <FormGroup style={{marginBottom: '5px'}}>
+            <Label htmlFor="rated"  style ={{marginBottom: '1px'}}> MPAA/ESRB Rating: </Label>
+            <Input bsSize="sm" 
               name="rated"
               value={rated}
               onChange={(e) => setRated(e.target.value)}
             />
           </FormGroup>
-          <FormGroup>
-            <Label htmlFor="rating"> Rating: </Label>
-            <Input
+          <FormGroup style={{marginBottom: '5px'}}>
+            <Label htmlFor="rating"  style ={{marginBottom: '1px'}}> Rating: </Label>
+            <Input bsSize="sm" 
               name="rating"
               type="select"
               max="5"
@@ -150,17 +147,17 @@ const MediaCreate = (props) => {
               <option>5</option>
             </Input>
           </FormGroup>
-          <FormGroup>
-            <Label htmlFor="consumed">Watched/Read/Played?: </Label>
-            <Input
+          <FormGroup style={{marginBottom: '5px'}}>
+            <Label htmlFor="consumed"  style ={{marginBottom: '1px'}}>Watched/Read/Played?: </Label>
+            <Input bsSize="sm" 
               name="consumed"
               value={consumed}
               onChange={(e) => setConsumed(e.target.value)}
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="platform">Platform: </Label>
-            <Input
+            <Label htmlFor="platform"  style ={{marginBottom: '1px'}}>Platform: </Label>
+            <Input bsSize="sm" 
               name="platform"
               value={platform}
               onChange={(e) => setPlatform(e.target.value)}
@@ -169,7 +166,8 @@ const MediaCreate = (props) => {
           <Button type="submit">Submit</Button>
         </Form>
    </Container>
-  );
+
+  )
 };
 
 export default MediaCreate;

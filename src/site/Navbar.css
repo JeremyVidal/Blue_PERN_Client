@@ -11,11 +11,13 @@
 
 #navContainer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: flex-end;
+    align-content: space-around;
     }
 
-h4 {
+/* h4 {
     align-content: flex-start;
+    float: left;
 
-}
+} */
