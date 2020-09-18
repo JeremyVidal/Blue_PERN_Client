@@ -38,6 +38,7 @@ Patrick Walls  |  P-Walls
 **Resources**
 
 [React Bootstrap ref:Nav](https://react-bootstrap.github.io/components/navs/)
+
 [React Navigation Actions](https://reactnavigation.org/docs/navigation-actions/)
 
 
