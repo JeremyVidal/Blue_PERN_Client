@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
-import { Table } from "reactstrap";
+import { Container, Table } from "reactstrap";
 
 const MediaAll = (props) => {
   const [media, setMedia] = useState([]);
@@ -50,8 +50,7 @@ const MediaAll = (props) => {
   };
 
   return (
-        <div className="main">
-        <div className="mainDiv">
+    <Container>
       <h5  className="mediaTable">Media in All Collections</h5>
       <hr />
       <Table striped>
@@ -71,8 +70,7 @@ const MediaAll = (props) => {
         </thead>
         <tbody  className="mediaTable">{mediaMapper(props.token)}</tbody>
       </Table>
-    </div>
-    </div>
+   </Container>
   );
 };
 export default MediaAll;

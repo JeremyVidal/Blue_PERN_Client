@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIURL from '../helpers/environment';
-import { Table, Button } from "reactstrap";
+import { Table, Button, Container } from "reactstrap";
 import MediaEdit from './MediaEdit';
 import "./media.css";
 
@@ -81,9 +81,8 @@ const MediaTable = (props) => {
   };
 
   return (
-	<div className="main">
-	<div className="mainDiv">
-      <h3>Media Collection</h3>
+	<Container>
+      <h5>Media Collection</h5>
       <hr />
       <Table striped>
         <thead className="mediaTable">
@@ -113,8 +112,7 @@ const MediaTable = (props) => {
         ) : (
           <></>
         )}
-    </div>
-	</div>
+ </Container>
   );
 }
 export default MediaTable;

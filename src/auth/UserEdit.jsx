@@ -11,7 +11,7 @@ const UserEdit = (props) => {
 	const [password, setPassword] = useState('');
 	const [changePasswordToggle, setChangePasswordToggle] = useState(true);
 	const[successMessage, setSuccessMessage] = useState('');
-	const [deleteUserId, setDeleteUserId] = useState("");
+	const [deleteUserId, setDeleteUserId] = useState('');
 	// const [userData, setUserData] = useState('');
 
   	const passwordToggle = (event) => {
@@ -90,26 +90,29 @@ const UserEdit = (props) => {
       	</div>
 	  ) : null;
 
+	  const getDeleteUserId = (id) => {
+		setDeleteUserId(id);
+	}
 
 
 	  useEffect(() => {
 		deleteUser(deleteUserId);
 	  }, [deleteUserId]);
-	
-	  const deleteUser = () => {
+
+	  const deleteUser = (token) => {
 		if (deleteUserId) {
-		  let url = `${APIURL}/user/${deleteUserId}`;
+		  let url = `${APIURL}/user/`;
 		  fetch(url, {
 			method: "DELETE",
 			headers: new Headers({
 			  "Content-Type": "application/json",
-			  Authorization: props.token,
+			  Authorization: token,
 			}),
 		  })
 			.then((res) => res.json())
 			.then((userData) => {
 			  console.log(userData);
-			  setDeleteUserId("");
+			  setDeleteUserId('');
 			//   fetchMedia(localStorage.getItem("token"));
 			})
 			.catch((err) => console.log(err));
@@ -119,7 +122,7 @@ const UserEdit = (props) => {
 
   return (
 	<Container style={{marginTop: "60px"}}>
-	 	<div className="d-flex justify-content-center user_heading"><h2>Update User</h2></div>
+	 	<div className="d-flex justify-content-center user_heading"><h5>Update User</h5></div>
 	 	<div className="d-flex justify-content-center" >{successMessage}</div>
 
 	 	<Form className="form" onSubmit={handleSubmit} style={{margin: "10px auto 0 auto", maxWidth: "300px"}}s>
@@ -143,7 +146,7 @@ const UserEdit = (props) => {
 			{changePasswordField()}
 			<div className="d-flex justify-content-between">
 				<Button className="updateButtons" type="submit">Update</Button>
-				<Button className="updateButtons" onClick={(deleteUserId) => {deleteUser(deleteUserId)}}>Delete Account</Button>
+				<Button className="updateButtons" onClick={() =>{getDeleteUserId(false)}}>Delete Account</Button>
 			</div>
 		</Form>
 	</Container>
