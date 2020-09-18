@@ -1,3 +1,49 @@
+## Learning React
+
+#### What are the requirements for the application to be considered Minimum Viable Product(MVP)?
+
+**Client**
+
+Must be written in React
+Must utilize custom styling in ALL VIEWS
+Your project should not look like the Workout Log or the Pie Client
+Add form validation to user signup/login:
+An email address should look like ‘test@test.com’,
+If a username is used instead of an email address, the username should be at least 4 or more characters and needs to include at least one (1) number or special character.
+Password should include 5 or more characters
+Must implement react-router
+Navbar /sidebar etc...
+Must connect with the server’s deployed URL
+Must display the functionality of the minimum 8 endpoints in the server
+Must be deployed
+
+**User story:**
+Sometimes I have trouble deciding what to read next. I would like a website that allows me to search by specific criteria like genre to help me decide what to read. I would also like to be able to store things I am interested in so I can come back and look at that list later. 
+
+### Mission Statement
+
+To allow users to create their own account that allows them to browse and store information on media types such as movies, books, and games.  Users will be able to save a list of media descriptions, ratings, etc.. on their account. 
+
+**Planning Document**
+[Google Doc Planning Document](https://docs.google.com/document/d/1VmRJjEDiV1e3-jRLncTRSR7Ga73T1Pm5mmB2EqZ-5Kw/edit#heading=h.b9u4zrkwzf7f)
+
+
+Team Members | GitHub Name
+------------ | -------------
+Amber Janzen  |  amberjanzen
+Summer Kerekes |  Phebesue
+Jeremy Vidal  |  JeremyVidal
+Patrick Walls  |  P-Walls
+
+**Resources**
+
+[React Bootstrap ref:Nav](https://react-bootstrap.github.io/components/navs/)
+[React Navigation Actions](https://reactnavigation.org/docs/navigation-actions/)
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
