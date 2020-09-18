@@ -1,3 +1,7 @@
 .toggle_button {text-decoration: none; color: white;}
 .toggle_button:hover {color: white;}
 .updateButtons{margin: 20px 0 20px 0;}
+.success_message {color: white;}
+.success_message {color: white; background-color: #363C45; margin-top: 10px; padding: 5px;}
+.user_heading {color: white;}
+.form label {color: white;}

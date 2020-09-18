@@ -1,10 +1,10 @@
-import React, {useState, UseEffect}from "react";
-import { Route, Link, Switch } from "react-router-dom";
-import Home from "./Home";
+import React, {useState, useEffect}from "react";
+import { Link } from "react-router-dom";
+// import Home from "./Home";
 import MediaTable from "../media/MediaTable";
-import MediaIndex from "../media/MediaIndex";
+// import MediaIndex from "../media/MediaIndex";
 import MediaCreate from "../media/MediaCreate";
-import MediaActions from "../media/MediaActions";
+// import MediaActions from "../media/MediaActions";
 import MediaAll from "../media/MediaAll";
 import UserEdit from "../auth/UserEdit";
 import "./Navbar.css";
@@ -19,17 +19,16 @@ import {
 } from "reactstrap";
 
 
-
-
-
 const Sitebar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  // const [media, setMedia] = useState([]);
+	// const [deleteId, setDeleteId] = useState('');
 
-  const toggle = () => {
-    let newIsOpen = !isOpen;
-    setIsOpen(newIsOpen);
+	const toggle = () => {
+		let newIsOpen = !isOpen;
+		setIsOpen(newIsOpen);
   };
+
+
   return (
     <div className="sidebar">
       <div className="mainNav">
@@ -60,8 +59,7 @@ const Sitebar = (props) => {
       </Navbar>
       
     	</div>
-     
-      <div className="route">
+      {/* <div className="route">
         <Switch>
           <Route exact path="/mediaCreate">
                <MediaCreate />
@@ -81,17 +79,15 @@ const Sitebar = (props) => {
               updateOn={props.updateOn}
               updateActive={props.updateActive}
               mediaToUpdate={props.mediaToUpdate}
-              updateOff={props.updateOff}
+			  updateOff={props.updateOff}
             />
           </Route>
           <Route exact path="/userEdit">
             <UserEdit token={props.token} />
           </Route>
-          {/* <Route exact path="/userDelete">
-            <UserDelete />
-          </Route> */}
         </Switch>
-      </div>
+
+      </div> */}
     </div>
   );
 };

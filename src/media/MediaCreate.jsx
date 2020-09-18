@@ -13,6 +13,7 @@ const MediaCreate = (props) => {
   const [platform, setPlatform] = useState("");
   const [media, setMedia] = useState([]);
 
+
   const fetchMedia = (token) => {
 		fetch(`${APIURL}/media`, {
 			// fetch(`${APIURL}/media/all`, {
@@ -30,10 +31,11 @@ const MediaCreate = (props) => {
 		  })
 	  };
 	
-	  useEffect(() => {
+	 useEffect(() => {
 
-		fetchMedia(localStorage.getItem('token'));
-	  }, []);
+	fetchMedia(localStorage.getItem('token'));
+	 }, []);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,8 +70,8 @@ const MediaCreate = (props) => {
         setRating(0);
         setConsumed("");
         setPlatform("");
-        // props.fetchMedia();
         fetchMedia(localStorage.getItem('token'));
+
       });
     };
     
