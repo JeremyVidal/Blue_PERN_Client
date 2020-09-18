@@ -1,5 +1,9 @@
 import React, {useState}from "react";
 import { Link } from "react-router-dom";
+
+import React, {useState, useEffect}from "react";
+import { Route, Switch, Link } from "react-router-dom";
+
 // import Home from "./Home";
 // import MediaTable from "../media/MediaTable";
 // import MediaIndex from "../media/MediaIndex";
@@ -33,12 +37,17 @@ const Sitebar = (props) => {
   return (
     <div className="sidebar">
       <div className="mainNav">
-      <Navbar color="black" light expand="md">
+        <div id="navContainer">
         <NavbarBrand style={{color: "white"}}>
+
 		<div className="d-flex">
 		<img className="media_image" src={Media} alt=""/><h3>My Media Collection</h3>
 		</div>
+
+         <h4>My Media Collection</h4>
+
         </NavbarBrand>
+      <Navbar color="black" light expand="md">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="nav-fill w-100" >
@@ -60,13 +69,14 @@ const Sitebar = (props) => {
           </Nav>
         </Collapse>
       </Navbar>
+        </div>
       
     	</div>
       {/* <div className="route">
         <Switch>
           <Route exact path="/mediaCreate">
                <MediaCreate />
-             
+               </Route
               {/* //  setMedia={props.setMedia}
               //  media={props.media}
               //  token={props.token}/> 

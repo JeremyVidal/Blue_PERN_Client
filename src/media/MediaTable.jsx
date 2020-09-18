@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIURL from '../helpers/environment';
-import { Table, Button } from "reactstrap";
+import { Table, Button, Container } from "reactstrap";
 import MediaEdit from './MediaEdit';
 import "./media.css";
 import Play from '../assets/Play.png';
@@ -86,11 +86,16 @@ const MediaTable = (props) => {
   };
 
   return (
+
 	<div className="main">
 	<div className="mainDiv">
 		<div className="d-flex" style={{padding: "20px"}}>
 			<img className="media_collection_image" src={Collection} alt=""/><h3>My Collection</h3>
 		</div>
+
+	<Container>
+      <h5>Media Collection</h5>
+      <hr />
       <Table striped>
         <thead className="mediaTable">
           <tr >
@@ -99,12 +104,14 @@ const MediaTable = (props) => {
             <th>Title</th>
             <th>Genre</th>
             <th>Description</th>
-            <th>Rated</th>
+            <th>MPAA/ESRB Rating</th>
             <th>Platform</th>
 			<th></th>
 			<th></th>
             {/* <th>Consumed</th> */}
             {/* <th>My Rating</th> */}
+            <th>Watched/Read/Played</th>
+            <th>My Rating</th>
           </tr>
         </thead>
         <tbody className="mediaTable">{mediaMapper()}</tbody>
@@ -120,8 +127,7 @@ const MediaTable = (props) => {
         ) : (
           <></>
         )}
-    </div>
-	</div>
+ </Container>
   );
 }
 export default MediaTable;

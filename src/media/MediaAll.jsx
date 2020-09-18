@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
+
 import { Table } from "reactstrap";
 import Play from '../assets/Play.png';
 import Collection from '../assets/Collection.png';
 import "./media.css";
+import { Container, Table } from "reactstrap";
 
 
 const MediaAll = (props) => {
@@ -56,12 +58,17 @@ const MediaAll = (props) => {
   };
 
   return (
+
         <div className="main">
         <div className="mainDiv">
 		<div className="d-flex" style={{padding: "20px"}}>
 			<img className="media_collection_image" src={Collection} alt=""/><h3>All Media Collections</h3>
 		</div>
       {/* <h3  className="mediaTable">Media in All Collections</h3> */}
+
+    <Container>
+      <h5  className="mediaTable">Media in All Collections</h5>
+      <hr />
       <Table striped>
         <thead  className="mediaTable" > 
           <tr>
@@ -79,8 +86,7 @@ const MediaAll = (props) => {
         </thead>
         <tbody  className="mediaTable">{mediaMapper(props.token)}</tbody>
       </Table>
-    </div>
-    </div>
+   </Container>
   );
 };
 export default MediaAll;

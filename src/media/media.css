@@ -11,3 +11,13 @@ h3{
 .mediaTable  {border: none;}
 .media_table_image {width: 30px;}
 .media_collection_image {width: 40px; margin-right: 10px;}
+
+h5 {
+  color: white;
+  text-align: center;
+}
+
+Label {
+  margin-bottom: 50px;
+}
+

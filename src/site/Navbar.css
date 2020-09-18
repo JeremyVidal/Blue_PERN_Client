@@ -1,7 +1,3 @@
-/* NavItem{
-    display: flex;
-    justify-content: space-between;
-} */
 .nav_buttons{
     margin: 0 5px;
 }
@@ -12,6 +8,22 @@
 .nav_links:hover{
     text-decoration: none; color: white;
 }
+
 .sidebar{position: fixed; top: 0; width: 100%;}
 
 .media_image {width: 60px;}
+
+
+#navContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    align-content: space-around;
+    }
+
+/* h4 {
+    align-content: flex-start;
+    float: left;
+
+} */
+

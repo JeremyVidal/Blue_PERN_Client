@@ -12,7 +12,7 @@ import MediaAll from "./media/MediaAll";
 import Sitebar from "./site/Navbar";
 import Footer from "./site/Footer";
 import "./App.css";
-import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -95,7 +95,7 @@ function App() {
               updateOn={updateOn}
               updateActive={updateActive}
               mediaToUpdate={mediaToUpdate}
-			  updateOff={updateOff}
+			        updateOff={updateOff}
             />
           </Route>
           <Route exact path="/userEdit">

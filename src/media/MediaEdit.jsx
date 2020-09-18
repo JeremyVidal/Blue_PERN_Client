@@ -3,8 +3,6 @@ import "./MediaEdit.css";
 import APIURL from "../helpers/environment";
 import {
   Button,
-  Row,
-  Col,
   Form,
   FormGroup,
   Label,
@@ -73,6 +71,7 @@ const MediaEdit = (props) => {
               name="type"
               value={editType}
               onChange={(e) => setEditType(e.target.value)}
+              required
             >
               <option></option>
               <option value="Movie">Movie</option>
@@ -86,6 +85,7 @@ const MediaEdit = (props) => {
               name="title"
               value={editTitle}
               onChange={(e) => setEditTitle(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup>
@@ -94,6 +94,7 @@ const MediaEdit = (props) => {
               name="genre"
               value={editGenre}
               onChange={(e) => setEditGenre(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup>
@@ -102,10 +103,11 @@ const MediaEdit = (props) => {
               name="description"
               value={editDescription}
               onChange={(e) => setEditDescription(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="rated">Edit MPAA or ESRB Rating:</Label>
+            <Label htmlFor="rated">Edit MPAA/ESRB Rating:</Label>
             <Input
               name="rated"
               value={editRated}
@@ -117,6 +119,7 @@ const MediaEdit = (props) => {
             <Input
               name="rating"
               type="select"
+              max="5"
               value={editRating}
               onChange={(e) => setEditRating(e.target.value)}
             >
@@ -129,7 +132,7 @@ const MediaEdit = (props) => {
             </Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="consumed">Edit Consumed:</Label>
+            <Label htmlFor="consumed">Watched/Read/Played?:</Label>
             <Input
               name="consumed"
               value={editConsumed}
@@ -144,18 +147,12 @@ const MediaEdit = (props) => {
               onChange={(e) => setEditPlatform(e.target.value)}
             />
           </FormGroup>
-          <Row>
-            <Col>
-              <Button type="submit" color="success">
-                Submit
-              </Button>
-            </Col>
-            <Col>
-              <Button type="button" color="danger" onClick={toggle}>
-                Cancel
-              </Button>
-            </Col>
-          </Row>
+          <Button type="submit" color="success">
+            Submit
+          </Button>{" "}
+          <Button color="danger" onClick={toggle}>
+            Cancel
+          </Button>
         </Form>
       </ModalBody>
     </Modal>
