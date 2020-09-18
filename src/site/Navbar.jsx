@@ -32,10 +32,11 @@ const Sitebar = (props) => {
   return (
     <div className="sidebar">
       <div className="mainNav">
-      <Navbar color="black" light expand="md">
+        <div id="navContainer">
         <NavbarBrand style={{color: "white"}}>
-         <h3>My Media Collection</h3>
+         <h4>My Media Collection</h4>
         </NavbarBrand>
+      <Navbar color="black" light expand="md">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="nav-fill w-100" >
@@ -57,6 +58,7 @@ const Sitebar = (props) => {
           </Nav>
         </Collapse>
       </Navbar>
+        </div>
       
     	</div>
       {/* <div className="route">

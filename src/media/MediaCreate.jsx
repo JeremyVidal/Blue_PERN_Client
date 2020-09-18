@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
+import "./media.css";
 
 const MediaCreate = (props) => {
   const [type, setType] = useState("");
@@ -72,11 +73,9 @@ const MediaCreate = (props) => {
   };
 
   return (
-    <div className="main">
-      <div className="mainDiv">
-        <h3>Add to your Media Collection</h3>
-        <br />
-        <h5>Select Media Type</h5>
+     <Container >
+     <h5>Add to your Media Collection</h5>
+      <Form className="form" onSubmit={handleSubmit} style={{margin:"auto", maxWidth: "500px"}}>
         <Form
           className="form"
           onSubmit={handleSubmit}
@@ -169,8 +168,7 @@ const MediaCreate = (props) => {
           </FormGroup>
           <Button type="submit">Submit</Button>
         </Form>
-      </div>
-    </div>
+   </Container>
   );
 };
 
