@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./MediaEdit.css";
-import APIURL from '../helpers/environment';
+import APIURL from "../helpers/environment";
 import {
   Button,
   Form,
@@ -48,13 +48,13 @@ const MediaEdit = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        "Authorization": localStorage.getItem('token'),
+        Authorization: localStorage.getItem("token"),
       }),
     }).then((res) => {
-      props.fetchMedia(localStorage.getItem('token'));
+      props.fetchMedia(localStorage.getItem("token"));
       console.log(`${APIURL}/media/update/${props.mediaToUpdate.id}`);
       console.log(res);
-      console.log(localStorage.getItem('token'))
+      console.log(localStorage.getItem("token"));
       props.updateOff();
     });
   };
@@ -71,6 +71,7 @@ const MediaEdit = (props) => {
               name="type"
               value={editType}
               onChange={(e) => setEditType(e.target.value)}
+              required
             >
               <option></option>
               <option value="Movie">Movie</option>
@@ -84,6 +85,7 @@ const MediaEdit = (props) => {
               name="title"
               value={editTitle}
               onChange={(e) => setEditTitle(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup>
@@ -92,6 +94,7 @@ const MediaEdit = (props) => {
               name="genre"
               value={editGenre}
               onChange={(e) => setEditGenre(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup>
@@ -100,6 +103,7 @@ const MediaEdit = (props) => {
               name="description"
               value={editDescription}
               onChange={(e) => setEditDescription(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup>
@@ -143,9 +147,12 @@ const MediaEdit = (props) => {
               onChange={(e) => setEditPlatform(e.target.value)}
             />
           </FormGroup>
-          <Button type="submit" color="success">Submit</Button>{' '}
-          <Button color="danger" onClick={toggle}>Cancel</Button>
-
+          <Button type="submit" color="success">
+            Submit
+          </Button>{" "}
+          <Button color="danger" onClick={toggle}>
+            Cancel
+          </Button>
         </Form>
       </ModalBody>
     </Modal>
