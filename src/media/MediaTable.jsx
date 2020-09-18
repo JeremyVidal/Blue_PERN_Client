@@ -93,10 +93,10 @@ const MediaTable = (props) => {
             <th>Title</th>
             <th>Genre</th>
             <th>Description</th>
-            <th>Rated</th>
+            <th>MPAA/ESRB Rating</th>
             <th>Platform</th>
-            {/* <th>Consumed</th> */}
-            {/* <th>My Rating</th> */}
+            <th>Watched/Read/Played</th>
+            <th>My Rating</th>
           </tr>
         </thead>
         <tbody className="mediaTable">{mediaMapper()}</tbody>

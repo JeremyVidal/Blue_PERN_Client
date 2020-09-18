@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./MediaEdit.css";
-import APIURL from "../helpers/environment";
+import APIURL from '../helpers/environment';
 import {
   Button,
-  Row,
-  Col,
   Form,
   FormGroup,
   Label,
@@ -50,13 +48,13 @@ const MediaEdit = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
+        "Authorization": localStorage.getItem('token'),
       }),
     }).then((res) => {
-      props.fetchMedia(localStorage.getItem("token"));
+      props.fetchMedia(localStorage.getItem('token'));
       console.log(`${APIURL}/media/update/${props.mediaToUpdate.id}`);
       console.log(res);
-      console.log(localStorage.getItem("token"));
+      console.log(localStorage.getItem('token'))
       props.updateOff();
     });
   };
@@ -105,7 +103,7 @@ const MediaEdit = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="rated">Edit MPAA or ESRB Rating:</Label>
+            <Label htmlFor="rated">Edit MPAA/ESRB Rating:</Label>
             <Input
               name="rated"
               value={editRated}
@@ -117,6 +115,7 @@ const MediaEdit = (props) => {
             <Input
               name="rating"
               type="select"
+              max="5"
               value={editRating}
               onChange={(e) => setEditRating(e.target.value)}
             >
@@ -129,7 +128,7 @@ const MediaEdit = (props) => {
             </Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="consumed">Edit Consumed:</Label>
+            <Label htmlFor="consumed">Watched/Read/Played?:</Label>
             <Input
               name="consumed"
               value={editConsumed}
@@ -144,18 +143,9 @@ const MediaEdit = (props) => {
               onChange={(e) => setEditPlatform(e.target.value)}
             />
           </FormGroup>
-          <Row>
-            <Col>
-              <Button type="submit" color="success">
-                Submit
-              </Button>
-            </Col>
-            <Col>
-              <Button type="button" color="danger" onClick={toggle}>
-                Cancel
-              </Button>
-            </Col>
-          </Row>
+          <Button type="submit" color="success">Submit</Button>{' '}
+          <Button color="danger" onClick={toggle}>Cancel</Button>
+
         </Form>
       </ModalBody>
     </Modal>
