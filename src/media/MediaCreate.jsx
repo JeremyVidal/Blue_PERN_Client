@@ -123,7 +123,7 @@ const MediaCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="rated">Rated: </Label>
+          <Label htmlFor="rated"> MPAA/ESRB Rating: </Label>
           <Input
             name="rated"
             value={rated}
@@ -135,6 +135,7 @@ const MediaCreate = (props) => {
           <Input
             name="rating"
             type="select"
+            max="5"
             value={rating}
             onChange={(e) => setRating(e.target.value)}
           >
@@ -147,7 +148,7 @@ const MediaCreate = (props) => {
           </Input>
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="consumed">Consumed: </Label>
+          <Label htmlFor="consumed">Watched/Read/Played?: </Label>
           <Input
             name="consumed"
             value={consumed}
