@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import APIURL from "../helpers/environment";
 import MediaCreate from "./MediaCreate";
+import MediaTable from "./MediaTable";
 import MediaActions from "./MediaActions";
 import MediaEdit from "./MediaEdit";
 import MediaTable from "./MediaTable";
@@ -20,7 +21,6 @@ const MediaIndex = (props) => {
 	// 		"Content-Type": "application/json",
 	// 		Authorization: props.token,
 	// 	}),
-
 	// 	})
 	// 		.then((res) => res.json())
 	// 		.then((mediaData) => {
@@ -28,6 +28,7 @@ const MediaIndex = (props) => {
 	// 		// console.log(mediaData);
 	// 	});
 	// };
+
 
 	// useEffect(() => {
 	// 		fetchMedia();

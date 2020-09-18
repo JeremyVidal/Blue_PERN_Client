@@ -13,26 +13,28 @@ const MediaCreate = (props) => {
   const [platform, setPlatform] = useState("");
   const [media, setMedia] = useState([]);
 
-  // const fetchMedia = (token) => {
-	// 	fetch(`${APIURL}/media`, {
-	// 		  method: "GET",
-	// 	  headers: new Headers({
-	// 		"Content-Type": "application/json",
-	// 		"Authorization": token,
-	// 	  }),
-	// 	})
-	// 	// .then(() => props.fetchMedia())
-	// 	  .then((res) => res.json())
-	// 	  .then((mediaData) => {
-	// 		  console.log(mediaData);
-	// 		  props.setMedia(mediaData);
-	// 	  })
-	//   };
-	
-	//   useEffect(() => {
 
-	// 	fetchMedia(localStorage.getItem('token'));
-	//   }, []);
+  const fetchMedia = (token) => {
+		fetch(`${APIURL}/media`, {
+			// fetch(`${APIURL}/media/all`, {
+		  method: "GET",
+		  headers: new Headers({
+			"Content-Type": "application/json",
+			"Authorization": token,
+		  }),
+		})
+		// .then(() => props.fetchMedia())
+		  .then((res) => res.json())
+		  .then((mediaData) => {
+			  console.log(mediaData);
+			  setMedia(mediaData);
+		  })
+	  };
+	
+	 useEffect(() => {
+
+	fetchMedia(localStorage.getItem('token'));
+	 }, []);
 
 
   const handleSubmit = (e) => {
@@ -48,17 +50,18 @@ const MediaCreate = (props) => {
           rated: rated,
           rating: rating,
           consumed: consumed,
-          platform: platform,
-        },
+          platform: platform
+        }
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        'Authorization': localStorage.getItem('token'),
-      }),
+        'Authorization':  localStorage.getItem('token'),
+        // 'Authorization': localStorage.getItem('token'),
+      })
     })
       .then((res) => res.json())
-      .then((logMedia) => {
-        console.log(logMedia);
+      .then((logData) => {
+        console.log(logData);
         setType("");
         setTitle("");
         setGenre("");
@@ -67,7 +70,7 @@ const MediaCreate = (props) => {
         setRating(0);
         setConsumed("");
         setPlatform("");
-        //fetchMedia(localStorage.getItem('token'));
+        fetchMedia(localStorage.getItem('token'));
 
       });
     };
@@ -151,7 +154,7 @@ const MediaCreate = (props) => {
             onChange={(e) => setPlatform(e.target.value)}
           />
         </FormGroup>
-        <input type="submit" />
+        <Button type="submit">Submit</Button>
       </Form>
     </div>
     </div>

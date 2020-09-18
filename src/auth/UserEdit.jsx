@@ -78,6 +78,7 @@ const UserEdit = (props) => {
 	  
   };
 
+
   const changePasswordField = () =>
     !changePasswordToggle ? (
 		<div>
@@ -88,6 +89,17 @@ const UserEdit = (props) => {
 			</FormGroup>
       	</div>
 	  ) : null;
+
+	//   const deleteUser =() =>{
+    //     fetch(`${APIURL}/user`,{
+    //         method: 'DELETE',
+    //         headers: new Headers ({
+    //             'Content-Type': 'application/json',
+    //             'Authorization': props.token
+    //         })
+    //     })
+    //     .then(()=> props.fetchUser())
+    // }
 
   return (
 	<Container style={{marginTop: "60px"}}>
@@ -115,7 +127,7 @@ const UserEdit = (props) => {
 			{changePasswordField()}
 			<div className="d-flex justify-content-between">
 				<Button className="updateButtons" type="submit">Update</Button>
-				<Button className="updateButtons" onClick={() => {props.DeleteUser(/*user.id*/)}}>Delete</Button>
+				{/* <Button className="updateButtons" onClick={() => {deleteUser(user)}}>Delete Account</Button> */}
 			</div>
 		</Form>
 	</Container>
